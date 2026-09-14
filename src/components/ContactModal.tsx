@@ -30,39 +30,42 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
   const handleClose = () => { setSubmitted(false); onClose(); };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md overflow-y-auto">
-      <div className="bg-black border border-white/20 w-full max-w-xl p-6 sm:p-10 relative shadow-2xl my-8 text-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+      <div className="glass-apple border border-white/20 w-full max-w-xl p-6 sm:p-10 relative shadow-2xl my-8 text-white rounded-3xl">
         <button
           onClick={handleClose}
-          className="absolute top-6 right-6 p-2.5 bg-black border border-white/20 text-white/50 hover:text-white hover:border-white transition-colors cursor-pointer"
+          className="absolute top-6 right-6 p-2.5 glass-apple rounded-full border border-white/20 text-white/50 hover:text-white hover:border-white transition-colors cursor-pointer"
         >
           <X className="w-4 h-4" />
         </button>
 
         {submitted ? (
           <div className="text-center py-8 space-y-6">
-            <div className="w-16 h-16 bg-[#ff5500] flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 rounded-2xl bg-[#ff5500] flex items-center justify-center mx-auto shadow-xl">
               <CheckCircle2 className="w-8 h-8 text-white" />
             </div>
             <div className="space-y-2">
               <h3 className="text-3xl font-black uppercase tracking-tight">REQUEST RECEIVED.</h3>
-              <p className="text-white/50 text-sm max-w-md mx-auto font-light">
+              <p className="text-white/60 text-sm max-w-md mx-auto font-light leading-relaxed">
                 We'll review your project details and get back to you within 24 hours with a clear plan and honest pricing.
               </p>
             </div>
-            <div className="p-5 bg-black border border-white/20 text-left font-mono text-xs space-y-2 max-w-md mx-auto text-white/80">
+            <div className="p-5 rounded-2xl glass-apple border border-white/15 text-left font-mono text-xs space-y-2 max-w-md mx-auto text-white/80">
               <div className="flex justify-between"><span className="text-white/40">NAME:</span><span>{formData.name}</span></div>
-              <div className="flex justify-between"><span className="text-white/40">PROJECT:</span><span className="uppercase text-white font-bold">{formData.projectType.replace(/-/g, ' ')}</span></div>
+              <div className="flex justify-between"><span className="text-white/40">PROJECT:</span><span className="uppercase text-[#ff5500] font-bold">{formData.projectType.replace(/-/g, ' ')}</span></div>
               <div className="flex justify-between"><span className="text-white/40">TIMELINE:</span><span className="text-white font-bold">{formData.timeline}</span></div>
             </div>
-            <button onClick={handleClose} className="px-8 py-4 bg-[#ff5500] text-white font-bold uppercase text-xs tracking-widest hover:bg-[#e64d00] transition-colors cursor-pointer">
+            <button 
+              onClick={handleClose} 
+              className="px-8 py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-colors cursor-pointer shadow-lg"
+            >
               Back to Site
             </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2 border-l border-[#ff5500]/60 pl-4 py-1">
-              <span className="text-[10px] font-mono font-bold tracking-[0.3em] uppercase text-white/40 block">Project Intake</span>
+            <div className="space-y-1.5 border-l-2 border-[#ff5500] pl-4 py-1">
+              <span className="text-[10px] font-mono font-bold tracking-[0.25em] uppercase text-[#ff5500] block">01 // PROJECT INTAKE</span>
               <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight">START YOUR PROJECT.</h3>
               <p className="text-xs text-white/50 font-light">Tell us about what you need — we'll come back with a clear plan.</p>
             </div>
@@ -73,13 +76,13 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
                   <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider">Your Name / Brand</label>
                   <input type="text" required placeholder="e.g. Ananya Mehta" value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3.5 py-3 bg-black border border-white/15 text-white placeholder:text-white/20 focus:outline-none focus:border-[#ff5500] transition-colors" />
+                    className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors" />
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider">Email Address</label>
                   <input type="email" required placeholder="hello@yourbrand.com" value={formData.email}
                     onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3.5 py-3 bg-black border border-white/15 text-white placeholder:text-white/20 focus:outline-none focus:border-[#ff5500] transition-colors" />
+                    className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors" />
                 </div>
               </div>
 
@@ -87,7 +90,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
                 <div className="space-y-1.5">
                   <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider">Project Type</label>
                   <select value={formData.projectType} onChange={e => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-3.5 py-3 bg-black border border-white/15 text-white focus:outline-none focus:border-[#ff5500] transition-colors">
+                    className="w-full px-4 py-3 input-apple rounded-xl text-white focus:outline-none transition-colors">
                     <option value="template-launch">Template Launch (1–2 Days)</option>
                     <option value="custom-build">Custom Build (2–3 Weeks)</option>
                     <option value="enterprise">Enterprise Custom</option>
@@ -97,7 +100,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
                 <div className="space-y-1.5">
                   <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider">Timeline</label>
                   <select value={formData.timeline} onChange={e => setFormData({ ...formData, timeline: e.target.value })}
-                    className="w-full px-3.5 py-3 bg-black border border-white/15 text-white focus:outline-none focus:border-[#ff5500] transition-colors">
+                    className="w-full px-4 py-3 input-apple rounded-xl text-white focus:outline-none transition-colors">
                     <option value="asap">ASAP</option>
                     <option value="1-month">Within 1 Month</option>
                     <option value="2-3-months">2–3 Months</option>
@@ -110,19 +113,19 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
                 <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider">Business / Industry</label>
                 <input type="text" placeholder="e.g. SaaS startup, e-commerce brand, coaching business..." value={formData.businessType}
                   onChange={e => setFormData({ ...formData, businessType: e.target.value })}
-                  className="w-full px-3.5 py-3 bg-black border border-white/15 text-white placeholder:text-white/20 focus:outline-none focus:border-[#ff5500] transition-colors" />
+                  className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors" />
               </div>
 
               <div className="space-y-1.5">
                 <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider">Tell Us About Your Project</label>
                 <textarea rows={3} placeholder="What do you sell, who is your customer, what should the website achieve..."
                   value={formData.notes} onChange={e => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-3.5 py-3 bg-black border border-white/15 text-white placeholder:text-white/20 focus:outline-none focus:border-[#ff5500] transition-colors" />
+                  className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors resize-none" />
               </div>
             </div>
 
             <button type="submit" disabled={isSubmitting}
-              className="w-full py-4 bg-[#ff5500] text-white hover:bg-[#e64d00] font-bold uppercase text-xs tracking-widest transition-all shadow-md flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50">
+              className="w-full py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold uppercase text-xs tracking-widest transition-all rounded-full shadow-[0_0_25px_rgba(255,85,0,0.35)] flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50">
               {isSubmitting ? <span>Sending...</span> : <><span>Submit Project Request</span><ArrowRight className="w-4 h-4" /></>}
             </button>
           </form>

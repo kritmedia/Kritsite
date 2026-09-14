@@ -22,6 +22,7 @@ export interface SiteTemplate {
   accentColor: string;
   features: string[];
   mockupBg: string;
+  previewImg?: string;
 }
 
 export interface WorkflowStep {

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, Globe, Film, Sparkles, Shield, Cpu, Compass } from 'lucide-react';
 import { DESIGN_PRINCIPLES } from '../data/content';
+import { AtmosphericMeshBackground } from '../components/AtmosphericMeshBackground';
 
 interface AboutPageProps {
   onOpenContact: () => void;
@@ -16,23 +17,24 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
   ];
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 bg-black text-white selection:bg-[#ff5500] selection:text-white">
       {/* ── HERO ── */}
-      <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#030303] border-b border-white/10 overflow-hidden">
-        {/* Architectural Workspace Backdrop */}
-        <div 
-          className="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none mix-blend-luminosity"
-          style={{ backgroundImage: "url('/images/workspace-dark.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-[#030303] pointer-events-none" />
+      <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 overflow-hidden">
+        {/* Atmospheric Subtle Smoky Mesh Background */}
+        <AtmosphericMeshBackground variant="signature" />
 
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="border-l-2 border-[#ff5500]/60 pl-6 sm:pl-10 py-2 space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-black/80 border border-white/15 text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#ff5500]">
+        <div className="relative z-10 max-w-7xl mx-auto space-y-6">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            01 // THE KRITMEDIA STUDIO PHILOSOPHY
+          </div>
+
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#ff5500]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>The KritMedia Studio Philosophy</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-[0.92] text-white">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-[0.92] text-white">
               BUILT BY CREATORS. <span className="block text-white/30">FOR VISIONARY FOUNDERS.</span>
             </h1>
             <p className="text-white/70 text-base sm:text-xl font-light max-w-2xl leading-relaxed">
@@ -44,20 +46,25 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
 
       {/* ── MANIFESTO & METRICS ── */}
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto space-y-12">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            02 // ORIGIN MANIFESTO
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             {/* Story & Philosophy */}
             <div className="lg:col-span-7 space-y-8">
-              <div className="border-l border-white/20 pl-6 sm:pl-10 py-2 space-y-3">
-                <span className="text-xs font-semibold tracking-[0.4em] uppercase text-white/40 block font-mono">
+              <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3">
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
                   Origin Manifesto
                 </span>
-                <h2 className="text-3xl sm:text-5xl font-black tracking-tighter uppercase leading-[0.95]">
+                <h2 className="text-3xl sm:text-5xl font-black tracking-tight uppercase leading-[0.95] text-white">
                   WHY WE <span className="text-white/30">EXIST.</span>
                 </h2>
               </div>
 
-              <div className="space-y-6 text-white/70 font-light leading-relaxed text-base sm:text-lg pl-6 sm:pl-10 border-l border-white/10">
+              <div className="space-y-6 text-white/70 font-light leading-relaxed text-base sm:text-lg pl-6 sm:pl-8 border-l border-white/10">
                 <p>
                   The internet is saturated with forgettable websites. Drag-and-drop page builders promise instant results but deliver bloated code, sluggish mobile performance, and zero consideration for how search engines actually crawl content today.
                 </p>
@@ -74,17 +81,17 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
             <div className="lg:col-span-5 space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="glass-card p-6 space-y-2 hover:border-white/30 transition-colors">
+                  <div key={stat.label} className="rounded-3xl glass-apple glass-apple-hover p-6 space-y-2">
                     <div className="text-3xl sm:text-4xl font-black font-mono text-white">{stat.value}</div>
                     <div className="text-[10px] font-mono uppercase tracking-widest text-[#ff5500] font-bold">
                       {stat.label}
                     </div>
-                    <p className="text-[11px] font-mono text-white/40">{stat.detail}</p>
+                    <p className="text-[11px] font-mono text-white/50">{stat.detail}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="glass-card p-8 border-[#ff5500]/40 space-y-4 relative overflow-hidden">
+              <div className="rounded-3xl glass-apple-amber p-8 space-y-4 relative overflow-hidden shadow-[0_0_40px_rgba(255,85,0,0.15)]">
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-[#ff5500]" />
                   <span className="text-xs font-mono uppercase tracking-widest text-white font-bold">
@@ -103,11 +110,16 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
       {/* ── DESIGN PRINCIPLES ── */}
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#050505] border-b border-white/10">
         <div className="max-w-7xl mx-auto space-y-16">
-          <div className="border-l border-white/20 pl-6 sm:pl-10 py-2 space-y-3 max-w-2xl">
-            <span className="text-xs font-semibold tracking-[0.4em] uppercase text-white/40 block font-mono">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            03 // CORE TENETS & FOUNDATION
+          </div>
+
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
               Core Tenets
             </span>
-            <h2 className="text-4xl sm:text-6xl font-black tracking-tighter uppercase leading-[0.95]">
+            <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase leading-[0.95] text-white">
               OUR DESIGN <span className="block text-white/30">PRINCIPLES.</span>
             </h2>
             <p className="text-white/50 text-base font-light">
@@ -119,7 +131,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
             {DESIGN_PRINCIPLES.map((principle) => (
               <div
                 key={principle.number}
-                className="glass-card p-8 sm:p-10 space-y-5 hover:border-white/30 transition-all group"
+                className="rounded-3xl glass-apple glass-apple-hover p-8 sm:p-10 space-y-5 transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-4xl font-black font-mono text-white/15 group-hover:text-[#ff5500] transition-colors">
@@ -129,7 +141,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                     {principle.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[9px] font-mono uppercase tracking-wider border border-[#ff5500]/30 text-[#ff5500] px-2 py-0.5"
+                        className="text-[9px] font-mono uppercase tracking-wider border border-[#ff5500]/30 text-[#ff5500] px-2.5 py-0.5 rounded-full bg-[#ff5500]/5"
                       >
                         {tag}
                       </span>
@@ -154,18 +166,23 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
       {/* ── THE KRITMEDIA UNIVERSE ── */}
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto space-y-16">
-          <div className="border-l border-white/20 pl-6 sm:pl-10 py-2 space-y-3 max-w-2xl">
-            <span className="text-xs font-semibold tracking-[0.4em] uppercase text-[#ff5500] block font-mono">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            04 // THE CREATIVE SYNDICATE
+          </div>
+
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
               The Creative Syndicate
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tighter uppercase leading-[0.95]">
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight uppercase leading-[0.95] text-white">
               THE KRITMEDIA <span className="block text-white/30">ECOSYSTEM.</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* KritSite Active */}
-            <div className="glass-card p-8 border-[#ff5500]/60 space-y-5 relative shadow-[0_0_40px_rgba(255,85,0,0.15)]">
+            <div className="rounded-3xl glass-apple-amber p-8 space-y-5 relative shadow-[0_0_40px_rgba(255,85,0,0.15)]">
               <div className="flex items-center gap-3">
                 <img
                   src="/logo.png"
@@ -194,11 +211,11 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
               href="https://kritvideo.com"
               target="_blank"
               rel="noreferrer"
-              className="glass-card p-8 space-y-5 hover:border-white/40 transition-all group cursor-pointer"
+              className="rounded-3xl glass-apple glass-apple-hover p-8 space-y-5 transition-all group cursor-pointer"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 border border-white/20 flex items-center justify-center group-hover:border-white transition-colors">
+                  <div className="w-10 h-10 rounded-xl border border-white/20 flex items-center justify-center group-hover:border-white transition-colors bg-white/5">
                     <Film className="w-5 h-5 text-white/70" />
                   </div>
                   <div>
@@ -219,9 +236,9 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
             </a>
 
             {/* Future Incubator */}
-            <div className="glass-card p-8 space-y-5 opacity-60 border-dashed">
+            <div className="rounded-3xl glass-apple p-8 space-y-5 opacity-60 border-dashed">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 border border-white/15 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl border border-white/15 flex items-center justify-center bg-white/5">
                   <Compass className="w-5 h-5 text-white/40" />
                 </div>
                 <div>
@@ -243,12 +260,12 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
       </section>
 
       {/* ── CALL TO ACTION ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#030303]">
+      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#050505]">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <span className="text-xs font-mono uppercase tracking-[0.4em] text-[#ff5500]">
-            Begin Your Engagement
+          <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#ff5500] font-bold">
+            05 // BEGIN YOUR ENGAGEMENT
           </span>
-          <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tighter text-white">
+          <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white">
             READY TO COLLABORATE?
           </h2>
           <p className="text-white/50 text-base font-light max-w-lg mx-auto leading-relaxed">
@@ -258,7 +275,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
             <button
               type="button"
               onClick={onOpenContact}
-              className="px-10 py-5 bg-[#ff5500] text-white font-bold uppercase text-xs tracking-widest hover:bg-[#e64d00] transition-all flex items-center gap-3 cursor-pointer shadow-[0_0_30px_rgba(255,85,0,0.35)]"
+              className="px-10 py-5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all flex items-center gap-3 cursor-pointer shadow-[0_0_30px_rgba(255,85,0,0.35)] hover:scale-[1.03]"
             >
               <span>Schedule Project Kickoff</span>
               <ArrowRight className="w-4 h-4" />

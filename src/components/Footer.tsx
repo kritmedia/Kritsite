@@ -27,14 +27,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <p className="text-xs sm:text-sm text-white/40 max-w-xs font-light leading-relaxed">
               Design-first websites that convert. SEO, AEO & GEO optimized. Templates live in 1–2 days, or fully custom. A KritMedia studio.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="w-8 h-8 border border-white/20 flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-colors">
+            <div className="flex items-center gap-3">
+              <a href="#" className="w-9 h-9 rounded-full border border-white/15 bg-white/[0.03] flex items-center justify-center text-white/40 hover:text-white hover:border-white/40 hover:bg-white/[0.08] transition-all">
                 <Instagram className="w-3.5 h-3.5" />
               </a>
-              <a href="#" className="w-8 h-8 border border-white/20 flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-colors">
+              <a href="#" className="w-9 h-9 rounded-full border border-white/15 bg-white/[0.03] flex items-center justify-center text-white/40 hover:text-white hover:border-white/40 hover:bg-white/[0.08] transition-all">
                 <Linkedin className="w-3.5 h-3.5" />
               </a>
-              <a href="#" className="w-8 h-8 border border-white/20 flex items-center justify-center text-white/40 hover:text-white hover:border-white transition-colors">
+              <a href="#" className="w-9 h-9 rounded-full border border-white/15 bg-white/[0.03] flex items-center justify-center text-white/40 hover:text-white hover:border-white/40 hover:bg-white/[0.08] transition-all">
                 <Twitter className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -74,7 +74,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               <span className="text-[10px] font-mono uppercase tracking-widest text-white/30 block font-bold">Start</span>
               <button
                 onClick={onOpenContact}
-                className="block px-5 py-3 bg-[#ff5500] text-white font-bold uppercase text-[10px] tracking-widest hover:bg-[#e64d00] transition-all cursor-pointer text-left"
+                className="block w-full sm:w-auto px-6 py-3 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold uppercase text-[10px] tracking-widest rounded-full shadow-[0_0_20px_rgba(255,85,0,0.35)] transition-all cursor-pointer text-center"
               >
                 Start a Project →
               </button>

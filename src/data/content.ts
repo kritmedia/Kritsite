@@ -79,6 +79,7 @@ export const SITE_TEMPLATES: SiteTemplate[] = [
     pages: 6,
     accentColor: '#ff5500',
     mockupBg: 'from-[#0a0a0a] to-[#111]',
+    previewImg: '/images/previews/obsidian_preview.jpg',
     features: ['Hero + Feature Grid', 'Pricing Table', 'FAQ', 'Blog Ready', 'Auth CTAs'],
   },
   {
@@ -90,6 +91,7 @@ export const SITE_TEMPLATES: SiteTemplate[] = [
     pages: 5,
     accentColor: '#e8e8e8',
     mockupBg: 'from-[#0d0d0d] to-[#1a1a1a]',
+    previewImg: '/images/previews/studio_preview.jpg',
     features: ['Portfolio Grid', 'Case Studies', 'Team Section', 'Services', 'Client Logos'],
   },
   {
@@ -101,6 +103,7 @@ export const SITE_TEMPLATES: SiteTemplate[] = [
     pages: 7,
     accentColor: '#c9a84c',
     mockupBg: 'from-[#080808] to-[#141414]',
+    previewImg: '/images/previews/luxe_preview.jpg',
     features: ['Product Showcase', 'Collection Grid', 'Brand Story', 'Testimonials', 'Shop CTA'],
   },
   {
@@ -112,6 +115,7 @@ export const SITE_TEMPLATES: SiteTemplate[] = [
     pages: 5,
     accentColor: '#a855f7',
     mockupBg: 'from-[#0c0c14] to-[#12121e]',
+    previewImg: '/images/previews/zenith_preview.jpg',
     features: ['Bio Hero', 'Speaking / Services', 'Media Kit', 'Testimonials', 'Newsletter'],
   },
   {
@@ -123,6 +127,7 @@ export const SITE_TEMPLATES: SiteTemplate[] = [
     pages: 4,
     accentColor: '#22c55e',
     mockupBg: 'from-[#050d05] to-[#0d150d]',
+    previewImg: '/images/previews/astral_preview.jpg',
     features: ['Menu / Services', 'Location & Hours', 'Gallery', 'Reservations / Contact'],
   },
   {
@@ -134,6 +139,7 @@ export const SITE_TEMPLATES: SiteTemplate[] = [
     pages: 5,
     accentColor: '#3b82f6',
     mockupBg: 'from-[#050812] to-[#0b1020]',
+    previewImg: '/images/previews/kinetic_preview.jpg',
     features: ['Product Hero', 'How It Works', 'Metrics / Proof', 'Pricing', 'Investor CTA'],
   },
 ];

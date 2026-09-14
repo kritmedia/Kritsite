@@ -5,6 +5,7 @@ import {
   Layers, CheckCircle2, Sliders, Cpu, Sparkles, Terminal
 } from 'lucide-react';
 import { SERVICE_PILLARS, WORKFLOW_STEPS, COMPARISON_POINTS, PRICING_PLANS, SERVICES_FAQS } from '../data/content';
+import { AtmosphericMeshBackground } from '../components/AtmosphericMeshBackground';
 
 interface ServicesPageProps {
   onOpenContact: (planId?: string) => void;
@@ -24,40 +25,41 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
   const activeCard = SERVICE_PILLARS.find((p) => p.id === activeTab) || SERVICE_PILLARS[0];
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 bg-black text-white selection:bg-[#ff5500] selection:text-white">
       {/* ── HERO ── */}
-      <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#030303] border-b border-white/10 overflow-hidden">
-        {/* Subtle Background Photography Texture */}
-        <div 
-          className="absolute inset-0 opacity-15 bg-cover bg-center pointer-events-none mix-blend-luminosity"
-          style={{ backgroundImage: "url('/images/design-architecture.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/90 to-[#030303] pointer-events-none" />
+      <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 overflow-hidden">
+        {/* Atmospheric Subtle Smoky Mesh Background */}
+        <AtmosphericMeshBackground variant="services" />
 
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="border-l-2 border-[#ff5500]/60 pl-6 sm:pl-10 py-2 space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-black/80 border border-white/15 text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#ff5500]">
+        <div className="relative z-10 max-w-7xl mx-auto space-y-6">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            01 // FULL-STACK WEB ARCHITECTURE
+          </div>
+
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#ff5500]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Full-Stack Web Design Architecture</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-[0.92] text-white">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-[0.92] text-white">
               ENGINEERED FOR AESTHETICS. <span className="block text-white/30">CALIBRATED FOR SEARCH.</span>
             </h1>
             <p className="text-white/70 text-base sm:text-xl font-light max-w-2xl leading-relaxed">
               Every website we build is treated as a strategic digital asset. We synthesize architectural design principles with modern <strong>SEO, AEO & GEO</strong> indexing to convert casual visitors into clients.
             </p>
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <button
                 type="button"
                 onClick={() => onOpenContact()}
-                className="px-8 py-4 bg-[#ff5500] text-white font-bold uppercase text-xs tracking-widest hover:bg-[#e64d00] transition-all flex items-center gap-2 cursor-pointer shadow-[0_0_25px_rgba(255,85,0,0.35)]"
+                className="px-8 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full shadow-[0_0_25px_rgba(255,85,0,0.35)] hover:scale-[1.03] transition-all flex items-center gap-2 cursor-pointer"
               >
                 <span>Initiate Project Scope</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <Link
                 to="/templates"
-                className="px-8 py-4 glass-card text-white font-bold uppercase text-xs tracking-widest hover:border-white transition-all"
+                className="px-8 py-4 glass-apple glass-apple-hover text-white font-bold uppercase text-xs tracking-widest rounded-full hover:border-white transition-all flex items-center gap-2"
               >
                 Browse 48h Templates
               </Link>
@@ -69,16 +71,21 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       {/* ── TABBED SERVICE PILLARS ── */}
       <section id="pillars" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto space-y-12">
-          <div className="border-l border-white/20 pl-6 sm:pl-10 py-2 space-y-3 max-w-2xl">
-            <span className="text-xs font-semibold tracking-[0.4em] uppercase text-white/40 block font-mono">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            02 // 4 PILLARS OF EXCELLENCE
+          </div>
+
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
               The 4 Pillars of Excellence
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tighter uppercase leading-[0.95]">
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight uppercase leading-[0.95] text-white">
               HOW WE DELIVER <span className="block text-white/30">UNFAIR ADVANTAGES.</span>
             </h2>
           </div>
 
-          {/* Tab selector buttons */}
+          {/* Tab selector buttons as Frosted Glass Capsules */}
           <div className="flex flex-wrap gap-2.5">
             {SERVICE_PILLARS.map((pillar) => {
               const Icon = TAB_ICONS[pillar.id] || Palette;
@@ -88,10 +95,10 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                   key={pillar.id}
                   type="button"
                   onClick={() => setActiveTab(pillar.id)}
-                  className={`px-5 py-3 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer border flex items-center gap-2.5 ${
+                  className={`px-6 py-3 text-xs font-bold font-mono uppercase tracking-wider rounded-full transition-all duration-200 cursor-pointer flex items-center gap-2.5 ${
                     isSelected
-                      ? 'bg-white text-black border-white shadow-xl scale-[1.02]'
-                      : 'glass-card text-white/70 border-white/15 hover:border-white/40 hover:text-white'
+                      ? 'bg-white text-black shadow-[0_0_25px_rgba(255,255,255,0.3)] scale-[1.02]'
+                      : 'glass-apple glass-apple-hover text-white/70 hover:text-white'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -104,12 +111,12 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
           {/* Active Pillar Card */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-8">
-              <div className="glass-card p-7 sm:p-10 space-y-6">
+              <div className="rounded-3xl glass-apple p-7 sm:p-10 space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono tracking-widest text-[#ff5500] uppercase font-bold">
+                  <span className="text-[10px] font-mono tracking-widest text-[#ff5500] uppercase font-bold px-3 py-1 bg-white/5 border border-white/10 rounded-full">
                     {activeCard.tag}
                   </span>
-                  <div className="px-4 py-1.5 bg-black/80 border border-white/20 text-right">
+                  <div className="px-4 py-1.5 rounded-xl bg-black/80 border border-white/20 text-right">
                     <span className="text-base font-bold font-mono text-white">{activeCard.metric}</span>
                     <span className="text-[9px] uppercase tracking-widest text-white/40 block font-mono">
                       {activeCard.metricLabel}
@@ -218,7 +225,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                 {/* Specs Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 font-mono text-xs">
                   {activeCard.specs.map((spec) => (
-                    <div key={spec.label} className="bg-black/60 border border-white/10 p-3 space-y-1">
+                    <div key={spec.label} className="bg-black/50 border border-white/10 p-3 rounded-2xl space-y-1">
                       <div className="text-[10px] text-white/40 uppercase">{spec.label}</div>
                       <div className="text-white font-medium truncate">{spec.value}</div>
                     </div>
@@ -236,7 +243,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                 {activeCard.features.map((f, i) => (
                   <div
                     key={i}
-                    className="glass-card p-4 flex items-start gap-3 hover:border-white/30 transition-colors"
+                    className="rounded-2xl glass-apple glass-apple-hover p-4 flex items-start gap-3"
                   >
                     <Check className="w-4 h-4 text-[#ff5500] mt-0.5 shrink-0" />
                     <span className="text-sm text-white/85 font-light">{f}</span>
@@ -247,7 +254,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
               <button
                 type="button"
                 onClick={() => onOpenContact(activeCard.id)}
-                className="w-full py-4 bg-[#ff5500] text-white font-bold uppercase text-xs tracking-widest hover:bg-[#e64d00] transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg mt-4"
+                className="w-full py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:scale-[1.02] mt-4"
               >
                 <span>Book This Capability</span>
                 <ArrowRight className="w-4 h-4" />
@@ -258,14 +265,19 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       </section>
 
       {/* ── 4-STEP DELIVERY TIMELINE ── */}
-      <section id="process" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#050505] border-b border-white/10 relative">
+      <section id="process" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto space-y-16">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            03 // LINEAR DELIVERY FRAMEWORK
+          </div>
+
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div className="border-l border-white/20 pl-6 sm:pl-10 py-2 space-y-3 max-w-2xl">
-              <span className="text-xs font-semibold tracking-[0.4em] uppercase text-white/40 block font-mono">
+            <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
                 Linear Delivery Framework
               </span>
-              <h2 className="text-4xl sm:text-6xl font-black tracking-tighter uppercase leading-[0.95]">
+              <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase leading-[0.95] text-white">
                 FROM BRIEFING <span className="block text-white/30">TO GLOBAL DEPLOYMENT.</span>
               </h2>
               <p className="text-white/50 text-base font-light">
@@ -276,7 +288,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
             <button
               type="button"
               onClick={() => onOpenContact()}
-              className="self-start px-8 py-4 bg-[#ff5500] text-white font-bold uppercase text-xs tracking-widest hover:bg-[#e64d00] transition-all flex items-center gap-3 cursor-pointer shrink-0 shadow-md"
+              className="self-start px-8 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all flex items-center gap-3 cursor-pointer shrink-0 shadow-[0_0_25px_rgba(255,85,0,0.35)] hover:scale-[1.03]"
             >
               <span>Initiate Discovery</span>
               <ArrowRight className="w-4 h-4" />
@@ -287,14 +299,14 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
             {WORKFLOW_STEPS.map((step) => (
               <div
                 key={step.step}
-                className="glass-card p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:border-white/40 transition-all group"
+                className="rounded-3xl glass-apple glass-apple-hover p-6 sm:p-8 flex flex-col justify-between space-y-6 group transition-all duration-300"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-3xl font-black font-mono text-white/25 group-hover:text-[#ff5500] transition-colors">
                       {step.step}
                     </span>
-                    <span className="text-[10px] font-mono text-white/60 border border-white/15 px-2.5 py-0.5 uppercase tracking-wider">
+                    <span className="text-[10px] font-mono text-white/70 border border-white/15 px-3 py-1 rounded-full uppercase tracking-wider bg-white/5">
                       {step.duration}
                     </span>
                   </div>
@@ -325,18 +337,23 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       </section>
 
       {/* ── COMPARISON TABLE ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10">
+      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#050505] border-b border-white/10">
         <div className="max-w-7xl mx-auto space-y-16">
-          <div className="border-l border-white/20 pl-6 sm:pl-10 py-2 space-y-3 max-w-3xl">
-            <span className="text-xs font-semibold tracking-[0.4em] uppercase text-white/40 block font-mono">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            04 // RIGOROUS STANDARDS
+          </div>
+
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-3xl">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
               Rigorous Standards
             </span>
-            <h2 className="text-4xl sm:text-6xl font-black tracking-tighter uppercase leading-[0.95]">
+            <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase leading-[0.95] text-white">
               ORDINARY WEBSITES <span className="block text-white/30">VS. KRITSITE ENGINEERING.</span>
             </h2>
           </div>
 
-          <div className="glass-card overflow-x-auto">
+          <div className="rounded-3xl glass-apple overflow-hidden border border-white/15 shadow-2xl">
             <table className="w-full min-w-[650px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-white/10 bg-black/40">
@@ -377,25 +394,30 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       </section>
 
       {/* ── PRICING ── */}
-      <section id="pricing" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#030303] border-b border-white/10">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <section id="pricing" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            05 // TRANSPARENT ENGAGEMENT
+          </div>
+
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-            <div className="border-l border-white/20 pl-6 sm:pl-10 py-2 space-y-3">
-              <span className="text-xs font-semibold tracking-[0.4em] uppercase text-white/40 block font-mono">
+            <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3">
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
                 Transparent Engagement
               </span>
-              <h2 className="text-4xl sm:text-6xl font-black tracking-tighter uppercase leading-[0.95]">
+              <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase leading-[0.95] text-white">
                 HONEST PRICING. <span className="block text-white/30">MAXIMUM CONVERSION.</span>
               </h2>
             </div>
-            <div className="flex items-center gap-1 border border-white/20 p-1 bg-black self-start">
+            <div className="flex items-center gap-1 border border-white/15 p-1 bg-black/60 backdrop-blur-xl rounded-full self-start">
               {(['INR', 'USD'] as const).map((c) => (
                 <button
                   key={c}
                   type="button"
                   onClick={() => setCurrency(c)}
-                  className={`px-5 py-2 text-xs font-bold font-mono uppercase tracking-widest transition-all cursor-pointer ${
-                    currency === c ? 'bg-white text-black' : 'text-white/50 hover:text-white'
+                  className={`px-5 py-2 text-xs font-bold font-mono uppercase tracking-widest rounded-full transition-all cursor-pointer ${
+                    currency === c ? 'bg-white text-black shadow-md' : 'text-white/50 hover:text-white'
                   }`}
                 >
                   {c === 'INR' ? '₹ Indian Rupee' : '$ USD Global'}
@@ -410,12 +432,14 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
               return (
                 <div
                   key={plan.id}
-                  className={`glass-card p-7 sm:p-9 flex flex-col justify-between space-y-8 relative transition-all duration-300 ${
-                    isPopular ? 'border-[#ff5500] ring-1 ring-[#ff5500]/30 shadow-2xl' : 'hover:border-white/40'
+                  className={`p-7 sm:p-9 flex flex-col justify-between space-y-8 relative transition-all duration-300 rounded-3xl ${
+                    isPopular 
+                      ? 'glass-apple-amber ring-1 ring-[#ff5500]/40 shadow-[0_0_50px_rgba(255,85,0,0.25)]' 
+                      : 'glass-apple glass-apple-hover'
                   }`}
                 >
                   {isPopular && (
-                    <div className="absolute -top-3.5 left-8 px-3.5 py-1 bg-[#ff5500] text-white text-[10px] font-black tracking-widest uppercase font-mono">
+                    <div className="absolute -top-3.5 left-8 px-4 py-1 bg-[#ff5500] text-white text-[10px] font-black tracking-widest uppercase font-mono rounded-full shadow-lg">
                       {plan.badge}
                     </div>
                   )}
@@ -453,10 +477,10 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                   <button
                     type="button"
                     onClick={() => onOpenContact(plan.id)}
-                    className={`w-full py-4 font-bold text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-3 cursor-pointer ${
+                    className={`w-full py-4 font-bold text-xs uppercase tracking-widest rounded-full transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg hover:scale-[1.02] ${
                       isPopular 
                         ? 'bg-[#ff5500] text-white hover:bg-[#e64d00]' 
-                        : 'bg-black text-white border border-white/20 hover:border-white hover:bg-white/5'
+                        : 'bg-white text-black hover:bg-neutral-200'
                     }`}
                   >
                     <span>Commission {plan.name}</span>
@@ -472,22 +496,27 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       {/* ── FAQ ── */}
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black">
         <div className="max-w-7xl mx-auto space-y-16">
-          <div className="border-l border-white/20 pl-6 sm:pl-10 py-2 space-y-3 max-w-xl">
-            <span className="text-xs font-semibold tracking-[0.4em] uppercase text-white/40 block font-mono">
+          {/* Top Ticker */}
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            06 // KNOWLEDGE BASE
+          </div>
+
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-xl">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
               Services Knowledge Base
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tighter uppercase leading-[0.95]">
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight uppercase leading-[0.95] text-white">
               FREQUENTLY ASKED <span className="block text-white/30">QUESTIONS.</span>
             </h2>
           </div>
 
           <div className="space-y-4 max-w-4xl">
             {SERVICES_FAQS.map((faq, idx) => (
-              <div key={idx} className="glass-card overflow-hidden">
+              <div key={idx} className="rounded-2xl glass-apple glass-apple-hover overflow-hidden transition-all duration-300">
                 <details className="group">
                   <summary className="p-6 cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-base uppercase tracking-tight text-white/90 group-hover:text-white">
                     <span>{faq.question}</span>
-                    <span className="w-7 h-7 border border-white/20 flex items-center justify-center shrink-0 font-mono text-xs group-open:rotate-45 transition-transform">
+                    <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center shrink-0 font-mono text-xs group-open:rotate-45 transition-transform">
                       +
                     </span>
                   </summary>

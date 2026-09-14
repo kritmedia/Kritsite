@@ -3,6 +3,7 @@ import {
   ArrowRight, CheckCircle2, Globe, Mail, Clock, ArrowUpRight, 
   Sparkles, Sliders, ShieldCheck, Zap
 } from 'lucide-react';
+import { AtmosphericMeshBackground } from '../components/AtmosphericMeshBackground';
 
 const CONTACT_FAQS = [
   { 
@@ -44,18 +45,16 @@ export function ContactPage() {
   };
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 bg-[#08080a] text-white">
       {/* ── HERO ── */}
-      <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#030303] border-b border-white/10 overflow-hidden">
-        {/* Ambient Glow */}
-        <div className="absolute -top-20 left-1/4 w-[600px] h-[600px] glow-orb-orange opacity-20 pointer-events-none" />
+      <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 overflow-hidden">
+        <AtmosphericMeshBackground variant="cta" />
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="border-l-2 border-[#ff5500]/60 pl-6 sm:pl-10 py-2 space-y-6 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-black/80 border border-white/15 text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#ff5500]">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Direct Studio Access</span>
-            </div>
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-3xl">
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#ff5500] font-bold block">
+              01 // DIRECT STUDIO ACCESS
+            </span>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-[0.92] text-white">
               COMMISSION YOUR <span className="block text-white/30">NEXT-GEN PLATFORM.</span>
             </h1>
@@ -67,14 +66,14 @@ export function ContactPage() {
       </section>
 
       {/* ── FORM & STUDIO CONTACT DESK ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
+      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#08080a] border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             {/* Form Column */}
             <div className="lg:col-span-7">
               {submitted ? (
-                <div className="glass-card border-[#ff5500]/40 p-10 sm:p-14 text-center space-y-8 shadow-[0_0_50px_rgba(255,85,0,0.15)]">
-                  <div className="w-16 h-16 bg-[#ff5500] flex items-center justify-center mx-auto shadow-xl">
+                <div className="glass-apple rounded-3xl border border-[#ff5500]/40 p-10 sm:p-14 text-center space-y-8 shadow-[0_0_50px_rgba(255,85,0,0.15)]">
+                  <div className="w-16 h-16 rounded-2xl bg-[#ff5500] flex items-center justify-center mx-auto shadow-xl">
                     <CheckCircle2 className="w-8 h-8 text-white" />
                   </div>
                   <div className="space-y-3">
@@ -86,7 +85,7 @@ export function ContactPage() {
                     </p>
                   </div>
 
-                  <div className="p-5 bg-black/80 border border-white/10 text-left font-mono text-xs space-y-2 max-w-xs mx-auto text-white/80">
+                  <div className="p-5 rounded-2xl glass-apple border border-white/10 text-left font-mono text-xs space-y-2 max-w-xs mx-auto text-white/80">
                     <div className="flex justify-between">
                       <span className="text-white/40">CLIENT:</span>
                       <span>{formData.name}</span>
@@ -106,16 +105,16 @@ export function ContactPage() {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="px-8 py-4 bg-[#ff5500] text-white font-bold uppercase text-xs tracking-widest hover:bg-[#e64d00] transition-colors cursor-pointer shadow-lg"
+                    className="px-8 py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all cursor-pointer shadow-lg"
                   >
                     Submit Another Inquiry
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="glass-card p-8 sm:p-12 space-y-8">
+                <form onSubmit={handleSubmit} className="glass-apple rounded-3xl p-8 sm:p-12 space-y-8 border border-white/10">
                   <div className="border-l-2 border-[#ff5500] pl-4 py-1 space-y-1">
                     <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#ff5500] font-bold">
-                      Project Ingest Portal
+                      02 // PROJECT DIRECTIVES
                     </span>
                     <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
                       PROJECT DIRECTIVES.
@@ -135,7 +134,7 @@ export function ContactPage() {
                           placeholder="e.g. Alex Morgan / Studio Apex"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full px-4 py-3.5 bg-black/80 border border-white/15 text-white placeholder:text-white/25 focus:outline-none focus:border-[#ff5500] transition-colors"
+                          className="w-full px-4 py-3.5 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors"
                         />
                       </div>
                       <div className="space-y-2">
@@ -148,7 +147,7 @@ export function ContactPage() {
                           placeholder="alex@studioapex.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full px-4 py-3.5 bg-black/80 border border-white/15 text-white placeholder:text-white/25 focus:outline-none focus:border-[#ff5500] transition-colors"
+                          className="w-full px-4 py-3.5 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -156,16 +155,15 @@ export function ContactPage() {
                     {/* Phone & Industry */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider flex justify-between">
-                          <span>Phone / WhatsApp</span>
-                          <span className="text-white/30 lowercase">optional</span>
+                        <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
+                          Phone / WhatsApp <span className="text-white/30 lowercase">(optional)</span>
                         </label>
                         <input
                           type="tel"
                           placeholder="+91 98765 43210"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full px-4 py-3.5 bg-black/80 border border-white/15 text-white placeholder:text-white/25 focus:outline-none focus:border-[#ff5500] transition-colors"
+                          className="w-full px-4 py-3.5 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors"
                         />
                       </div>
                       <div className="space-y-2">
@@ -177,7 +175,7 @@ export function ContactPage() {
                           placeholder="e.g. Fintech, Luxury E-Com, AI SaaS"
                           value={formData.industry}
                           onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
-                          className="w-full px-4 py-3.5 bg-black/80 border border-white/15 text-white placeholder:text-white/25 focus:outline-none focus:border-[#ff5500] transition-colors"
+                          className="w-full px-4 py-3.5 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -191,7 +189,7 @@ export function ContactPage() {
                         <select
                           value={formData.projectType}
                           onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                          className="w-full px-4 py-3.5 bg-black/80 border border-white/15 text-white focus:outline-none focus:border-[#ff5500] transition-colors"
+                          className="w-full px-4 py-3.5 input-apple rounded-xl text-white focus:outline-none transition-colors"
                         >
                           <option value="template-launch">Signature Template Launch (1–2 Days, ₹14,999)</option>
                           <option value="custom-build">Full Custom Build (2–3 Weeks, ₹49,999)</option>
@@ -207,7 +205,7 @@ export function ContactPage() {
                         <select
                           value={formData.budget}
                           onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                          className="w-full px-4 py-3.5 bg-black/80 border border-white/15 text-white focus:outline-none focus:border-[#ff5500] transition-colors"
+                          className="w-full px-4 py-3.5 input-apple rounded-xl text-white focus:outline-none transition-colors"
                         >
                           <option value="₹14,999 / $179">₹14,999 / $179 (Template Launch)</option>
                           <option value="₹49,999 / $599 (Custom Build)">₹49,999 / $599 (Custom Build)</option>
@@ -222,7 +220,7 @@ export function ContactPage() {
                       <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
                         Launch Horizon
                       </label>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                         {[
                           { value: '48h', label: 'Express (48h)' },
                           { value: '1-month', label: '< 1 Month' },
@@ -233,10 +231,10 @@ export function ContactPage() {
                             key={opt.value}
                             type="button"
                             onClick={() => setFormData({ ...formData, timeline: opt.value })}
-                            className={`py-3 px-3 text-[10px] font-bold uppercase tracking-widest border transition-all cursor-pointer ${
+                            className={`py-3 px-3 text-[10px] font-bold uppercase tracking-wider rounded-full border transition-all cursor-pointer ${
                               formData.timeline === opt.value
-                                ? 'bg-white text-black border-white shadow-md'
-                                : 'glass-card text-white/50 border-white/15 hover:border-white/40 hover:text-white'
+                                ? 'bg-[#ff5500] text-white border-[#ff5500] shadow-[0_0_20px_rgba(255,85,0,0.35)]'
+                                : 'glass-apple text-white/60 border-white/10 hover:border-white/30 hover:text-white'
                             }`}
                           >
                             {opt.label}
@@ -255,7 +253,7 @@ export function ContactPage() {
                         placeholder="Tell us what you are looking to build — reference websites, target conversions, or specific pain points of your current setup..."
                         value={formData.notes}
                         onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                        className="w-full px-4 py-3.5 bg-black/80 border border-white/15 text-white placeholder:text-white/25 focus:outline-none focus:border-[#ff5500] transition-colors resize-none"
+                        className="w-full px-4 py-3.5 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors resize-none"
                       />
                     </div>
                   </div>
@@ -263,7 +261,7 @@ export function ContactPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-5 bg-[#ff5500] text-white hover:bg-[#e64d00] font-bold uppercase text-xs tracking-widest transition-all flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50 shadow-[0_0_30px_rgba(255,85,0,0.35)]"
+                    className="w-full py-5 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold uppercase text-xs tracking-widest transition-all rounded-full flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50 shadow-[0_0_30px_rgba(255,85,0,0.35)]"
                   >
                     {submitting ? (
                       <span>Scheduling Project Ingest...</span>
@@ -280,7 +278,7 @@ export function ContactPage() {
 
             {/* Studio Desk Column */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="glass-card p-8 space-y-4">
+              <div className="glass-apple rounded-3xl p-8 space-y-4 border border-white/10">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />
                   <span className="text-[10px] font-mono uppercase tracking-widest text-white/50">
@@ -295,7 +293,7 @@ export function ContactPage() {
                 </p>
               </div>
 
-              <div className="glass-card p-8 space-y-5">
+              <div className="glass-apple rounded-3xl p-8 space-y-5 border border-white/10">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-white/40 block">
                   Studio Channels
                 </span>
@@ -315,7 +313,7 @@ export function ContactPage() {
                 </div>
               </div>
 
-              <div className="glass-card p-8 border-[#ff5500]/30 space-y-3">
+              <div className="glass-apple-amber rounded-3xl p-8 space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-[#ff5500]">
                     KritMedia Network
@@ -333,20 +331,20 @@ export function ContactPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#050505]">
+      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black">
         <div className="max-w-4xl mx-auto space-y-10">
-          <div className="border-l border-white/20 pl-6 py-2 space-y-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-white/40">
-              Quick Clarity
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-2">
+            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#ff5500] font-bold block">
+              03 // COMMON QUESTIONS
             </span>
-            <h2 className="text-3xl font-black uppercase tracking-tighter text-white">
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white">
               COMMON INQUIRY QUESTIONS.
             </h2>
           </div>
 
           <div className="space-y-4">
             {CONTACT_FAQS.map((faq, idx) => (
-              <div key={idx} className="glass-card p-6 space-y-2">
+              <div key={idx} className="glass-apple rounded-2xl p-6 space-y-2 border border-white/10 hover:border-white/20 transition-all">
                 <h4 className="text-sm font-bold uppercase text-white/90">{faq.q}</h4>
                 <p className="text-xs text-white/60 font-light leading-relaxed">{faq.a}</p>
               </div>
