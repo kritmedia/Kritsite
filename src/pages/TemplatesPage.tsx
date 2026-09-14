@@ -4,6 +4,7 @@ import { ArrowRight, Eye, X, Check, Sparkles, Monitor, Smartphone } from 'lucide
 import { SITE_TEMPLATES, TEMPLATES_FAQS } from '../data/content';
 import { SiteTemplate } from '../types';
 import { AtmosphericMeshBackground } from '../components/AtmosphericMeshBackground';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface TemplatesPageProps {
   onOpenContact: (planId?: string) => void;
@@ -77,6 +78,7 @@ function TemplateMockup({
 export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
   const [activeCategory, setActiveCategory] = useState('All');
   const [previewTemplate, setPreviewTemplate] = useState<SiteTemplate | null>(null);
+  const { currency, formatPrice } = useCurrency();
 
   const filtered =
     activeCategory === 'All'
@@ -88,7 +90,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
       {/* ── HERO ── */}
       <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 overflow-hidden">
         {/* Atmospheric Subtle Smoky Mesh Background */}
-        <AtmosphericMeshBackground variant="problem" />
+        <AtmosphericMeshBackground variant="services" />
 
         <div className="relative z-10 max-w-7xl mx-auto space-y-6">
           {/* Top Ticker */}
@@ -110,7 +112,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
             <div className="flex flex-wrap items-center gap-6 pt-2 text-xs font-mono text-white/70">
               <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
                 <span className="w-2 h-2 rounded-full bg-[#ff5500]" />
-                <span>Transparent ₹14,999 / $179 Pricing</span>
+                <span>Transparent {formatPrice('₹14,999', '$179')} Pricing</span>
               </div>
               <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
@@ -193,7 +195,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                   <div className="space-y-4 pt-4 border-t border-white/10">
                     <div className="flex items-center justify-between text-xs font-mono">
                       <span className="text-white/40 uppercase">Setup Fee:</span>
-                      <span className="text-white font-bold text-sm">₹14,999 / $179</span>
+                      <span className="text-white font-bold text-sm">{formatPrice('₹14,999', '$179')}</span>
                     </div>
 
                     <div className="flex items-center gap-2.5">
@@ -370,7 +372,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                 }}
                 className="flex-1 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all cursor-pointer shadow-[0_0_25px_rgba(255,85,0,0.3)] hover:scale-[1.02] text-center"
               >
-                Proceed With {previewTemplate.name} (₹14,999)
+                Proceed With {previewTemplate.name} ({formatPrice('₹14,999', '$179')})
               </button>
               <button
                 type="button"

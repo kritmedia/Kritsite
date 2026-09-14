@@ -2,12 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { AtmosphericMeshBackground } from './AtmosphericMeshBackground';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface PricingSectionProps {
   onOpenContact: (planId?: string) => void;
 }
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact }) => {
+  const { currency, formatPrice, toggleCurrency } = useCurrency();
+
   return (
     <section
       id="services"
@@ -17,9 +20,21 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
       <AtmosphericMeshBackground variant="services" />
 
       <div className="max-w-7xl mx-auto relative z-10 space-y-6 sm:space-y-8">
-        {/* Top Monospace Ticker / Example Tag */}
-        <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-          EXAMPLE 03 // MINIMAL SPLIT LAYOUT
+        {/* Top Monospace Ticker / Example Tag with Currency Pill */}
+        <div className="flex items-center justify-between flex-wrap gap-3">
+          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+            EXAMPLE 03 // MINIMAL SPLIT LAYOUT
+          </div>
+          <button
+            type="button"
+            onClick={toggleCurrency}
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-[10px] font-mono uppercase tracking-wider text-white/70 hover:text-white transition-all cursor-pointer"
+            title="Switch currency viewing mode"
+          >
+            <span className={currency === 'INR' ? 'text-[#ff5500] font-bold' : 'text-white/40'}>₹ INR</span>
+            <span className="text-white/20">/</span>
+            <span className={currency === 'USD' ? 'text-[#ff5500] font-bold' : 'text-white/40'}>$ USD</span>
+          </button>
         </div>
 
         {/* ── 3-Column Minimal Split Layout Frame ── */}
@@ -78,7 +93,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
 
                 {/* Pricing */}
                 <div className="text-xl sm:text-2xl font-bold font-mono tracking-tight text-white pt-1">
-                  ₹14,999 <span className="text-white/40 font-normal text-sm font-sans">/ $179</span>
+                  {formatPrice('₹14,999', '$179')}
                 </div>
 
                 {/* CTA Link / Button */}
@@ -131,7 +146,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
 
                 {/* Pricing */}
                 <div className="text-xl sm:text-2xl font-bold font-mono tracking-tight text-white pt-1">
-                  ₹49,999 <span className="text-white/40 font-normal text-sm font-sans">/ $599</span>
+                  {formatPrice('₹49,999', '$599')}
                 </div>
 
                 {/* CTA Link / Button */}

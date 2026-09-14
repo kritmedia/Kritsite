@@ -4,6 +4,7 @@ import {
   Sparkles, Sliders, ShieldCheck, Zap
 } from 'lucide-react';
 import { AtmosphericMeshBackground } from '../components/AtmosphericMeshBackground';
+import { useCurrency } from '../context/CurrencyContext';
 
 const CONTACT_FAQS = [
   { 
@@ -21,13 +22,14 @@ const CONTACT_FAQS = [
 ];
 
 export function ContactPage() {
+  const { currency, formatPrice } = useCurrency();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     projectType: 'custom-build',
     industry: '',
-    budget: '₹49,999 / $599 (Custom Build)',
+    budget: '',
     timeline: '1-month',
     notes: '',
   });
@@ -191,9 +193,9 @@ export function ContactPage() {
                           onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                           className="w-full px-4 py-3.5 input-apple rounded-xl text-white focus:outline-none transition-colors"
                         >
-                          <option value="template-launch">Signature Template Launch (1–2 Days, ₹14,999)</option>
-                          <option value="custom-build">Full Custom Build (2–3 Weeks, ₹49,999)</option>
-                          <option value="enterprise">Enterprise Platform (4–8 Weeks, ₹1,49,999+)</option>
+                          <option value="template-launch">Signature Template Launch (1–2 Days, {formatPrice('₹14,999', '$179')})</option>
+                          <option value="custom-build">Full Custom Build (2–3 Weeks, {formatPrice('₹49,999', '$599')})</option>
+                          <option value="enterprise">Enterprise Platform (4–8 Weeks, {formatPrice('₹1,49,999+', '$1,799+')})</option>
                           <option value="consultation">Strategic Advisory / Undecided</option>
                         </select>
                       </div>
@@ -207,10 +209,21 @@ export function ContactPage() {
                           onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                           className="w-full px-4 py-3.5 input-apple rounded-xl text-white focus:outline-none transition-colors"
                         >
-                          <option value="₹14,999 / $179">₹14,999 / $179 (Template Launch)</option>
-                          <option value="₹49,999 / $599 (Custom Build)">₹49,999 / $599 (Custom Build)</option>
-                          <option value="₹1,00,000–₹2,00,000 / $1,200–$2,400">₹1,00,000–₹2,00,000 / $1,200–$2,400</option>
-                          <option value="₹2,00,000+ / $2,500+">₹2,00,000+ / $2,500+ (Enterprise)</option>
+                          {currency === 'INR' ? (
+                            <>
+                              <option value="₹14,999">₹14,999 (Template Launch)</option>
+                              <option value="₹49,999">₹49,999 (Custom Build)</option>
+                              <option value="₹1,00,000–₹2,00,000">₹1,00,000–₹2,00,000</option>
+                              <option value="₹2,00,000+">₹2,00,000+ (Enterprise)</option>
+                            </>
+                          ) : (
+                            <>
+                              <option value="$179">$179 (Template Launch)</option>
+                              <option value="$599">$599 (Custom Build)</option>
+                              <option value="$1,200–$2,400">$1,200–$2,400</option>
+                              <option value="$2,500+">$2,500+ (Enterprise)</option>
+                            </>
+                          )}
                         </select>
                       </div>
                     </div>

@@ -10,6 +10,7 @@ import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { CustomCursor } from './components/CustomCursor';
+import { CurrencyProvider } from './context/CurrencyContext';
 
 function ScrollHandler() {
   const { pathname } = useLocation();
@@ -99,7 +100,9 @@ function AppShell() {
 export default function App() {
   return (
     <BrowserRouter>
-      <AppShell />
+      <CurrencyProvider>
+        <AppShell />
+      </CurrencyProvider>
     </BrowserRouter>
   );
 }

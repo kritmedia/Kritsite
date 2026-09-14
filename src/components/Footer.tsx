@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, ArrowUpRight, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface FooterProps {
   onOpenContact: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
+  const { currency, setCurrency } = useCurrency();
   return (
     <footer className="bg-black border-t border-white/10 py-20 px-6 sm:px-8 lg:px-12 text-white/50">
       <div className="max-w-7xl mx-auto space-y-16">
@@ -85,9 +87,33 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10 text-xs text-white/30 font-mono">
           <div>© {new Date().getFullYear()} KRITSITE. A KRITMEDIA STUDIO. ALL RIGHTS RESERVED.</div>
-          <div className="flex items-center gap-6 uppercase tracking-wider text-[11px]">
-            <span className="text-white/20">Privacy Policy</span>
-            <span className="text-white/20">Terms of Service</span>
+          
+          <div className="flex items-center gap-4">
+            <div className="inline-flex items-center gap-1 p-0.5 rounded-full border border-white/15 bg-white/[0.04]">
+              <button
+                type="button"
+                onClick={() => setCurrency('INR')}
+                className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all cursor-pointer ${
+                  currency === 'INR' ? 'bg-[#ff5500] text-white shadow-sm' : 'text-white/40 hover:text-white'
+                }`}
+              >
+                ₹ INR
+              </button>
+              <button
+                type="button"
+                onClick={() => setCurrency('USD')}
+                className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all cursor-pointer ${
+                  currency === 'USD' ? 'bg-[#ff5500] text-white shadow-sm' : 'text-white/40 hover:text-white'
+                }`}
+              >
+                $ USD
+              </button>
+            </div>
+
+            <div className="hidden sm:flex items-center gap-6 uppercase tracking-wider text-[11px]">
+              <span className="text-white/20">Privacy Policy</span>
+              <span className="text-white/20">Terms of Service</span>
+            </div>
           </div>
         </div>
       </div>

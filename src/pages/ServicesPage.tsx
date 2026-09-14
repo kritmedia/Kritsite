@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { SERVICE_PILLARS, WORKFLOW_STEPS, COMPARISON_POINTS, PRICING_PLANS, SERVICES_FAQS } from '../data/content';
 import { AtmosphericMeshBackground } from '../components/AtmosphericMeshBackground';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface ServicesPageProps {
   onOpenContact: (planId?: string) => void;
@@ -20,7 +21,7 @@ const TAB_ICONS: Record<string, React.FC<{ className?: string }>> = {
 
 export function ServicesPage({ onOpenContact }: ServicesPageProps) {
   const [activeTab, setActiveTab] = useState('design');
-  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
+  const { currency, setCurrency } = useCurrency();
 
   const activeCard = SERVICE_PILLARS.find((p) => p.id === activeTab) || SERVICE_PILLARS[0];
 

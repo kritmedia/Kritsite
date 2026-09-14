@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, CheckCircle2, ArrowRight, Globe } from 'lucide-react';
+import { useCurrency } from '../context/CurrencyContext';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ interface ContactModalProps {
 }
 
 export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, selectedPlanId }) => {
+  const { formatPrice } = useCurrency();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -91,9 +93,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
                   <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider">Project Type</label>
                   <select value={formData.projectType} onChange={e => setFormData({ ...formData, projectType: e.target.value })}
                     className="w-full px-4 py-3 input-apple rounded-xl text-white focus:outline-none transition-colors">
-                    <option value="template-launch">Template Launch (1–2 Days)</option>
-                    <option value="custom-build">Custom Build (2–3 Weeks)</option>
-                    <option value="enterprise">Enterprise Custom</option>
+                    <option value="template-launch">Template Launch (1–2 Days, {formatPrice('₹14,999', '$179')})</option>
+                    <option value="custom-build">Custom Build (2–3 Weeks, {formatPrice('₹49,999', '$599')})</option>
+                    <option value="enterprise">Enterprise Custom ({formatPrice('₹1,49,999+', '$1,799+')})</option>
                     <option value="not-sure">Not Sure Yet</option>
                   </select>
                 </div>
