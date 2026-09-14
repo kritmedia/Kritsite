@@ -48,18 +48,18 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
             </div>
             <div className="space-y-2">
               <h3 className="text-3xl font-bold tracking-tight">Request Received.</h3>
-              <p className="text-white/60 text-sm max-w-md mx-auto font-light leading-relaxed">
+              <p className="text-white/70 text-base max-w-md mx-auto font-normal leading-relaxed">
                 We'll review your project details and get back to you within 24 hours with a clear plan and honest pricing.
               </p>
             </div>
-            <div className="p-5 rounded-2xl glass-apple border border-white/15 text-left font-mono text-xs space-y-2 max-w-md mx-auto text-white/80">
-              <div className="flex justify-between"><span className="text-white/40">NAME:</span><span>{formData.name}</span></div>
-              <div className="flex justify-between"><span className="text-white/40">PROJECT:</span><span className="capitalize text-[#ff5500] font-bold">{formData.projectType.replace(/-/g, ' ')}</span></div>
-              <div className="flex justify-between"><span className="text-white/40">TIMELINE:</span><span className="text-white font-bold">{formData.timeline}</span></div>
+            <div className="p-5 rounded-2xl glass-apple border border-white/15 text-left font-mono text-xs sm:text-sm space-y-2 max-w-md mx-auto text-white/80">
+              <div className="flex justify-between"><span className="text-white/50">NAME:</span><span>{formData.name}</span></div>
+              <div className="flex justify-between"><span className="text-white/50">PROJECT:</span><span className="capitalize text-[#ff5500] font-bold">{formData.projectType.replace(/-/g, ' ')}</span></div>
+              <div className="flex justify-between"><span className="text-white/50">TIMELINE:</span><span className="text-white font-bold">{formData.timeline}</span></div>
             </div>
             <button 
               onClick={handleClose} 
-              className="px-8 py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold text-xs tracking-wider rounded-full transition-colors cursor-pointer shadow-lg"
+              className="px-8 py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold text-xs sm:text-sm tracking-wider rounded-full transition-colors cursor-pointer shadow-lg"
             >
               Back to Site
             </button>
@@ -67,32 +67,32 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-1.5 border-l-2 border-[#ff5500] pl-4 py-1">
-              <span className="text-[10px] font-mono font-bold tracking-wider text-[#ff5500] block">01 // Project Intake</span>
+              <span className="text-xs font-mono font-bold tracking-wider text-[#ff5500] block">01 // Project Intake</span>
               <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">Start Your Project.</h3>
-              <p className="text-xs text-white/50 font-light">Tell us about what you need — we'll come back with a clear plan.</p>
+              <p className="text-sm text-white/70 font-normal">Tell us about what you need — we'll come back with a clear plan.</p>
             </div>
 
-            <div className="space-y-4 font-mono text-xs">
+            <div className="space-y-4 font-mono text-xs sm:text-sm">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-bold text-white/70 tracking-wide block">Your Name / Brand</label>
+                  <label className="text-xs sm:text-sm font-bold text-white/85 tracking-wide block">Your Name / Brand</label>
                   <input type="text" required placeholder="e.g. Ananya Mehta" value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors" />
+                    className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors text-sm" />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-bold text-white/70 tracking-wide block">Email Address</label>
+                  <label className="text-xs sm:text-sm font-bold text-white/85 tracking-wide block">Email Address</label>
                   <input type="email" required placeholder="hello@yourbrand.com" value={formData.email}
                     onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors" />
+                    className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors text-sm" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-bold text-white/70 tracking-wide block">Project Type</label>
+                  <label className="text-xs sm:text-sm font-bold text-white/85 tracking-wide block">Project Type</label>
                   <select value={formData.projectType} onChange={e => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-3 input-apple rounded-xl text-white focus:outline-none transition-colors">
+                    className="w-full px-4 py-3 input-apple rounded-xl text-white focus:outline-none transition-colors text-sm" >
                     <option value="template-launch">Template Launch (1–2 Days, {formatPrice('₹14,999', '$179')})</option>
                     <option value="custom-build">Custom Build (2–3 Weeks, {formatPrice('₹49,999', '$599')})</option>
                     <option value="enterprise">Enterprise Custom ({formatPrice('₹1,49,999+', '$1,799+')})</option>
@@ -100,9 +100,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
                   </select>
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-bold text-white/70 tracking-wide block">Timeline</label>
+                  <label className="text-xs sm:text-sm font-bold text-white/85 tracking-wide block">Timeline</label>
                   <select value={formData.timeline} onChange={e => setFormData({ ...formData, timeline: e.target.value })}
-                    className="w-full px-4 py-3 input-apple rounded-xl text-white focus:outline-none transition-colors">
+                    className="w-full px-4 py-3 input-apple rounded-xl text-white focus:outline-none transition-colors text-sm" >
                     <option value="asap">ASAP</option>
                     <option value="1-month">Within 1 Month</option>
                     <option value="2-3-months">2–3 Months</option>
@@ -112,22 +112,22 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-[11px] font-bold text-white/70 tracking-wide block">Business / Industry</label>
+                <label className="text-xs sm:text-sm font-bold text-white/85 tracking-wide block">Business / Industry</label>
                 <input type="text" placeholder="e.g. SaaS startup, e-commerce brand, coaching business..." value={formData.businessType}
                   onChange={e => setFormData({ ...formData, businessType: e.target.value })}
-                  className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors" />
+                  className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors text-sm" />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-[11px] font-bold text-white/70 tracking-wide block">Tell Us About Your Project</label>
+                <label className="text-xs sm:text-sm font-bold text-white/85 tracking-wide block">Tell Us About Your Project</label>
                 <textarea rows={3} placeholder="What do you sell, who is your customer, what should the website achieve..."
                   value={formData.notes} onChange={e => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors resize-none" />
+                  className="w-full px-4 py-3 input-apple rounded-xl text-white placeholder:text-white/25 focus:outline-none transition-colors resize-none text-sm" />
               </div>
             </div>
 
             <button type="submit" disabled={isSubmitting}
-              className="w-full py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold text-xs tracking-wider transition-all rounded-full shadow-[0_0_25px_rgba(255,85,0,0.35)] flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50">
+              className="w-full py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold text-xs sm:text-sm tracking-wider transition-all rounded-full shadow-[0_0_25px_rgba(255,85,0,0.35)] flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50">
               {isSubmitting ? <span>Sending...</span> : <><span>Submit Project Request</span><ArrowRight className="w-4 h-4" /></>}
             </button>
           </form>

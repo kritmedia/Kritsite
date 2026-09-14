@@ -138,7 +138,7 @@ export const WebsiteAutopsy: React.FC = () => {
 
       {/* 1. Weak Headline (Top-Left) */}
       <div className="absolute top-2 sm:top-6 -left-1 sm:-left-14 flex flex-col items-end rotate-[-6deg] pointer-events-none">
-        <div className="font-handwritten text-[#ff5500] font-bold text-xs sm:text-sm tracking-wide leading-none drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)] text-right">
+        <div className="font-handwritten text-[#ff5500] font-bold text-sm sm:text-base tracking-wide leading-none drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)] text-right">
           <span>Weak</span>
           <span className="block mt-0.5">Headline</span>
         </div>
@@ -184,7 +184,7 @@ export const WebsiteAutopsy: React.FC = () => {
             strokeLinejoin="round"
           />
         </svg>
-        <div className="font-handwritten text-[#ff5500] font-bold text-xs sm:text-sm tracking-wide leading-none drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)]">
+        <div className="font-handwritten text-[#ff5500] font-bold text-sm sm:text-base tracking-wide leading-none drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)]">
           <span>Slow</span>
           <span className="block mt-0.5">Loading</span>
         </div>
@@ -192,7 +192,7 @@ export const WebsiteAutopsy: React.FC = () => {
 
       {/* 3. Generic Design (Mid-Left) */}
       <div className="absolute top-[58%] sm:top-[56%] -left-1 sm:-left-16 flex flex-col items-end rotate-[-5deg] pointer-events-none">
-        <div className="font-handwritten text-[#ff5500] font-bold text-xs sm:text-sm tracking-wide leading-none drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)] text-right">
+        <div className="font-handwritten text-[#ff5500] font-bold text-sm sm:text-base tracking-wide leading-none drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)] text-right">
           <span>Generic</span>
           <span className="block mt-0.5">Design</span>
         </div>
@@ -238,7 +238,7 @@ export const WebsiteAutopsy: React.FC = () => {
             strokeLinejoin="round"
           />
         </svg>
-        <div className="font-handwritten text-[#ff5500] font-bold text-xs sm:text-sm tracking-wide leading-tight drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)]">
+        <div className="font-handwritten text-[#ff5500] font-bold text-sm sm:text-base tracking-wide leading-tight drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)]">
           <span>Doesn't</span>
           <span className="block">Explain</span>
           <span className="block">Value</span>
@@ -266,7 +266,7 @@ export const WebsiteAutopsy: React.FC = () => {
             strokeLinejoin="round"
           />
         </svg>
-        <div className="font-handwritten text-[#ff5500] font-bold text-xs sm:text-sm tracking-wide leading-tight drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)]">
+        <div className="font-handwritten text-[#ff5500] font-bold text-sm sm:text-base tracking-wide leading-tight drop-shadow-[0_2px_10px_rgba(255,85,0,0.6)]">
           <span>Hard to Find</span>
           <span className="block">on Search</span>
         </div>

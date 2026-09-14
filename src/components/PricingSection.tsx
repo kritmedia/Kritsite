@@ -25,7 +25,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
           <button
             type="button"
             onClick={toggleCurrency}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-[10px] font-mono tracking-wider text-white/70 hover:text-white transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-black/60 backdrop-blur-xl text-xs font-mono tracking-wider text-white/80 hover:text-white transition-all cursor-pointer shadow-lg hover:border-white/40"
             title="Switch currency viewing mode"
           >
             <span className={currency === 'INR' ? 'text-[#ff5500] font-bold' : 'text-white/40'}>₹ INR</span>
@@ -41,7 +41,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
             <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between space-y-12">
               {/* Vertical Orange Line + Story Narrative */}
               <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 space-y-6">
-                <div className="inline-flex items-center gap-2 text-[11px] font-mono tracking-wider text-[#ff5500]">
+                <div className="inline-flex items-center gap-2 text-xs font-mono tracking-wider text-[#ff5500]">
                   <span>04 // Services</span>
                 </div>
 
@@ -49,7 +49,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                   Choose Your<br />Starting Point.
                 </h2>
 
-                <div className="space-y-4 text-xs sm:text-sm text-white/70 font-light leading-relaxed max-w-sm pt-2">
+                <div className="space-y-4 text-sm sm:text-base text-white/80 font-light leading-relaxed max-w-sm pt-2">
                   <p>A proven foundation or a completely blank canvas.</p>
                   <p>Either way, we build the website your business has actually grown into.</p>
                 </div>
@@ -59,7 +59,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
               <div className="pt-6 sm:pt-10">
                 <Link
                   to="/services"
-                  className="inline-flex items-center gap-2.5 text-xs font-mono font-semibold tracking-wider text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
+                  className="inline-flex items-center gap-2.5 text-xs sm:text-sm font-mono font-semibold tracking-wider text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
                 >
                   <span>Explore Services</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
@@ -73,7 +73,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 {/* Monospace Tag Header */}
                 <div className="space-y-1">
                   <div className="text-xs font-mono font-bold text-[#ff5500]">01</div>
-                  <div className="text-[10px] font-mono tracking-wider text-white/50">
+                  <div className="text-xs font-mono tracking-wider text-white/60">
                     Template Launch
                   </div>
                 </div>
@@ -84,7 +84,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 </h3>
 
                 {/* Subtitle / Description */}
-                <p className="text-xs sm:text-sm text-white/60 font-light leading-relaxed">
+                <p className="text-sm sm:text-base text-white/75 font-light leading-relaxed">
                   A premium website, customized to your brand. Live in 48 hours.
                 </p>
 
@@ -97,7 +97,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 <div className="pt-1">
                   <button
                     onClick={() => onOpenContact('template-launch')}
-                    className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wide text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono font-semibold tracking-wide text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
                   >
                     <span>Get Started</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
@@ -126,7 +126,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 {/* Monospace Tag Header */}
                 <div className="space-y-1">
                   <div className="text-xs font-mono font-bold text-[#ff5500]">02</div>
-                  <div className="text-[10px] font-mono tracking-wider text-white/50">
+                  <div className="text-xs font-mono tracking-wider text-white/60">
                     Custom Website
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 </h3>
 
                 {/* Subtitle / Description */}
-                <p className="text-xs sm:text-sm text-white/60 font-light leading-relaxed">
+                <p className="text-sm sm:text-base text-white/75 font-light leading-relaxed">
                   A fully custom website designed around your goals, your brand and your audience.
                 </p>
 
@@ -150,7 +150,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 <div className="pt-1">
                   <button
                     onClick={() => onOpenContact('custom-build')}
-                    className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wide text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono font-semibold tracking-wide text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
                   >
                     <span>Build Custom</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />

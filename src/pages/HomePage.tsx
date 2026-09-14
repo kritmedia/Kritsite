@@ -28,7 +28,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
             <div className="lg:col-span-5 space-y-8">
               {/* Section Header with Left Orange Bar */}
               <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 space-y-4">
-                <div className="inline-flex items-center gap-2 text-[10px] font-mono tracking-wider text-[#ff5500]">
+                <div className="inline-flex items-center gap-2 text-xs font-mono tracking-wider text-[#ff5500]">
                   <span>03 // Point of View</span>
                 </div>
                 <h2 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-black tracking-tight leading-[0.95]">
@@ -38,14 +38,14 @@ export function HomePage({ onOpenContact }: HomePageProps) {
               </div>
 
               {/* Narrative Copy */}
-              <div className="space-y-4 text-base sm:text-lg text-white/70 font-light leading-relaxed pl-6 sm:pl-8">
+              <div className="space-y-4 text-base sm:text-lg text-white/80 font-normal leading-relaxed pl-6 sm:pl-8">
                 <p>
                   Maybe your website looked fine two years ago.
                 </p>
                 <p>
                   Now your brand is better, your offer is stronger, and your prices have gone up.
                 </p>
-                <p className="text-white font-medium">
+                <p className="text-white font-semibold">
                   But the website still feels like a template.
                 </p>
               </div>
@@ -59,7 +59,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
                 <div>
                   <Link
                     to="/services"
-                    className="group inline-flex items-center gap-3 pl-6 pr-2.5 py-3 bg-white text-black font-bold text-xs tracking-wider rounded-full shadow-2xl hover:bg-white/90 hover:scale-[1.02] transition-all cursor-pointer"
+                    className="group inline-flex items-center gap-3 pl-6 pr-2.5 py-3 bg-white text-black font-bold text-xs sm:text-sm tracking-wider rounded-full shadow-2xl hover:bg-white/90 hover:scale-[1.02] transition-all cursor-pointer"
                   >
                     <span>See How We Work</span>
                     <div className="w-7 h-7 rounded-full bg-[#ff5500] text-white flex items-center justify-center shrink-0 group-hover:rotate-45 transition-transform">
@@ -91,7 +91,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
           {/* Header */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-white/10 pb-10 sm:pb-12">
             <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-mono tracking-wider text-[#ff5500]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
                 <span>05 // The KritSite Signature</span>
               </div>
               <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-[0.92]">
@@ -99,10 +99,10 @@ export function HomePage({ onOpenContact }: HomePageProps) {
               </h2>
             </div>
             <div className="max-w-md space-y-2">
-              <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+              <p className="text-sm sm:text-base text-white/80 font-normal leading-relaxed">
                 A website has one job: help your business win more attention and trust.
               </p>
-              <p className="text-xs font-mono tracking-wider text-white/40">
+              <p className="text-xs sm:text-sm font-mono tracking-wider text-white/60">
                 So we build around three things:
               </p>
             </div>
@@ -123,7 +123,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
                   Clear Layouts. Strong Type. Thoughtful Motion.
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-white/60 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-white/75 leading-relaxed font-normal">
                 Your website should feel like your brand, not like a theme with your logo pasted on it.
               </p>
             </div>
@@ -141,7 +141,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
                   Fast Pages. Light Code. Smooth Interactions.
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-white/60 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-white/75 leading-relaxed font-normal">
                 Because nobody enjoys staring at a loading spinner. Especially your customers.
               </p>
             </div>
@@ -159,7 +159,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
                   SEO, AEO and GEO Built Into The Site From The Start.
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-white/60 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-white/75 leading-relaxed font-normal">
                 So Google can understand you. And AI search tools can understand you too.
               </p>
             </div>
@@ -167,18 +167,18 @@ export function HomePage({ onOpenContact }: HomePageProps) {
 
           {/* Signature Summary Banner with Apple Glassmorphism & Breathing Border */}
           <div className="p-8 sm:p-10 rounded-3xl glass-apple flex flex-col sm:flex-row items-center justify-between gap-6 animate-border-breathe">
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-mono tracking-wider text-white">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm sm:text-base font-mono tracking-wider text-white">
               <span className="font-bold">Design.</span>
               <span className="text-[#ff5500]">✦</span>
               <span className="font-bold">Performance.</span>
               <span className="text-[#ff5500]">✦</span>
               <span className="font-bold">Discovery.</span>
-              <span className="text-white/40 block sm:inline">All working together.</span>
+              <span className="text-white/60 block sm:inline">All working together.</span>
             </div>
 
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 text-xs font-mono tracking-wider text-white/80 hover:text-white transition-colors shrink-0"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono tracking-wider text-white/85 hover:text-white transition-colors shrink-0"
             >
               <span>Explore Our Approach</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#ff5500]" />
@@ -195,15 +195,15 @@ export function HomePage({ onOpenContact }: HomePageProps) {
         <div className="max-w-7xl mx-auto space-y-16 sm:space-y-20 relative z-10">
           {/* Header */}
           <div className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-mono tracking-wider text-[#ff5500]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
               <span>06 // Proof</span>
             </div>
             <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-[0.92]">
               No Six-Month <span className="block text-white/30">Website Drama.</span>
             </h2>
-            <div className="pt-2 space-y-2 text-sm sm:text-base text-white/70 font-light leading-relaxed">
+            <div className="pt-2 space-y-2 text-sm sm:text-base text-white/80 font-normal leading-relaxed">
               <p>We built KritSite around a simple idea: <strong className="text-white font-bold">Good work should not take forever.</strong></p>
-              <p className="text-white/50 text-xs sm:text-sm">
+              <p className="text-white/70 text-sm sm:text-base leading-relaxed">
                 That means clear pricing, clear timelines, and a lean process without five people joining a call just to say hello.
               </p>
             </div>
@@ -225,10 +225,10 @@ export function HomePage({ onOpenContact }: HomePageProps) {
                   {item.stat}
                 </div>
                 <div className="space-y-1">
-                  <div className="text-xs sm:text-sm font-bold tracking-wide text-white">
+                  <div className="text-sm sm:text-base font-bold tracking-wide text-white">
                     {item.label}
                   </div>
-                  <div className="text-[10px] sm:text-xs font-mono text-white/40">
+                  <div className="text-xs sm:text-sm font-mono text-white/60">
                     {item.desc}
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
 
           {/* Closing Remark */}
           <div className="text-center pt-4">
-            <p className="text-xs sm:text-sm font-mono tracking-wider text-white/50">
+            <p className="text-sm sm:text-base font-mono tracking-wider text-white/70">
               And yes, we actually care about what happens after the site goes live.
             </p>
           </div>
@@ -252,7 +252,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
 
         <div className="max-w-4xl mx-auto space-y-12 sm:space-y-16 relative z-10 text-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-mono tracking-wider text-[#ff5500]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
               <span>07 // Your Move</span>
             </div>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[0.92]">
@@ -261,7 +261,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
           </div>
 
           {/* Playful Stagger Points with Apple Glassmorphism & Breathing Border */}
-          <div className="space-y-3.5 max-w-xl mx-auto text-left font-mono text-xs sm:text-sm text-white/80 p-6 sm:p-8 rounded-3xl glass-apple animate-border-breathe">
+          <div className="space-y-3.5 max-w-xl mx-auto text-left font-mono text-sm sm:text-base text-white/90 p-6 sm:p-8 rounded-3xl glass-apple animate-border-breathe">
             <div className="flex items-start gap-3">
               <span className="text-[#ff5500]">✦</span>
               <span>It could make people stop scrolling.</span>
@@ -283,7 +283,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
           {/* The Closer & CTA */}
           <div className="space-y-6">
             <div className="space-y-1">
-              <p className="text-base sm:text-lg text-white/60 font-light tracking-wide">
+              <p className="text-base sm:text-lg text-white/75 font-normal tracking-wide">
                 Or... It could stay the same.
               </p>
               <p className="text-xl sm:text-2xl font-bold tracking-tight text-white">
@@ -294,11 +294,11 @@ export function HomePage({ onOpenContact }: HomePageProps) {
             <div className="pt-4 flex flex-col items-center gap-3">
               <button
                 onClick={() => onOpenContact()}
-                className="group px-8 sm:px-12 py-4 sm:py-5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs sm:text-sm tracking-wider rounded-full shadow-2xl hover:scale-[1.03] transition-all cursor-pointer inline-flex items-center gap-3"
+                className="group px-8 sm:px-12 py-4 sm:py-5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-sm sm:text-base tracking-wider rounded-full shadow-2xl hover:scale-[1.03] transition-all cursor-pointer inline-flex items-center gap-3"
               >
                 <span>Start a Project →</span>
               </button>
-              <p className="text-[11px] sm:text-xs font-mono tracking-wider text-white/40">
+              <p className="text-xs sm:text-sm font-mono tracking-wider text-white/60">
                 Tell us what you're building. We'll take it from there.
               </p>
             </div>

@@ -25,19 +25,19 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
 
         <div className="relative z-10 max-w-7xl mx-auto space-y-6">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono tracking-[0.2em] text-white/40">
+          <div className="text-xs font-mono tracking-[0.2em] text-white/50">
             01 // The KritMedia Studio Philosophy
           </div>
 
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] sm:text-xs font-mono tracking-wider text-[#ff5500]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>The KritMedia Studio Philosophy</span>
             </div>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[0.92] text-white">
               Built by Creators. <span className="block text-white/30">For Visionary Founders.</span>
             </h1>
-            <p className="text-white/70 text-base sm:text-xl font-light max-w-2xl leading-relaxed">
+            <p className="text-white/80 text-base sm:text-xl font-normal max-w-2xl leading-relaxed">
               KritSite is the web engineering division of KritMedia. We reject disposable, mass-market website templates in favor of bespoke architectural digital systems that convert.
             </p>
           </div>
@@ -48,7 +48,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto space-y-12">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono tracking-[0.2em] text-white/40">
+          <div className="text-xs font-mono tracking-[0.2em] text-white/50">
             02 // Origin Manifesto
           </div>
 
@@ -64,7 +64,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                 </h2>
               </div>
 
-              <div className="space-y-6 text-white/70 font-light leading-relaxed text-base sm:text-lg pl-6 sm:pl-8 border-l border-white/10">
+              <div className="space-y-6 text-white/80 font-normal leading-relaxed text-base sm:text-lg pl-6 sm:pl-8 border-l border-white/10">
                 <p>
                   The internet is saturated with forgettable websites. Drag-and-drop page builders promise instant results but deliver bloated code, sluggish mobile performance, and zero consideration for how search engines actually crawl content today.
                 </p>
@@ -83,10 +83,10 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                 {stats.map((stat) => (
                   <div key={stat.label} className="rounded-3xl glass-apple glass-apple-hover p-6 space-y-2">
                     <div className="text-3xl sm:text-4xl font-black font-mono text-white">{stat.value}</div>
-                    <div className="text-[10px] font-mono tracking-wider text-[#ff5500] font-bold">
+                    <div className="text-xs font-mono tracking-wider text-[#ff5500] font-bold">
                       {stat.label}
                     </div>
-                    <p className="text-[11px] font-mono text-white/50">{stat.detail}</p>
+                    <p className="text-xs font-mono text-white/60">{stat.detail}</p>
                   </div>
                 ))}
               </div>
@@ -94,11 +94,11 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
               <div className="rounded-3xl glass-apple-amber p-8 space-y-4 relative overflow-hidden shadow-[0_0_40px_rgba(255,85,0,0.15)]">
                 <div className="flex items-center gap-3">
                   <Shield className="w-5 h-5 text-[#ff5500]" />
-                  <span className="text-xs font-mono tracking-wider text-white font-bold">
+                  <span className="text-xs sm:text-sm font-mono tracking-wider text-white font-bold">
                     Zero-Bloat Studio Guarantee
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                <p className="text-sm sm:text-base text-white/75 font-normal leading-relaxed">
                   We don't install heavy, unvetted third-party plugins or rely on bloated themes. Every client receives cleanly authored, high-performance code ready for production scaling.
                 </p>
               </div>
@@ -111,7 +111,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#050505] border-b border-white/10">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono tracking-[0.2em] text-white/40">
+          <div className="text-xs font-mono tracking-[0.2em] text-white/50">
             03 // Core Tenets & Foundation
           </div>
 
@@ -122,7 +122,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
             <h2 className="text-4xl sm:text-6xl font-black tracking-tight leading-[0.95] text-white">
               Our Design <span className="block text-white/30">Principles.</span>
             </h2>
-            <p className="text-white/50 text-base font-light">
+            <p className="text-white/70 text-base font-normal">
               The four foundational rules that every project must satisfy before deployment.
             </p>
           </div>
@@ -141,7 +141,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                     {principle.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[9px] font-mono tracking-wider border border-[#ff5500]/30 text-[#ff5500] px-2.5 py-0.5 rounded-full bg-[#ff5500]/5"
+                        className="text-xs font-mono tracking-wider border border-[#ff5500]/30 text-[#ff5500] px-3 py-1 rounded-full bg-[#ff5500]/5"
                       >
                         {tag}
                       </span>
@@ -153,7 +153,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                   <h3 className="text-xl sm:text-2xl font-black tracking-tight text-white">
                     {principle.title}
                   </h3>
-                  <p className="text-sm text-white/60 leading-relaxed font-light">
+                  <p className="text-base text-white/75 leading-relaxed font-normal">
                     {principle.description}
                   </p>
                 </div>
@@ -167,7 +167,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono tracking-[0.2em] text-white/40">
+          <div className="text-xs font-mono tracking-[0.2em] text-white/50">
             04 // The Creative Syndicate
           </div>
 
@@ -190,7 +190,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                   className="w-10 h-10 rounded-xl object-contain shadow-[0_0_20px_rgba(255,85,0,0.4)]"
                 />
                 <div>
-                  <span className="text-[9px] font-mono text-[#ff5500] tracking-wider block font-bold">
+                  <span className="text-xs font-mono text-[#ff5500] tracking-wider block font-bold">
                     Active Studio
                   </span>
                   <span className="text-xl font-black tracking-tight text-white">
@@ -198,10 +198,10 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                   </span>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+              <p className="text-sm sm:text-base text-white/80 font-normal leading-relaxed">
                 Design-first web development. 48h signature template launches and bespoke multi-page commissions with native AEO/GEO indexing.
               </p>
-              <div className="pt-2 text-[10px] font-mono text-[#ff5500] tracking-wider font-bold">
+              <div className="pt-2 text-xs font-mono text-[#ff5500] tracking-wider font-bold">
                 Web Architecture & Design
               </div>
             </div>
@@ -219,7 +219,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                     <Film className="w-5 h-5 text-white/70" />
                   </div>
                   <div>
-                    <span className="text-[9px] font-mono text-white/40 tracking-wider block">
+                    <span className="text-xs font-mono text-white/50 tracking-wider block">
                       Sister Studio
                     </span>
                     <span className="text-xl font-black tracking-tight text-white">KritVideo</span>
@@ -227,10 +227,10 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-white/30 group-hover:text-white transition-colors" />
               </div>
-              <p className="text-xs sm:text-sm text-white/50 font-light leading-relaxed">
+              <p className="text-sm sm:text-base text-white/70 font-normal leading-relaxed">
                 High-retention post-production, ACEScg DaVinci color grading, spatial audio mastering, and 48-hour turnarounds for top creators.
               </p>
-              <div className="pt-2 text-[10px] font-mono text-white/40 tracking-wider">
+              <div className="pt-2 text-xs font-mono text-white/50 tracking-wider">
                 Video Post-Production
               </div>
             </a>
@@ -242,16 +242,16 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                   <Compass className="w-5 h-5 text-white/40" />
                 </div>
                 <div>
-                  <span className="text-[9px] font-mono text-white/30 tracking-wider block">
+                  <span className="text-xs font-mono text-white/40 tracking-wider block">
                     In Incubation
                   </span>
                   <span className="text-xl font-black tracking-tight text-white/50">KritBrand</span>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm text-white/40 font-light leading-relaxed">
+              <p className="text-sm sm:text-base text-white/60 font-normal leading-relaxed">
                 Comprehensive brand identity systems, corporate typography, and digital guideline design for next-generation brands.
               </p>
-              <div className="pt-2 text-[10px] font-mono text-white/30 tracking-wider">
+              <div className="pt-2 text-xs font-mono text-white/40 tracking-wider">
                 Brand Strategy (Q1 2027)
               </div>
             </div>
@@ -268,14 +268,14 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
           <h2 className="text-4xl sm:text-6xl font-black tracking-tight text-white">
             Ready to Collaborate?
           </h2>
-          <p className="text-white/50 text-base font-light max-w-lg mx-auto leading-relaxed">
+          <p className="text-white/70 text-base sm:text-lg font-normal max-w-lg mx-auto leading-relaxed">
             Reach out with your project parameters and receive a direct scope proposal from our lead architect.
           </p>
           <div className="flex justify-center gap-4 pt-2">
             <button
               type="button"
               onClick={onOpenContact}
-              className="px-10 py-5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs tracking-wider rounded-full transition-all flex items-center gap-3 cursor-pointer shadow-[0_0_30px_rgba(255,85,0,0.35)] hover:scale-[1.03]"
+              className="px-10 py-5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs sm:text-sm tracking-wider rounded-full transition-all flex items-center gap-3 cursor-pointer shadow-[0_0_30px_rgba(255,85,0,0.35)] hover:scale-[1.03]"
             >
               <span>Schedule Project Kickoff</span>
               <ArrowRight className="w-4 h-4" />

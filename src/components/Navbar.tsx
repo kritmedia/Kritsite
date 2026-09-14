@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ArrowUpRight, ChevronRight } from 'lucide-react';
-import { useCurrency } from '../context/CurrencyContext';
 
 interface NavbarProps {
   onOpenContact: () => void;
@@ -11,7 +10,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { pathname, hash } = useLocation();
   const navigate = useNavigate();
-  const { currency, setCurrency, toggleCurrency } = useCurrency();
 
   useEffect(() => {
     setMobileOpen(false);
@@ -123,18 +121,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
           {/* Right Action Buttons */}
           <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-            {/* Desktop Currency Switcher Pill */}
-            <button
-              type="button"
-              onClick={toggleCurrency}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-[10px] font-mono tracking-wider text-white transition-all cursor-pointer select-none"
-              title="Toggle currency viewing preference"
-            >
-              <span className={currency === 'INR' ? 'text-[#ff5500] font-bold' : 'text-white/40'}>₹ INR</span>
-              <span className="text-white/20">/</span>
-              <span className={currency === 'USD' ? 'text-[#ff5500] font-bold' : 'text-white/40'}>$ USD</span>
-            </button>
-
             {/* White Pill Button with Glowing Shadow */}
             <button
               onClick={onOpenContact}
@@ -185,31 +171,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 text-neutral-500 group-hover:text-white" />
             </Link>
           ))}
-
-          {/* Mobile Currency Selector */}
-          <div className="flex items-center justify-between px-4 py-2.5 text-xs font-mono border-t border-white/10 mt-1">
-            <span className="text-white/40 text-[10px] tracking-wider">Currency</span>
-            <div className="flex items-center gap-1 p-1 bg-black/60 rounded-full border border-white/15">
-              <button
-                type="button"
-                onClick={() => setCurrency('INR')}
-                className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all cursor-pointer ${
-                  currency === 'INR' ? 'bg-[#ff5500] text-white shadow-sm' : 'text-white/50 hover:text-white'
-                }`}
-              >
-                ₹ INR
-              </button>
-              <button
-                type="button"
-                onClick={() => setCurrency('USD')}
-                className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all cursor-pointer ${
-                  currency === 'USD' ? 'bg-[#ff5500] text-white shadow-sm' : 'text-white/50 hover:text-white'
-                }`}
-              >
-                $ USD
-              </button>
-            </div>
-          </div>
 
           <div className="pt-2">
             <button
