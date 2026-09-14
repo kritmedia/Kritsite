@@ -20,11 +20,8 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
       <AtmosphericMeshBackground variant="services" />
 
       <div className="max-w-7xl mx-auto relative z-10 space-y-6 sm:space-y-8">
-        {/* Top Monospace Ticker / Example Tag with Currency Pill */}
-        <div className="flex items-center justify-between flex-wrap gap-3">
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            EXAMPLE 03 // MINIMAL SPLIT LAYOUT
-          </div>
+        {/* Currency Switcher Pill */}
+        <div className="flex justify-end">
           <button
             type="button"
             onClick={toggleCurrency}

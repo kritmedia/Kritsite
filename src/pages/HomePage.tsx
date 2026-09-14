@@ -21,12 +21,7 @@ export function HomePage({ onOpenContact }: HomePageProps) {
         {/* Dark Smoky Fluid Silk Atmospheric Background in KritSite Brand Colors */}
         <AtmosphericMeshBackground variant="problem" />
 
-        <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16 relative z-10">
-          {/* Top Section Category Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            03 // WEBSITE AUTOPSY
-          </div>
-
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* The Editorial Narrative & Website Autopsy Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Story Column */}
