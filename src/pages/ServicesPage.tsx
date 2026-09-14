@@ -28,20 +28,15 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
   return (
     <div className="pt-24 bg-black text-white selection:bg-[#ff5500] selection:text-white">
       {/* ── HERO ── */}
-      <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 overflow-hidden">
+      <section className="relative py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 overflow-hidden">
         {/* Atmospheric Subtle Smoky Mesh Background */}
         <AtmosphericMeshBackground variant="services" />
 
         <div className="relative z-10 max-w-7xl mx-auto space-y-6">
-          {/* Top Ticker */}
-          <div className="text-xs font-mono tracking-wider text-white/50">
-            01 // Full-Stack Web Architecture
-          </div>
-
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Full-Stack Web Design Architecture</span>
+              <span>01 // Full-Stack Web Architecture</span>
             </div>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[0.92] text-white">
               Engineered for Aesthetics. <span className="block text-white/30">Calibrated for Search.</span>
@@ -70,18 +65,16 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       </section>
 
       {/* ── TABBED SERVICE PILLARS ── */}
-      <section id="pillars" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
-        <div className="max-w-7xl mx-auto space-y-12">
-          {/* Top Ticker */}
-          <div className="text-xs font-mono tracking-wider text-white/50">
-            02 // 4 Pillars of Excellence
-          </div>
+      <section id="pillars" className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 relative overflow-hidden">
+        {/* Atmospheric Subtle Smoky Mesh Background */}
+        <AtmosphericMeshBackground variant="signature" />
 
+        <div className="relative z-10 max-w-7xl mx-auto space-y-12">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
-            <span className="text-xs font-semibold tracking-wider text-[#ff5500] block font-mono">
-              The 4 Pillars of Excellence
-            </span>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-[0.95] text-white">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+              <span>02 // The 4 Pillars of Excellence</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[0.95] text-white">
               How We Deliver <span className="block text-white/30">Unfair Advantages.</span>
             </h2>
           </div>
@@ -266,18 +259,16 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       </section>
 
       {/* ── 4-STEP DELIVERY TIMELINE ── */}
-      <section id="process" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
-        <div className="max-w-7xl mx-auto space-y-16">
-          {/* Top Ticker */}
-          <div className="text-xs font-mono tracking-wider text-white/50">
-            03 // Linear Delivery Framework
-          </div>
+      <section id="process" className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 relative overflow-hidden">
+        {/* Atmospheric Smoky Silk Mesh Background */}
+        <AtmosphericMeshBackground variant="problem" />
 
+        <div className="relative z-10 max-w-7xl mx-auto space-y-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
-              <span className="text-xs font-semibold tracking-wider text-[#ff5500] block font-mono">
-                Linear Delivery Framework
-              </span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+                <span>03 // Linear Delivery Framework</span>
+              </div>
               <h2 className="text-4xl sm:text-6xl font-black tracking-tight leading-[0.95] text-white">
                 From Briefing <span className="block text-white/30">to Global Deployment.</span>
               </h2>
@@ -338,17 +329,15 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       </section>
 
       {/* ── COMPARISON TABLE ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#050505] border-b border-white/10">
-        <div className="max-w-7xl mx-auto space-y-16">
-          {/* Top Ticker */}
-          <div className="text-xs font-mono tracking-wider text-white/50">
-            04 // Rigorous Standards
-          </div>
+      <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-[#050505] border-b border-white/10 relative overflow-hidden">
+        {/* Atmospheric Subtle Smoky Mesh Background */}
+        <AtmosphericMeshBackground variant="proof" />
 
+        <div className="relative z-10 max-w-7xl mx-auto space-y-16">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-3xl">
-            <span className="text-xs font-semibold tracking-wider text-[#ff5500] block font-mono">
-              Rigorous Standards
-            </span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+              <span>04 // Rigorous Standards</span>
+            </div>
             <h2 className="text-4xl sm:text-6xl font-black tracking-tight leading-[0.95] text-white">
               Ordinary Websites <span className="block text-white/30">vs. KritSite Engineering.</span>
             </h2>
@@ -395,18 +384,16 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       </section>
 
       {/* ── PRICING ── */}
-      <section id="pricing" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-16 relative z-10">
-          {/* Top Ticker */}
-          <div className="text-xs font-mono tracking-[0.2em] text-white/50">
-            05 // Transparent Engagement
-          </div>
+      <section id="pricing" className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 relative overflow-hidden">
+        {/* Atmospheric Subtle Smoky Mesh Background */}
+        <AtmosphericMeshBackground variant="services" />
 
+        <div className="max-w-7xl mx-auto space-y-16 relative z-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3">
-              <span className="text-xs font-bold tracking-[0.2em] text-[#ff5500] block font-mono">
-                Transparent Engagement
-              </span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+                <span>05 // Transparent Engagement</span>
+              </div>
               <h2 className="text-4xl sm:text-6xl font-black tracking-tight leading-[0.95] text-white">
                 Honest Pricing. <span className="block text-white/30">Maximum Conversion.</span>
               </h2>
@@ -495,17 +482,15 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black">
-        <div className="max-w-7xl mx-auto space-y-16">
-          {/* Top Ticker */}
-          <div className="text-xs font-mono tracking-[0.2em] text-white/50">
-            06 // Knowledge Base
-          </div>
+      <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black relative overflow-hidden">
+        {/* Atmospheric Subtle Smoky Mesh Background */}
+        <AtmosphericMeshBackground variant="cta" hasBorderFrame />
 
+        <div className="max-w-7xl mx-auto space-y-16 relative z-10">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-xl">
-            <span className="text-xs font-bold tracking-[0.2em] text-[#ff5500] block font-mono">
-              Services Knowledge Base
-            </span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+              <span>06 // Knowledge Base</span>
+            </div>
             <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-[0.95] text-white">
               Frequently Asked <span className="block text-white/30">Questions.</span>
             </h2>
@@ -527,6 +512,22 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                 </details>
               </div>
             ))}
+          </div>
+
+          {/* Signature Closer CTA Banner matching Homepage Aesthetics */}
+          <div className="p-8 sm:p-12 rounded-3xl glass-apple flex flex-col sm:flex-row items-center justify-between gap-8 animate-border-breathe">
+            <div className="space-y-2 text-left">
+              <span className="text-xs font-mono text-[#ff5500] font-bold tracking-wider">✦ Ready To Elevate Your Digital Asset?</span>
+              <h3 className="text-2xl sm:text-3xl font-black text-white">Let's Discuss Your Project Scope.</h3>
+              <p className="text-sm sm:text-base text-white/70">From 48-hour launch templates to bespoke platforms. No fluff, guaranteed delivery.</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => onOpenContact()}
+              className="px-8 sm:px-10 py-4 sm:py-5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs sm:text-sm tracking-wider rounded-full shadow-2xl hover:scale-[1.03] transition-all cursor-pointer shrink-0 flex items-center gap-3"
+            >
+              <span>Initiate Project Scope →</span>
+            </button>
           </div>
         </div>
       </section>

@@ -47,17 +47,18 @@ export function ContactPage() {
   };
 
   return (
-    <div className="pt-24 bg-[#08080a] text-white">
+    <div className="pt-24 bg-black text-white selection:bg-[#ff5500] selection:text-white">
       {/* ── HERO ── */}
-      <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 overflow-hidden">
+      <section className="relative py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 overflow-hidden">
         <AtmosphericMeshBackground variant="cta" />
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-3xl">
-            <span className="text-xs font-mono tracking-[0.25em] text-[#ff5500] font-bold block">
-              01 // Direct Studio Access
-            </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.92] text-white">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>01 // Direct Studio Access</span>
+            </div>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[0.92] text-white">
               Commission Your <span className="block text-white/30">Next-Gen Platform.</span>
             </h1>
             <p className="text-white/80 text-base sm:text-xl font-normal max-w-2xl leading-relaxed">
@@ -68,13 +69,15 @@ export function ContactPage() {
       </section>
 
       {/* ── FORM & STUDIO CONTACT DESK ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#08080a] border-b border-white/10 relative">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 relative overflow-hidden">
+        <AtmosphericMeshBackground variant="problem" />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             {/* Form Column */}
             <div className="lg:col-span-7">
               {submitted ? (
-                <div className="glass-apple rounded-3xl border border-[#ff5500]/40 p-10 sm:p-14 text-center space-y-8 shadow-[0_0_50px_rgba(255,85,0,0.15)]">
+                <div className="glass-apple rounded-3xl border border-[#ff5500]/40 p-10 sm:p-14 text-center space-y-8 shadow-[0_0_50px_rgba(255,85,0,0.15)] animate-border-breathe">
                   <div className="w-16 h-16 rounded-2xl bg-[#ff5500] flex items-center justify-center mx-auto shadow-xl">
                     <CheckCircle2 className="w-8 h-8 text-white" />
                   </div>
@@ -114,10 +117,11 @@ export function ContactPage() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="glass-apple rounded-3xl p-8 sm:p-12 space-y-8 border border-white/10">
-                  <div className="border-l-2 border-[#ff5500] pl-4 py-1 space-y-1">
-                    <span className="text-xs font-mono tracking-[0.3em] text-[#ff5500] font-bold">
-                      02 // Project Directives
-                    </span>
+                  <div className="border-l-2 border-[#ff5500] pl-4 py-1 space-y-2">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
+                      <span>02 // Project Directives</span>
+                    </div>
                     <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
                       Project Directives.
                     </h2>
@@ -326,7 +330,7 @@ export function ContactPage() {
                 </div>
               </div>
 
-              <div className="glass-apple-amber rounded-3xl p-8 space-y-3">
+              <div className="rounded-3xl glass-apple-amber p-8 space-y-3 relative overflow-hidden shadow-[0_0_40px_rgba(255,85,0,0.15)] animate-border-breathe">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono tracking-wider text-[#ff5500] font-bold">
                     KritMedia Network
@@ -344,13 +348,16 @@ export function ContactPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black">
-        <div className="max-w-4xl mx-auto space-y-10">
+      <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black relative overflow-hidden">
+        <AtmosphericMeshBackground variant="proof" />
+
+        <div className="relative z-10 max-w-4xl mx-auto space-y-10">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-2">
-            <span className="text-xs font-mono tracking-[0.25em] text-[#ff5500] font-bold block">
-              03 // Common Questions
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tighter text-white">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
+              <span>03 // Common Questions</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
               Common Inquiry Questions.
             </h2>
           </div>

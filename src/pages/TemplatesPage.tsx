@@ -88,20 +88,15 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
   return (
     <div className="pt-24 bg-black text-white selection:bg-[#ff5500] selection:text-white">
       {/* ── HERO ── */}
-      <section className="relative py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 overflow-hidden">
+      <section className="relative py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 overflow-hidden">
         {/* Atmospheric Subtle Smoky Mesh Background */}
         <AtmosphericMeshBackground variant="services" />
 
         <div className="relative z-10 max-w-7xl mx-auto space-y-6">
-          {/* Top Ticker */}
-          <div className="text-xs font-mono tracking-[0.2em] text-white/50">
-            01 // 48-Hour Signature Catalog
-          </div>
-
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>48-Hour Signature Catalog</span>
+              <span>01 // 48-Hour Signature Catalog</span>
             </div>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[0.92] text-white">
               Signature Designs. <span className="block text-white/30">Live in 1–2 Days.</span>
@@ -124,11 +119,22 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
       </section>
 
       {/* ── FILTER & TEMPLATE GALLERY ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
-        <div className="max-w-7xl mx-auto space-y-12">
-          {/* Top Ticker */}
-          <div className="text-xs font-mono tracking-[0.2em] text-white/50">
-            02 // Curated Template Architecture
+      <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 relative overflow-hidden">
+        <AtmosphericMeshBackground variant="signature" />
+
+        <div className="relative z-10 max-w-7xl mx-auto space-y-12">
+          {/* Header */}
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
+              <span>02 // Curated Template Architecture</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+              Engineered Templates. Built For Conversion.
+            </h2>
+            <p className="text-white/70 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+              Select a framework below. Every build includes custom brand integration, responsive optimization, and production deployment in 48 hours.
+            </p>
           </div>
 
           {/* Category Filter Pills */}
@@ -226,14 +232,17 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
       </section>
 
       {/* ── CUSTOM COMMISSION BANNER ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#050505] border-b border-white/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="rounded-3xl glass-apple-amber p-10 sm:p-14 border border-[#ff5500]/40 relative overflow-hidden shadow-[0_0_50px_rgba(255,85,0,0.18)]">
+      <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 relative overflow-hidden">
+        <AtmosphericMeshBackground variant="cta" />
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="rounded-3xl glass-apple-amber p-10 sm:p-14 border border-[#ff5500]/40 relative overflow-hidden shadow-[0_0_50px_rgba(255,85,0,0.18)] animate-border-breathe">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
               <div className="lg:col-span-8 space-y-4">
-                <span className="text-xs font-mono tracking-[0.2em] text-[#ff5500] font-bold">
-                  03 // Need a Different Direction?
-                </span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
+                  <span>03 // Bespoke Commission</span>
+                </div>
                 <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-white">
                   Every Brand Has Unique Goals. <span className="text-white/30 block">We Build Bespoke Platforms.</span>
                 </h2>
@@ -264,19 +273,17 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
       </section>
 
       {/* ── TEMPLATES FAQ ── */}
-      <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black">
-        <div className="max-w-4xl mx-auto space-y-12">
-          {/* Top Ticker */}
-          <div className="text-xs font-mono tracking-[0.2em] text-white/50">
-            04 // Template Inquiries
-          </div>
+      <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black relative overflow-hidden">
+        <AtmosphericMeshBackground variant="proof" />
 
+        <div className="relative z-10 max-w-4xl mx-auto space-y-12">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3">
-            <span className="text-xs font-bold tracking-[0.2em] text-[#ff5500] block font-mono">
-              Template Inquiries
-            </span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
+              <span>04 // Frequently Asked Questions</span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
-              Frequently Asked Questions.
+              Template Inquiries & Launch Process.
             </h2>
           </div>
 
