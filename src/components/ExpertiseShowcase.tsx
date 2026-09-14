@@ -240,17 +240,17 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
               <span className="text-white/40">›</span>
             </div>
             
-            {/* Morphic-style Headline with White Line 1 and Muted Line 2 + Glowing LOVE */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[0.98] uppercase">
+            {/* Morphic-style Headline with White Line 1 and Muted Line 2 + Glowing Love */}
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[0.98]">
               <span className="block text-white">
-                GOOD WEBSITES GET ATTENTION.
+                Good Websites Get Attention.
               </span>
               <span className="block text-white/40 mt-1">
-                GREAT ONES WIN{' '}
+                Great Ones Win{' '}
                 <span className="text-[#ff5500] drop-shadow-[0_0_35px_rgba(255,85,0,0.85)] font-black">
-                  LOVE
+                  Love
                 </span>{' '}
-                & KEEP IT.
+                & Keep It.
               </span>
             </h2>
           </div>
@@ -264,16 +264,16 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
             <div className="flex items-center gap-3">
               <button
                 onClick={() => onOpenContact()}
-                className="px-6 py-2.5 rounded-full bg-[#ff5500] hover:bg-[#ff661a] text-white text-xs font-mono font-bold uppercase tracking-wider shadow-[0_0_25px_rgba(255,85,0,0.4)] transition-all cursor-pointer"
+                className="px-6 py-2.5 rounded-full bg-[#ff5500] hover:bg-[#ff661a] text-white text-xs font-mono font-semibold tracking-wide shadow-[0_0_25px_rgba(255,85,0,0.4)] transition-all cursor-pointer"
               >
-                START A PROJECT
+                Start a Project
               </button>
 
               <a
                 href="#problem"
-                className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/10 text-white/90 text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer"
+                className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/10 text-white/90 text-xs font-mono tracking-wide transition-colors cursor-pointer"
               >
-                OUR APPROACH
+                Our Approach
               </a>
             </div>
           </div>
@@ -347,7 +347,7 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
               {/* Subtle hover vignette & quick inspect reveal */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 sm:p-5">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-[#ff5500] font-bold border border-[#ff5500]/30">
+                  <span className="text-[10px] font-mono tracking-wider px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-[#ff5500] font-bold border border-[#ff5500]/30">
                     {item.metric}
                   </span>
                   <div className="w-7 h-7 rounded-full bg-white text-black flex items-center justify-center shadow-lg">
@@ -356,10 +356,10 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
                 </div>
 
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-white/50 block">
+                  <span className="text-[10px] font-mono tracking-wider text-white/50 block">
                     {item.category}
                   </span>
-                  <h3 className="text-lg sm:text-xl font-black uppercase text-white tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
                     {item.title}
                   </h3>
                 </div>
@@ -414,18 +414,18 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
             {/* Modal Header */}
             <div className="space-y-2.5">
               <div className="flex items-center gap-2.5 flex-wrap">
-                <span className="px-3 py-1 rounded-full bg-[#ff5500]/15 border border-[#ff5500]/40 text-[#ff5500] text-[10px] font-mono uppercase tracking-widest font-bold">
+                <span className="px-3 py-1 rounded-full bg-[#ff5500]/15 border border-[#ff5500]/40 text-[#ff5500] text-[10px] font-mono tracking-wider font-bold">
                   {inspectingItem.category}
                 </span>
                 <span className="text-xs font-mono text-white/40">
                   {inspectingItem.domain}
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-mono font-bold">
-                  LIGHTHOUSE 100/100
+                  Lighthouse 100/100
                 </span>
               </div>
 
-              <h3 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
+              <h3 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
                 {inspectingItem.title}
               </h3>
               <p className="text-sm sm:text-base text-white/80 font-light max-w-2xl leading-relaxed">
@@ -446,8 +446,8 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
                   <span className="text-[10px] font-mono text-white/60 tracking-wider">
                     https://{inspectingItem.domain}
                   </span>
-                  <span className="text-[9px] font-mono text-white/40 uppercase tracking-widest">
-                    LIVE BUILD
+                  <span className="text-[9px] font-mono text-white/40 tracking-wider">
+                    Live Build
                   </span>
                 </div>
 
@@ -464,26 +464,26 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
               <div className="lg:col-span-6 space-y-4">
                 {/* Technical Specs Card */}
                 <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 space-y-3">
-                  <div className="flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-widest text-[#ff5500]">
+                  <div className="flex items-center gap-2 text-[11px] font-mono font-semibold tracking-wider text-[#ff5500]">
                     <Cpu className="w-4 h-4" />
-                    <span>TECHNICAL ARCHITECTURE</span>
+                    <span>Technical Architecture</span>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div>
-                      <span className="text-white/40 font-mono block text-[9px] uppercase tracking-wider">Framework & Runtime</span>
+                      <span className="text-white/40 font-mono block text-[9px] tracking-wider">Framework & Runtime</span>
                       <span className="text-white font-medium text-[11px] leading-snug block">{inspectingItem.specs.framework}</span>
                     </div>
                     <div>
-                      <span className="text-white/40 font-mono block text-[9px] uppercase tracking-wider">Motion & Physics</span>
+                      <span className="text-white/40 font-mono block text-[9px] tracking-wider">Motion & Physics</span>
                       <span className="text-white font-medium text-[11px] leading-snug block">{inspectingItem.specs.motion}</span>
                     </div>
                     <div>
-                      <span className="text-white/40 font-mono block text-[9px] uppercase tracking-wider">Performance Metrics</span>
+                      <span className="text-white/40 font-mono block text-[9px] tracking-wider">Performance Metrics</span>
                       <span className="text-[#ff5500] font-mono font-bold text-[11px] leading-snug block">{inspectingItem.specs.speed}</span>
                     </div>
                     <div>
-                      <span className="text-white/40 font-mono block text-[9px] uppercase tracking-wider">Search & AI Discovery</span>
+                      <span className="text-white/40 font-mono block text-[9px] tracking-wider">Search & AI Discovery</span>
                       <span className="text-white font-medium text-[11px] leading-snug block">{inspectingItem.specs.search}</span>
                     </div>
                   </div>
@@ -491,9 +491,9 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
 
                 {/* Engineering Highlights Card */}
                 <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 space-y-3">
-                  <div className="flex items-center gap-2 text-[11px] font-mono font-bold uppercase tracking-widest text-[#ff5500]">
+                  <div className="flex items-center gap-2 text-[11px] font-mono font-semibold tracking-wider text-[#ff5500]">
                     <ShieldCheck className="w-4 h-4" />
-                    <span>ENGINEERING HIGHLIGHTS</span>
+                    <span>Engineering Highlights</span>
                   </div>
 
                   <ul className="space-y-2 text-xs text-white/80">
@@ -529,9 +529,9 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
                     setInspectingItem(null);
                     onOpenContact(id);
                   }}
-                  className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#ff5500] hover:bg-[#ff661a] text-white font-mono text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,85,0,0.5)] transition-all cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#ff5500] hover:bg-[#ff661a] text-white font-mono text-xs font-semibold tracking-wide flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,85,0,0.5)] transition-all cursor-pointer"
                 >
-                  <span>REQUEST A BUILD LIKE THIS</span>
+                  <span>Request a Build Like This</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>

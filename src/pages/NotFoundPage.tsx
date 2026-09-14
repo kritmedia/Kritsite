@@ -10,12 +10,12 @@ export function NotFoundPage() {
 
       <div className="relative z-10 text-center space-y-10 max-w-2xl">
         <div className="space-y-4">
-          <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#ff5500] font-bold block">
-            00 // SYSTEM CODE 404
+          <span className="text-xs font-mono tracking-[0.25em] text-[#ff5500] font-bold block">
+            00 // System Code 404
           </span>
           <h1 className="text-8xl sm:text-9xl font-black tracking-tighter text-white/10 select-none">404</h1>
-          <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-white leading-tight">
-            PAGE NOT FOUND. <span className="text-white/30 block">KEEP SCROLLING.</span>
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tighter text-white leading-tight">
+            Page Not Found. <span className="text-white/30 block">Keep Scrolling.</span>
           </h2>
           <p className="text-white/60 text-base font-light max-w-md mx-auto leading-relaxed">
             The page you're looking for doesn't exist. But a world-class website does — let's build yours.
@@ -24,13 +24,13 @@ export function NotFoundPage() {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
             to="/"
-            className="px-8 py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all shadow-[0_0_25px_rgba(255,85,0,0.35)] flex items-center gap-2"
+            className="px-8 py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold text-xs tracking-wider rounded-full transition-all shadow-[0_0_25px_rgba(255,85,0,0.35)] flex items-center gap-2"
           >
             Go Home <ArrowRight className="w-3.5 h-3.5" />
           </Link>
           <Link
             to="/contact"
-            className="px-8 py-4 glass-apple border border-white/20 text-white font-bold uppercase text-xs tracking-widest rounded-full hover:border-white/40 transition-all"
+            className="px-8 py-4 glass-apple border border-white/20 text-white font-bold text-xs tracking-wider rounded-full hover:border-white/40 transition-all"
           >
             Contact Us
           </Link>

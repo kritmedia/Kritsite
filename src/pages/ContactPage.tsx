@@ -54,11 +54,11 @@ export function ContactPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-3xl">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#ff5500] font-bold block">
-              01 // DIRECT STUDIO ACCESS
+            <span className="text-xs font-mono tracking-[0.25em] text-[#ff5500] font-bold block">
+              01 // Direct Studio Access
             </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter uppercase leading-[0.92] text-white">
-              COMMISSION YOUR <span className="block text-white/30">NEXT-GEN PLATFORM.</span>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.92] text-white">
+              Commission Your <span className="block text-white/30">Next-Gen Platform.</span>
             </h1>
             <p className="text-white/70 text-base sm:text-xl font-light max-w-2xl leading-relaxed">
               Whether you need a signature template deployed in 48 hours or an end-to-end bespoke platform, share your requirements below for a rapid feasibility assessment.
@@ -79,8 +79,8 @@ export function ContactPage() {
                     <CheckCircle2 className="w-8 h-8 text-white" />
                   </div>
                   <div className="space-y-3">
-                    <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
-                      BRIEF INGESTED.
+                    <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
+                      Brief Ingested.
                     </h2>
                     <p className="text-white/60 text-base font-light max-w-md mx-auto">
                       Our lead design architect will evaluate your specifications and reply with milestone scopes within 24 hours.
@@ -89,16 +89,16 @@ export function ContactPage() {
 
                   <div className="p-5 rounded-2xl glass-apple border border-white/10 text-left font-mono text-xs space-y-2 max-w-xs mx-auto text-white/80">
                     <div className="flex justify-between">
-                      <span className="text-white/40">CLIENT:</span>
+                      <span className="text-white/40">Client:</span>
                       <span>{formData.name}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-white/40">EMAIL:</span>
+                      <span className="text-white/40">Email:</span>
                       <span className="truncate max-w-[150px]">{formData.email}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-white/40">TIER:</span>
-                      <span className="uppercase text-[#ff5500] font-bold">
+                      <span className="text-white/40">Tier:</span>
+                      <span className="capitalize text-[#ff5500] font-bold">
                         {formData.projectType.replace(/-/g, ' ')}
                       </span>
                     </div>
@@ -107,7 +107,7 @@ export function ContactPage() {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="px-8 py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all cursor-pointer shadow-lg"
+                    className="px-8 py-4 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold text-xs tracking-wider rounded-full transition-all cursor-pointer shadow-lg"
                   >
                     Submit Another Inquiry
                   </button>
@@ -115,11 +115,11 @@ export function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="glass-apple rounded-3xl p-8 sm:p-12 space-y-8 border border-white/10">
                   <div className="border-l-2 border-[#ff5500] pl-4 py-1 space-y-1">
-                    <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#ff5500] font-bold">
-                      02 // PROJECT DIRECTIVES
+                    <span className="text-[10px] font-mono tracking-[0.3em] text-[#ff5500] font-bold">
+                      02 // Project Directives
                     </span>
-                    <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
-                      PROJECT DIRECTIVES.
+                    <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
+                      Project Directives.
                     </h2>
                   </div>
 
@@ -127,7 +127,7 @@ export function ContactPage() {
                     {/* Name & Email */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
+                        <label className="text-[11px] font-bold text-white/70 tracking-wide block font-mono">
                           Client / Brand Name *
                         </label>
                         <input
@@ -140,7 +140,7 @@ export function ContactPage() {
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
+                        <label className="text-[11px] font-bold text-white/70 tracking-wide block font-mono">
                           Direct Email *
                         </label>
                         <input
@@ -157,8 +157,8 @@ export function ContactPage() {
                     {/* Phone & Industry */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
-                          Phone / WhatsApp <span className="text-white/30 lowercase">(optional)</span>
+                        <label className="text-[11px] font-bold text-white/70 tracking-wide block font-mono">
+                          Phone / WhatsApp <span className="text-white/30 lowercase font-normal">(optional)</span>
                         </label>
                         <input
                           type="tel"
@@ -169,7 +169,7 @@ export function ContactPage() {
                         />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
+                        <label className="text-[11px] font-bold text-white/70 tracking-wide block font-mono">
                           Industry / Domain
                         </label>
                         <input
@@ -185,7 +185,7 @@ export function ContactPage() {
                     {/* Engagement Tier & Target Budget */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
+                        <label className="text-[11px] font-bold text-white/70 tracking-wide block font-mono">
                           Engagement Tier *
                         </label>
                         <select
@@ -201,7 +201,7 @@ export function ContactPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
+                        <label className="text-[11px] font-bold text-white/70 tracking-wide block font-mono">
                           Target Budget Band
                         </label>
                         <select
@@ -230,7 +230,7 @@ export function ContactPage() {
 
                     {/* Timeline Priority */}
                     <div className="space-y-2">
-                      <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
+                      <label className="text-[11px] font-bold text-white/70 tracking-wide block font-mono">
                         Launch Horizon
                       </label>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
@@ -244,7 +244,7 @@ export function ContactPage() {
                             key={opt.value}
                             type="button"
                             onClick={() => setFormData({ ...formData, timeline: opt.value })}
-                            className={`py-3 px-3 text-[10px] font-bold uppercase tracking-wider rounded-full border transition-all cursor-pointer ${
+                            className={`py-3 px-3 text-[10px] font-bold tracking-wider rounded-full border transition-all cursor-pointer ${
                               formData.timeline === opt.value
                                 ? 'bg-[#ff5500] text-white border-[#ff5500] shadow-[0_0_20px_rgba(255,85,0,0.35)]'
                                 : 'glass-apple text-white/60 border-white/10 hover:border-white/30 hover:text-white'
@@ -258,7 +258,7 @@ export function ContactPage() {
 
                     {/* Vision notes */}
                     <div className="space-y-2">
-                      <label className="text-[10px] uppercase font-bold text-white/70 tracking-wider block">
+                      <label className="text-[11px] font-bold text-white/70 tracking-wide block font-mono">
                         Directives & Scope Notes
                       </label>
                       <textarea
@@ -274,7 +274,7 @@ export function ContactPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-5 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold uppercase text-xs tracking-widest transition-all rounded-full flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50 shadow-[0_0_30px_rgba(255,85,0,0.35)]"
+                    className="w-full py-5 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold text-xs tracking-wider transition-all rounded-full flex items-center justify-center gap-3 cursor-pointer disabled:opacity-50 shadow-[0_0_30px_rgba(255,85,0,0.35)]"
                   >
                     {submitting ? (
                       <span>Scheduling Project Ingest...</span>
@@ -294,11 +294,11 @@ export function ContactPage() {
               <div className="glass-apple rounded-3xl p-8 space-y-4 border border-white/10">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-white/50">
+                  <span className="text-[10px] font-mono tracking-wider text-white/50">
                     Studio Status // Online
                   </span>
                 </div>
-                <h3 className="text-xl font-bold uppercase text-white">
+                <h3 className="text-xl font-bold text-white">
                   Guaranteed 24h Response
                 </h3>
                 <p className="text-xs text-white/60 font-light leading-relaxed">
@@ -307,7 +307,7 @@ export function ContactPage() {
               </div>
 
               <div className="glass-apple rounded-3xl p-8 space-y-5 border border-white/10">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-white/40 block">
+                <span className="text-[10px] font-mono tracking-wider text-white/40 block">
                   Studio Channels
                 </span>
                 <div className="space-y-4 text-xs font-mono">
@@ -328,12 +328,12 @@ export function ContactPage() {
 
               <div className="glass-apple-amber rounded-3xl p-8 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#ff5500]">
+                  <span className="text-[10px] font-mono tracking-wider text-[#ff5500]">
                     KritMedia Network
                   </span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-white/40" />
                 </div>
-                <h4 className="text-base font-bold uppercase text-white">Need Video As Well?</h4>
+                <h4 className="text-base font-bold text-white">Need Video As Well?</h4>
                 <p className="text-xs text-white/60 font-light leading-relaxed">
                   Check out <strong>KritVideo</strong> for high-retention video post-production, commercial editing, and ACES color grading.
                 </p>
@@ -347,18 +347,18 @@ export function ContactPage() {
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black">
         <div className="max-w-4xl mx-auto space-y-10">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-2">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#ff5500] font-bold block">
-              03 // COMMON QUESTIONS
+            <span className="text-xs font-mono tracking-[0.25em] text-[#ff5500] font-bold block">
+              03 // Common Questions
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-white">
-              COMMON INQUIRY QUESTIONS.
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tighter text-white">
+              Common Inquiry Questions.
             </h2>
           </div>
 
           <div className="space-y-4">
             {CONTACT_FAQS.map((faq, idx) => (
               <div key={idx} className="glass-apple rounded-2xl p-6 space-y-2 border border-white/10 hover:border-white/20 transition-all">
-                <h4 className="text-sm font-bold uppercase text-white/90">{faq.q}</h4>
+                <h4 className="text-sm font-bold text-white/90">{faq.q}</h4>
                 <p className="text-xs text-white/60 font-light leading-relaxed">{faq.a}</p>
               </div>
             ))}

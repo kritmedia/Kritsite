@@ -63,11 +63,11 @@ function TemplateMockup({
         onClick={() => onPreview(template)}
         className="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center gap-2.5 z-20"
       >
-        <span className="px-5 py-2.5 bg-white text-black text-xs font-bold font-mono uppercase tracking-widest rounded-full flex items-center gap-2 shadow-2xl hover:bg-neutral-200 transition-all">
+        <span className="px-5 py-2.5 bg-white text-black text-xs font-bold font-mono tracking-wider rounded-full flex items-center gap-2 shadow-2xl hover:bg-neutral-200 transition-all">
           <Eye className="w-3.5 h-3.5" />
           <span>Interactive Preview</span>
         </span>
-        <span className="text-[10px] font-mono text-white/60 uppercase tracking-wider">
+        <span className="text-[10px] font-mono text-white/60 tracking-wider">
           Click to inspect specs
         </span>
       </div>
@@ -94,17 +94,17 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
 
         <div className="relative z-10 max-w-7xl mx-auto space-y-6">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            01 // 48-HOUR SIGNATURE CATALOG
+          <div className="text-[11px] sm:text-xs font-mono tracking-[0.2em] text-white/40">
+            01 // 48-Hour Signature Catalog
           </div>
 
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#ff5500]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] sm:text-xs font-mono tracking-wider text-[#ff5500]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>48-Hour Signature Catalog</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-[0.92] text-white">
-              SIGNATURE DESIGNS. <span className="block text-white/30">LIVE IN 1–2 DAYS.</span>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[0.92] text-white">
+              Signature Designs. <span className="block text-white/30">Live in 1–2 Days.</span>
             </h1>
             <p className="text-white/70 text-base sm:text-xl font-light max-w-2xl leading-relaxed">
               We engineered a catalog of 6 architectural web templates across high-growth industries. We customize your brand colors, typography, and copy — and deploy to production within 48 hours.
@@ -127,8 +127,8 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto space-y-12">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            02 // CURATED TEMPLATE ARCHITECTURE
+          <div className="text-[11px] sm:text-xs font-mono tracking-[0.2em] text-white/40">
+            02 // Curated Template Architecture
           </div>
 
           {/* Category Filter Pills */}
@@ -138,7 +138,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2.5 text-xs font-bold uppercase tracking-wider font-mono rounded-full transition-all duration-200 cursor-pointer ${
+                className={`px-5 py-2.5 text-xs font-bold tracking-wider font-mono rounded-full transition-all duration-200 cursor-pointer ${
                   activeCategory === cat
                     ? 'bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.25)] scale-[1.02]'
                     : 'glass-apple glass-apple-hover text-white/60 hover:text-white'
@@ -167,14 +167,14 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                   <div className="space-y-3">
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-white group-hover:text-[#ff5500] transition-colors">
+                        <h3 className="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-[#ff5500] transition-colors">
                           {template.name}
                         </h3>
                         <p className="text-xs sm:text-sm text-white/50 font-light mt-0.5">
                           {template.tagline}
                         </p>
                       </div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider border border-white/15 px-3 py-1 rounded-full text-white/70 bg-white/5 shrink-0">
+                      <span className="text-[10px] font-mono tracking-wider border border-white/15 px-3 py-1 rounded-full text-white/70 bg-white/5 shrink-0">
                         {template.pages} Pages
                       </span>
                     </div>
@@ -194,7 +194,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
 
                   <div className="space-y-4 pt-4 border-t border-white/10">
                     <div className="flex items-center justify-between text-xs font-mono">
-                      <span className="text-white/40 uppercase">Setup Fee:</span>
+                      <span className="text-white/40">Setup Fee:</span>
                       <span className="text-white font-bold text-sm">{formatPrice('₹14,999', '$179')}</span>
                     </div>
 
@@ -202,7 +202,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                       <button
                         type="button"
                         onClick={() => onOpenContact('template-launch')}
-                        className="flex-1 py-3.5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md hover:scale-[1.02]"
+                        className="flex-1 py-3.5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs tracking-wider rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md hover:scale-[1.02]"
                       >
                         <span>Launch in 48h</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -231,11 +231,11 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
           <div className="rounded-3xl glass-apple-amber p-10 sm:p-14 border border-[#ff5500]/40 relative overflow-hidden shadow-[0_0_50px_rgba(255,85,0,0.18)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
               <div className="lg:col-span-8 space-y-4">
-                <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#ff5500] font-bold">
-                  03 // NEED A DIFFERENT DIRECTION?
+                <span className="text-xs font-mono tracking-[0.2em] text-[#ff5500] font-bold">
+                  03 // Need a Different Direction?
                 </span>
-                <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-white">
-                  EVERY BRAND HAS UNIQUE GOALS. <span className="text-white/30 block">WE BUILD BESPOKE PLATFORMS.</span>
+                <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-white">
+                  Every Brand Has Unique Goals. <span className="text-white/30 block">We Build Bespoke Platforms.</span>
                 </h2>
                 <p className="text-white/70 text-base font-light max-w-xl leading-relaxed">
                   If none of our templates match your exact architectural vision, we'll design a 100% custom platform tailored to your audience.
@@ -246,14 +246,14 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                 <button
                   type="button"
                   onClick={() => onOpenContact('custom-build')}
-                  className="w-full py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_30px_rgba(255,85,0,0.3)] hover:scale-[1.02]"
+                  className="w-full py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs tracking-wider rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_30px_rgba(255,85,0,0.3)] hover:scale-[1.02]"
                 >
                   <span>Request Custom Build</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <Link
                   to="/services"
-                  className="w-full py-4 glass-apple glass-apple-hover text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all text-center"
+                  className="w-full py-4 glass-apple glass-apple-hover text-white font-bold text-xs tracking-wider rounded-full transition-all text-center"
                 >
                   View Custom Services
                 </Link>
@@ -267,16 +267,16 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            04 // TEMPLATE INQUIRIES
+          <div className="text-[11px] sm:text-xs font-mono tracking-[0.2em] text-white/40">
+            04 // Template Inquiries
           </div>
 
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
+            <span className="text-xs font-bold tracking-[0.2em] text-[#ff5500] block font-mono">
               Template Inquiries
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
-              FREQUENTLY ASKED QUESTIONS.
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
+              Frequently Asked Questions.
             </h2>
           </div>
 
@@ -284,7 +284,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
             {TEMPLATES_FAQS.map((faq, idx) => (
               <div key={idx} className="rounded-2xl glass-apple glass-apple-hover overflow-hidden transition-all duration-300">
                 <details className="group">
-                  <summary className="p-6 cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-base uppercase tracking-tight text-white/90 group-hover:text-white">
+                  <summary className="p-6 cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-base tracking-tight text-white/90 group-hover:text-white">
                     <span>{faq.question}</span>
                     <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center shrink-0 font-mono text-xs group-open:rotate-45 transition-transform">
                       +
@@ -313,10 +313,10 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
             </button>
 
             <div className="space-y-2">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-[#ff5500] px-3 py-1 bg-white/5 border border-white/10 rounded-full inline-block">
+              <span className="text-[10px] font-mono tracking-wider text-[#ff5500] px-3 py-1 bg-white/5 border border-white/10 rounded-full inline-block">
                 Template Specification
               </span>
-              <h3 className="text-3xl font-black uppercase tracking-tight text-white">
+              <h3 className="text-3xl font-black tracking-tight text-white">
                 {previewTemplate.name} // {previewTemplate.industry}
               </h3>
               <p className="text-sm text-white/60 font-light">
@@ -340,7 +340,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
 
             {/* Included in 48h launch */}
             <div className="p-5 rounded-2xl bg-black/60 border border-white/10 space-y-3">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-white/40 block">
+              <span className="text-[10px] font-mono tracking-wider text-white/40 block">
                 Included in 48h Turnaround:
               </span>
               <div className="grid grid-cols-2 gap-2.5 text-xs font-mono text-white/80">
@@ -370,14 +370,14 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                   setPreviewTemplate(null);
                   onOpenContact('template-launch');
                 }}
-                className="flex-1 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all cursor-pointer shadow-[0_0_25px_rgba(255,85,0,0.3)] hover:scale-[1.02] text-center"
+                className="flex-1 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs tracking-wider rounded-full transition-all cursor-pointer shadow-[0_0_25px_rgba(255,85,0,0.3)] hover:scale-[1.02] text-center"
               >
                 Proceed With {previewTemplate.name} ({formatPrice('₹14,999', '$179')})
               </button>
               <button
                 type="button"
                 onClick={() => setPreviewTemplate(null)}
-                className="px-8 py-4 glass-apple glass-apple-hover text-white font-bold uppercase text-xs tracking-widest rounded-full hover:border-white transition-all cursor-pointer"
+                className="px-8 py-4 glass-apple glass-apple-hover text-white font-bold text-xs tracking-wider rounded-full hover:border-white transition-all cursor-pointer"
               >
                 Close
               </button>

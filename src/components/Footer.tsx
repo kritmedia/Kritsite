@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
           {/* Navigation columns */}
           <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8 text-xs">
             <div className="space-y-4">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-white/30 block font-bold">Services</span>
+              <span className="text-[10px] font-mono tracking-wider text-white/40 block font-bold">Services</span>
               <div className="space-y-3">
                 <Link to="/services" className="block text-white/50 hover:text-white transition-colors">Template Launch</Link>
                 <Link to="/services" className="block text-white/50 hover:text-white transition-colors">Custom Build</Link>
@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               </div>
             </div>
             <div className="space-y-4">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-white/30 block font-bold">Templates</span>
+              <span className="text-[10px] font-mono tracking-wider text-white/40 block font-bold">Templates</span>
               <div className="space-y-3">
                 <Link to="/templates" className="block text-white/50 hover:text-white transition-colors">Obsidian (SaaS)</Link>
                 <Link to="/templates" className="block text-white/50 hover:text-white transition-colors">Studio (Agency)</Link>
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               </div>
             </div>
             <div className="space-y-4">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-white/30 block font-bold">Company</span>
+              <span className="text-[10px] font-mono tracking-wider text-white/40 block font-bold">Company</span>
               <div className="space-y-3">
                 <Link to="/about" className="block text-white/50 hover:text-white transition-colors">About</Link>
                 <Link to="/contact" className="block text-white/50 hover:text-white transition-colors">Contact</Link>
@@ -73,10 +73,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               </div>
             </div>
             <div className="space-y-4">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-white/30 block font-bold">Start</span>
+              <span className="text-[10px] font-mono tracking-wider text-white/40 block font-bold">Start</span>
               <button
                 onClick={onOpenContact}
-                className="block w-full sm:w-auto px-6 py-3 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold uppercase text-[10px] tracking-widest rounded-full shadow-[0_0_20px_rgba(255,85,0,0.35)] transition-all cursor-pointer text-center"
+                className="block w-full sm:w-auto px-6 py-3 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold text-xs tracking-wider rounded-full shadow-[0_0_20px_rgba(255,85,0,0.35)] transition-all cursor-pointer text-center"
               >
                 Start a Project →
               </button>
@@ -86,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10 text-xs text-white/30 font-mono">
-          <div>© {new Date().getFullYear()} KRITSITE. A KRITMEDIA STUDIO. ALL RIGHTS RESERVED.</div>
+          <div>© {new Date().getFullYear()} KritSite. A KritMedia Studio. All rights reserved.</div>
           
           <div className="flex items-center gap-4">
             <div className="inline-flex items-center gap-1 p-0.5 rounded-full border border-white/15 bg-white/[0.04]">
@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               </button>
             </div>
 
-            <div className="hidden sm:flex items-center gap-6 uppercase tracking-wider text-[11px]">
+            <div className="hidden sm:flex items-center gap-6 tracking-wider text-[11px]">
               <span className="text-white/20">Privacy Policy</span>
               <span className="text-white/20">Terms of Service</span>
             </div>

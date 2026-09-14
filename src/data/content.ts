@@ -26,7 +26,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'custom-build',
     name: 'Custom Build',
-    badge: 'MOST POPULAR',
+    badge: 'Most Popular',
     inrPrice: '₹49,999',
     usdPrice: '$599',
     period: 'one-time',

@@ -34,17 +34,17 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
 
         <div className="relative z-10 max-w-7xl mx-auto space-y-6">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            01 // FULL-STACK WEB ARCHITECTURE
+          <div className="text-[11px] sm:text-xs font-mono tracking-wider text-white/40">
+            01 // Full-Stack Web Architecture
           </div>
 
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#ff5500]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] sm:text-xs font-mono tracking-wider text-[#ff5500]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Full-Stack Web Design Architecture</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-[0.92] text-white">
-              ENGINEERED FOR AESTHETICS. <span className="block text-white/30">CALIBRATED FOR SEARCH.</span>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[0.92] text-white">
+              Engineered for Aesthetics. <span className="block text-white/30">Calibrated for Search.</span>
             </h1>
             <p className="text-white/70 text-base sm:text-xl font-light max-w-2xl leading-relaxed">
               Every website we build is treated as a strategic digital asset. We synthesize architectural design principles with modern <strong>SEO, AEO & GEO</strong> indexing to convert casual visitors into clients.
@@ -53,14 +53,14 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
               <button
                 type="button"
                 onClick={() => onOpenContact()}
-                className="px-8 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full shadow-[0_0_25px_rgba(255,85,0,0.35)] hover:scale-[1.03] transition-all flex items-center gap-2 cursor-pointer"
+                className="px-8 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs tracking-wider rounded-full shadow-[0_0_25px_rgba(255,85,0,0.35)] hover:scale-[1.03] transition-all flex items-center gap-2 cursor-pointer"
               >
                 <span>Initiate Project Scope</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <Link
                 to="/templates"
-                className="px-8 py-4 glass-apple glass-apple-hover text-white font-bold uppercase text-xs tracking-widest rounded-full hover:border-white transition-all flex items-center gap-2"
+                className="px-8 py-4 glass-apple glass-apple-hover text-white font-bold text-xs tracking-wider rounded-full hover:border-white transition-all flex items-center gap-2"
               >
                 Browse 48h Templates
               </Link>
@@ -73,16 +73,16 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       <section id="pillars" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto space-y-12">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            02 // 4 PILLARS OF EXCELLENCE
+          <div className="text-[11px] sm:text-xs font-mono tracking-wider text-white/40">
+            02 // 4 Pillars of Excellence
           </div>
 
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
+            <span className="text-xs font-semibold tracking-wider text-[#ff5500] block font-mono">
               The 4 Pillars of Excellence
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tight uppercase leading-[0.95] text-white">
-              HOW WE DELIVER <span className="block text-white/30">UNFAIR ADVANTAGES.</span>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-[0.95] text-white">
+              How We Deliver <span className="block text-white/30">Unfair Advantages.</span>
             </h2>
           </div>
 
@@ -96,7 +96,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                   key={pillar.id}
                   type="button"
                   onClick={() => setActiveTab(pillar.id)}
-                  className={`px-6 py-3 text-xs font-bold font-mono uppercase tracking-wider rounded-full transition-all duration-200 cursor-pointer flex items-center gap-2.5 ${
+                  className={`px-6 py-3 text-xs font-semibold font-mono tracking-wider rounded-full transition-all duration-200 cursor-pointer flex items-center gap-2.5 ${
                     isSelected
                       ? 'bg-white text-black shadow-[0_0_25px_rgba(255,255,255,0.3)] scale-[1.02]'
                       : 'glass-apple glass-apple-hover text-white/70 hover:text-white'
@@ -114,19 +114,19 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
             <div className="lg:col-span-8">
               <div className="rounded-3xl glass-apple p-7 sm:p-10 space-y-6">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono tracking-widest text-[#ff5500] uppercase font-bold px-3 py-1 bg-white/5 border border-white/10 rounded-full">
+                  <span className="text-[10px] font-mono tracking-wider text-[#ff5500] font-bold px-3 py-1 bg-white/5 border border-white/10 rounded-full">
                     {activeCard.tag}
                   </span>
                   <div className="px-4 py-1.5 rounded-xl bg-black/80 border border-white/20 text-right">
                     <span className="text-base font-bold font-mono text-white">{activeCard.metric}</span>
-                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-mono">
+                    <span className="text-[9px] tracking-wider text-white/40 block font-mono">
                       {activeCard.metricLabel}
                     </span>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
+                  <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
                     {activeCard.title}
                   </h3>
                   <p className="text-sm sm:text-base text-white/60 leading-relaxed font-light max-w-2xl">
@@ -173,7 +173,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                           <Cpu className="w-3.5 h-3.5 text-[#ff5500]" />
                           Multi-Engine Optimization Stack
                         </span>
-                        <span className="text-emerald-400 font-bold">100% CRAWLABLE</span>
+                        <span className="text-emerald-400 font-bold">100% Crawlable</span>
                       </div>
                       <div className="space-y-2">
                         <div className="flex justify-between items-center text-[10px] text-white/70">
@@ -199,7 +199,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                           <Zap className="w-3.5 h-3.5 text-[#ff5500]" />
                           48h Rapid Ingest Pipeline
                         </span>
-                        <span className="text-white font-bold">GUARANTEED</span>
+                        <span className="text-white font-bold">Guaranteed</span>
                       </div>
                       <p className="text-[11px] text-white/50 leading-relaxed font-light">
                         Select template → Provide brand hex & copy → We customize and deploy on your domain within 2 business days.
@@ -214,7 +214,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                           <Terminal className="w-3.5 h-3.5 text-[#ff5500]" />
                           Clean Slate Architecture
                         </span>
-                        <span className="text-white font-bold">0% TEMPLATE CODE</span>
+                        <span className="text-white font-bold">0% Template Code</span>
                       </div>
                       <p className="text-[11px] text-white/50 leading-relaxed font-light">
                         Full Figma design review sessions, custom micro-interactions, copy written from scratch, and 30 days of post-launch warranty.
@@ -227,7 +227,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 font-mono text-xs">
                   {activeCard.specs.map((spec) => (
                     <div key={spec.label} className="bg-black/50 border border-white/10 p-3 rounded-2xl space-y-1">
-                      <div className="text-[10px] text-white/40 uppercase">{spec.label}</div>
+                      <div className="text-[10px] text-white/40">{spec.label}</div>
                       <div className="text-white font-medium truncate">{spec.value}</div>
                     </div>
                   ))}
@@ -237,7 +237,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
 
             {/* Features Checklist Column */}
             <div className="lg:col-span-4 space-y-4">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-white/40 block">
+              <span className="text-[10px] font-mono tracking-wider text-white/40 block">
                 Pillar Deliverables
               </span>
               <div className="space-y-2.5">
@@ -255,7 +255,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
               <button
                 type="button"
                 onClick={() => onOpenContact(activeCard.id)}
-                className="w-full py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:scale-[1.02] mt-4"
+                className="w-full py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs tracking-wider rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:scale-[1.02] mt-4"
               >
                 <span>Book This Capability</span>
                 <ArrowRight className="w-4 h-4" />
@@ -269,17 +269,17 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       <section id="process" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            03 // LINEAR DELIVERY FRAMEWORK
+          <div className="text-[11px] sm:text-xs font-mono tracking-wider text-white/40">
+            03 // Linear Delivery Framework
           </div>
 
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
+              <span className="text-xs font-semibold tracking-wider text-[#ff5500] block font-mono">
                 Linear Delivery Framework
               </span>
-              <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase leading-[0.95] text-white">
-                FROM BRIEFING <span className="block text-white/30">TO GLOBAL DEPLOYMENT.</span>
+              <h2 className="text-4xl sm:text-6xl font-black tracking-tight leading-[0.95] text-white">
+                From Briefing <span className="block text-white/30">to Global Deployment.</span>
               </h2>
               <p className="text-white/50 text-base font-light">
                 A milestone-driven production pipeline. Every step is documented and reviewable before advancing.
@@ -289,7 +289,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
             <button
               type="button"
               onClick={() => onOpenContact()}
-              className="self-start px-8 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold uppercase text-xs tracking-widest rounded-full transition-all flex items-center gap-3 cursor-pointer shrink-0 shadow-[0_0_25px_rgba(255,85,0,0.35)] hover:scale-[1.03]"
+              className="self-start px-8 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs tracking-wider rounded-full transition-all flex items-center gap-3 cursor-pointer shrink-0 shadow-[0_0_25px_rgba(255,85,0,0.35)] hover:scale-[1.03]"
             >
               <span>Initiate Discovery</span>
               <ArrowRight className="w-4 h-4" />
@@ -307,13 +307,13 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                     <span className="text-3xl font-black font-mono text-white/25 group-hover:text-[#ff5500] transition-colors">
                       {step.step}
                     </span>
-                    <span className="text-[10px] font-mono text-white/70 border border-white/15 px-3 py-1 rounded-full uppercase tracking-wider bg-white/5">
+                    <span className="text-[10px] font-mono text-white/70 border border-white/15 px-3 py-1 rounded-full tracking-wider bg-white/5">
                       {step.duration}
                     </span>
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-lg font-black uppercase tracking-tight text-white group-hover:text-white/90">
+                    <h3 className="text-lg font-bold tracking-tight text-white group-hover:text-white/90">
                       {step.title}
                     </h3>
                     <p className="text-xs text-white/50 leading-relaxed font-light">{step.description}</p>
@@ -321,7 +321,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 space-y-2">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-white/40 block">
+                  <span className="text-[10px] font-mono tracking-wider text-white/40 block">
                     Verified Deliverables:
                   </span>
                   {step.deliverables.map((d, i) => (
@@ -341,16 +341,16 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#050505] border-b border-white/10">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            04 // RIGOROUS STANDARDS
+          <div className="text-[11px] sm:text-xs font-mono tracking-wider text-white/40">
+            04 // Rigorous Standards
           </div>
 
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-3xl">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
+            <span className="text-xs font-semibold tracking-wider text-[#ff5500] block font-mono">
               Rigorous Standards
             </span>
-            <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase leading-[0.95] text-white">
-              ORDINARY WEBSITES <span className="block text-white/30">VS. KRITSITE ENGINEERING.</span>
+            <h2 className="text-4xl sm:text-6xl font-black tracking-tight leading-[0.95] text-white">
+              Ordinary Websites <span className="block text-white/30">vs. KritSite Engineering.</span>
             </h2>
           </div>
 
@@ -358,13 +358,13 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
             <table className="w-full min-w-[650px] border-collapse text-left">
               <thead>
                 <tr className="border-b border-white/10 bg-black/40">
-                  <th className="py-4 px-6 text-[10px] font-mono uppercase tracking-widest text-white/40 w-1/4">
+                  <th className="py-4 px-6 text-[10px] font-mono tracking-wider text-white/40 w-1/4">
                     Attribute
                   </th>
-                  <th className="py-4 px-6 text-[10px] font-mono uppercase tracking-widest text-red-400/80">
+                  <th className="py-4 px-6 text-[10px] font-mono tracking-wider text-red-400/80">
                     Typical Agency / DIY Theme
                   </th>
-                  <th className="py-4 px-6 text-[10px] font-mono uppercase tracking-widest text-[#ff5500]">
+                  <th className="py-4 px-6 text-[10px] font-mono tracking-wider text-[#ff5500]">
                     KritSite Standard
                   </th>
                 </tr>
@@ -372,7 +372,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
               <tbody>
                 {COMPARISON_POINTS.map((point, i) => (
                   <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                    <td className="py-5 px-6 text-xs font-bold uppercase tracking-wider text-white/70 font-mono">
+                    <td className="py-5 px-6 text-xs font-bold tracking-wider text-white/70 font-mono">
                       {point.category}
                     </td>
                     <td className="py-5 px-6 text-xs sm:text-sm text-white/40 font-light">
@@ -398,17 +398,17 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       <section id="pricing" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black border-b border-white/10 relative overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-16 relative z-10">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            05 // TRANSPARENT ENGAGEMENT
+          <div className="text-[11px] sm:text-xs font-mono tracking-[0.2em] text-white/40">
+            05 // Transparent Engagement
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
+              <span className="text-xs font-bold tracking-[0.2em] text-[#ff5500] block font-mono">
                 Transparent Engagement
               </span>
-              <h2 className="text-4xl sm:text-6xl font-black tracking-tight uppercase leading-[0.95] text-white">
-                HONEST PRICING. <span className="block text-white/30">MAXIMUM CONVERSION.</span>
+              <h2 className="text-4xl sm:text-6xl font-black tracking-tight leading-[0.95] text-white">
+                Honest Pricing. <span className="block text-white/30">Maximum Conversion.</span>
               </h2>
             </div>
             <div className="flex items-center gap-1 border border-white/15 p-1 bg-black/60 backdrop-blur-xl rounded-full self-start">
@@ -417,7 +417,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                   key={c}
                   type="button"
                   onClick={() => setCurrency(c)}
-                  className={`px-5 py-2 text-xs font-bold font-mono uppercase tracking-widest rounded-full transition-all cursor-pointer ${
+                  className={`px-5 py-2 text-xs font-bold font-mono tracking-wider rounded-full transition-all cursor-pointer ${
                     currency === c ? 'bg-white text-black shadow-md' : 'text-white/50 hover:text-white'
                   }`}
                 >
@@ -429,7 +429,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {PRICING_PLANS.map((plan) => {
-              const isPopular = plan.badge === 'MOST POPULAR';
+              const isPopular = plan.badge === 'Most Popular' || plan.badge === 'MOST POPULAR';
               return (
                 <div
                   key={plan.id}
@@ -440,14 +440,14 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                   }`}
                 >
                   {isPopular && (
-                    <div className="absolute -top-3.5 left-8 px-4 py-1 bg-[#ff5500] text-white text-[10px] font-black tracking-widest uppercase font-mono rounded-full shadow-lg">
+                    <div className="absolute -top-3.5 left-8 px-4 py-1 bg-[#ff5500] text-white text-[10px] font-black tracking-wider font-mono rounded-full shadow-lg">
                       {plan.badge}
                     </div>
                   )}
 
                   <div className="space-y-6">
                     <div className="space-y-2">
-                      <h3 className="text-2xl font-black uppercase tracking-tight text-white">{plan.name}</h3>
+                      <h3 className="text-2xl font-black tracking-tight text-white">{plan.name}</h3>
                       <p className="text-xs text-white/50 leading-relaxed font-light">{plan.description}</p>
                     </div>
 
@@ -455,7 +455,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                       <span className="text-5xl sm:text-6xl font-black font-mono tracking-tight text-white">
                         {currency === 'INR' ? plan.inrPrice : plan.usdPrice}
                       </span>
-                      <span className="text-xs text-white/40 font-mono uppercase tracking-wider">{plan.period}</span>
+                      <span className="text-xs text-white/40 font-mono tracking-wider">{plan.period}</span>
                     </div>
 
                     <div className="space-y-2 text-xs text-white/60 font-mono">
@@ -478,7 +478,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                   <button
                     type="button"
                     onClick={() => onOpenContact(plan.id)}
-                    className={`w-full py-4 font-bold text-xs uppercase tracking-widest rounded-full transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg hover:scale-[1.02] ${
+                    className={`w-full py-4 font-bold text-xs tracking-wider rounded-full transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg hover:scale-[1.02] ${
                       isPopular 
                         ? 'bg-[#ff5500] text-white hover:bg-[#e64d00]' 
                         : 'bg-white text-black hover:bg-neutral-200'
@@ -498,16 +498,16 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
       <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-black">
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Top Ticker */}
-          <div className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-            06 // KNOWLEDGE BASE
+          <div className="text-[11px] sm:text-xs font-mono tracking-[0.2em] text-white/40">
+            06 // Knowledge Base
           </div>
 
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-xl">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff5500] block font-mono">
+            <span className="text-xs font-bold tracking-[0.2em] text-[#ff5500] block font-mono">
               Services Knowledge Base
             </span>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tight uppercase leading-[0.95] text-white">
-              FREQUENTLY ASKED <span className="block text-white/30">QUESTIONS.</span>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight leading-[0.95] text-white">
+              Frequently Asked <span className="block text-white/30">Questions.</span>
             </h2>
           </div>
 
@@ -515,7 +515,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
             {SERVICES_FAQS.map((faq, idx) => (
               <div key={idx} className="rounded-2xl glass-apple glass-apple-hover overflow-hidden transition-all duration-300">
                 <details className="group">
-                  <summary className="p-6 cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-base uppercase tracking-tight text-white/90 group-hover:text-white">
+                  <summary className="p-6 cursor-pointer list-none flex items-center justify-between gap-4 font-bold text-base tracking-tight text-white/90 group-hover:text-white">
                     <span>{faq.question}</span>
                     <span className="w-7 h-7 rounded-full border border-white/20 flex items-center justify-center shrink-0 font-mono text-xs group-open:rotate-45 transition-transform">
                       +

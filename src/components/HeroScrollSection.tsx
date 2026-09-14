@@ -203,11 +203,11 @@ export const HeroScrollSection: React.FC<HeroScrollSectionProps> = ({ onOpenCont
         {/* ── Technical Live Frame Badge (Top-Right) ── */}
         <div className="absolute top-24 right-6 sm:right-12 z-20 hidden md:flex items-center gap-3 bg-black/60 backdrop-blur-md border border-white/15 px-4 py-2 rounded-full shadow-2xl">
           <div className="w-2 h-2 rounded-full bg-[#ff5500] animate-pulse" />
-          <span className="text-[11px] font-mono tracking-widest text-white/80 uppercase">
-            FRAME {String(currentFrameNum).padStart(3, '0')} / {TOTAL_FRAMES}
+          <span className="text-[11px] font-mono tracking-wider text-white/80">
+            Frame {String(currentFrameNum).padStart(3, '0')} / {TOTAL_FRAMES}
           </span>
-          <span className="text-[10px] font-mono text-white/50 border-l border-white/20 pl-2 uppercase">
-            {currentFrameNum < 70 ? '01 // HERO' : '02 // PRODUCTION EXPERTISE'}
+          <span className="text-[10px] font-mono text-white/50 border-l border-white/20 pl-2">
+            {currentFrameNum < 70 ? '01 // Hero' : '02 // Production Expertise'}
           </span>
         </div>
       </div>
@@ -226,14 +226,14 @@ export const HeroScrollSection: React.FC<HeroScrollSectionProps> = ({ onOpenCont
               </h1>
 
               {/* Sub-Keywords with Star Bullets */}
-              <div className="mt-4 sm:mt-6 flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em] text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                <span>48H LAUNCHES</span>
+              <div className="mt-4 sm:mt-6 flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-xs font-semibold tracking-wider text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                <span>48h Launches</span>
                 <span className="text-[#ff5500]">✦</span>
-                <span>CUSTOM BUILDS</span>
+                <span>Custom Builds</span>
                 <span className="text-[#ff5500]">✦</span>
-                <span>BUILT FOR SEARCH</span>
+                <span>Built for Search</span>
                 <span className="text-[#ff5500]">✦</span>
-                <span>BUILT TO PERFORM</span>
+                <span>Built to Perform</span>
               </div>
             </div>
 
@@ -242,20 +242,20 @@ export const HeroScrollSection: React.FC<HeroScrollSectionProps> = ({ onOpenCont
             {/* Right Column: Narrative Copy & Rounded Pill CTA */}
             <div className="relative w-full lg:max-w-[360px] xl:max-w-[400px] flex items-center lg:justify-end">
               <div className="space-y-4 sm:space-y-5">
-                <p className="text-xs sm:text-sm font-semibold tracking-wider text-white/90 uppercase leading-relaxed max-w-sm drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+                <p className="text-xs sm:text-sm font-normal text-white/85 leading-relaxed max-w-sm drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
                   We design and build fast, high-converting websites for businesses that have outgrown the boring stuff.
                 </p>
 
-                <p className="text-[11px] sm:text-xs text-white/60 uppercase tracking-wide leading-relaxed max-w-sm drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+                <p className="text-[11px] sm:text-xs text-white/60 leading-relaxed max-w-sm drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                   No bloated themes. No endless meetings. No website that looks like it was made during a lunch break.
                 </p>
 
                 <div className="flex items-center gap-3 sm:gap-4 pt-1 pointer-events-auto">
                   <button
                     onClick={() => onOpenContact()}
-                    className="group pl-5 sm:pl-6 pr-2 py-2 sm:py-2.5 bg-white text-black font-bold uppercase text-[11px] sm:text-xs tracking-wider rounded-full shadow-2xl inline-flex items-center gap-3 hover:bg-white/90 hover:scale-[1.03] transition-all cursor-pointer whitespace-nowrap shrink-0"
+                    className="group pl-5 sm:pl-6 pr-2 py-2 sm:py-2.5 bg-white text-black font-bold text-[11px] sm:text-xs tracking-wide rounded-full shadow-2xl inline-flex items-center gap-3 hover:bg-white/90 hover:scale-[1.03] transition-all cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    <span>START A PROJECT</span>
+                    <span>Start a Project</span>
                     <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#ff5500] text-white flex items-center justify-center shrink-0 group-hover:rotate-45 transition-transform">
                       <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
@@ -263,9 +263,9 @@ export const HeroScrollSection: React.FC<HeroScrollSectionProps> = ({ onOpenCont
 
                   <a
                     href="#expertise"
-                    className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-white/60 hover:text-white inline-flex items-center gap-1 transition-colors group/link py-1 px-1 cursor-pointer whitespace-nowrap shrink-0"
+                    className="text-[10px] sm:text-xs font-mono tracking-wider text-white/60 hover:text-white inline-flex items-center gap-1 transition-colors group/link py-1 px-1 cursor-pointer whitespace-nowrap shrink-0"
                   >
-                    <span>SEE OUR BUILDS</span>
+                    <span>See Our Builds</span>
                     <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white/40 group-hover/link:text-white transition-colors" />
                   </a>
                 </div>
@@ -276,18 +276,18 @@ export const HeroScrollSection: React.FC<HeroScrollSectionProps> = ({ onOpenCont
           {/* Bottom Ribbon */}
           <div className="w-full bg-black/75 backdrop-blur-md border-t border-white/10 py-2.5 sm:py-3.5 px-4 sm:px-10 lg:px-14 xl:px-18 pointer-events-auto">
             <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3 sm:gap-6 text-[9px] sm:text-xs font-mono uppercase tracking-widest text-white/70 overflow-x-auto no-scrollbar whitespace-nowrap py-1">
-                <span className="text-white font-bold">48H LAUNCHES</span>
+              <div className="flex items-center gap-3 sm:gap-6 text-[9px] sm:text-xs font-mono tracking-wider text-white/70 overflow-x-auto no-scrollbar whitespace-nowrap py-1">
+                <span className="text-white font-medium">48h Launches</span>
                 <span className="text-[#ff5500]">·</span>
-                <span className="text-white font-bold">CUSTOM BUILDS</span>
+                <span className="text-white font-medium">Custom Builds</span>
                 <span className="text-[#ff5500]">·</span>
-                <span className="text-white font-bold">BUILT FOR SEARCH</span>
+                <span className="text-white font-medium">Built for Search</span>
                 <span className="text-[#ff5500]">·</span>
-                <span className="text-white font-bold">BUILT TO PERFORM</span>
+                <span className="text-white font-medium">Built to Perform</span>
               </div>
 
-              <a href="#expertise" className="hidden lg:flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/50 hover:text-white transition-colors shrink-0">
-                <span>SCROLL TO DISCOVER</span>
+              <a href="#expertise" className="hidden lg:flex items-center gap-2 text-[10px] font-mono tracking-wider text-white/50 hover:text-white transition-colors shrink-0">
+                <span>Scroll to discover</span>
                 <ChevronDown className="w-3.5 h-3.5 text-[#ff5500] animate-bounce" />
               </a>
             </div>

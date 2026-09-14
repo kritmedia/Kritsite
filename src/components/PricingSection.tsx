@@ -25,7 +25,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
           <button
             type="button"
             onClick={toggleCurrency}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-[10px] font-mono uppercase tracking-wider text-white/70 hover:text-white transition-all cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/15 bg-white/[0.04] hover:bg-white/[0.08] text-[10px] font-mono tracking-wider text-white/70 hover:text-white transition-all cursor-pointer"
             title="Switch currency viewing mode"
           >
             <span className={currency === 'INR' ? 'text-[#ff5500] font-bold' : 'text-white/40'}>₹ INR</span>
@@ -41,12 +41,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
             <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between space-y-12">
               {/* Vertical Orange Line + Story Narrative */}
               <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 space-y-6">
-                <div className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.2em] text-[#ff5500]">
-                  <span>04 // SERVICES</span>
+                <div className="inline-flex items-center gap-2 text-[11px] font-mono tracking-wider text-[#ff5500]">
+                  <span>04 // Services</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-black tracking-tight text-white leading-[1.08]">
-                  Choose your<br />starting point.
+                  Choose Your<br />Starting Point.
                 </h2>
 
                 <div className="space-y-4 text-xs sm:text-sm text-white/70 font-light leading-relaxed max-w-sm pt-2">
@@ -59,9 +59,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
               <div className="pt-6 sm:pt-10">
                 <Link
                   to="/services"
-                  className="inline-flex items-center gap-2.5 text-xs font-mono font-bold uppercase tracking-widest text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
+                  className="inline-flex items-center gap-2.5 text-xs font-mono font-semibold tracking-wider text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
                 >
-                  <span>EXPLORE SERVICES</span>
+                  <span>Explore Services</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
                 </Link>
               </div>
@@ -73,14 +73,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 {/* Monospace Tag Header */}
                 <div className="space-y-1">
                   <div className="text-xs font-mono font-bold text-[#ff5500]">01</div>
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/50">
-                    TEMPLATE LAUNCH
+                  <div className="text-[10px] font-mono tracking-wider text-white/50">
+                    Template Launch
                   </div>
                 </div>
 
                 {/* Headline */}
                 <h3 className="text-2xl sm:text-3xl lg:text-[28px] font-black tracking-tight text-white leading-tight">
-                  Launch.<br />Look sharp.<br />Move faster.
+                  Launch.<br />Look Sharp.<br />Move Faster.
                 </h3>
 
                 {/* Subtitle / Description */}
@@ -97,7 +97,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 <div className="pt-1">
                   <button
                     onClick={() => onOpenContact('template-launch')}
-                    className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
+                    className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wide text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
                   >
                     <span>Get Started</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
@@ -126,14 +126,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 {/* Monospace Tag Header */}
                 <div className="space-y-1">
                   <div className="text-xs font-mono font-bold text-[#ff5500]">02</div>
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/50">
-                    CUSTOM WEBSITE
+                  <div className="text-[10px] font-mono tracking-wider text-white/50">
+                    Custom Website
                   </div>
                 </div>
 
                 {/* Headline */}
                 <h3 className="text-2xl sm:text-3xl lg:text-[28px] font-black tracking-tight text-white leading-tight">
-                  Built for<br />what's next.
+                  Built For<br />What's Next.
                 </h3>
 
                 {/* Subtitle / Description */}
@@ -150,7 +150,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 <div className="pt-1">
                   <button
                     onClick={() => onOpenContact('custom-build')}
-                    className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
+                    className="inline-flex items-center gap-2 text-xs font-mono font-semibold tracking-wide text-[#ff5500] hover:text-white transition-colors group cursor-pointer"
                   >
                     <span>Build Custom</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
