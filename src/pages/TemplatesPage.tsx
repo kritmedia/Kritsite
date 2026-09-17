@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Clock, ShieldCheck, CheckCircle2, Eye, Lock, Flame, Layers, Zap, Compass, Check, ArrowUpRight, Cpu } from 'lucide-react';
+import { ArrowRight, Sparkles, Clock, ShieldCheck, CheckCircle2, Lock, Flame, Layers, Zap, ArrowUpRight, Cpu, Check, BarChart3, Rocket } from 'lucide-react';
 import { AtmosphericMeshBackground } from '../components/AtmosphericMeshBackground';
 import { useCurrency } from '../context/CurrencyContext';
 
@@ -8,83 +8,65 @@ interface TemplatesPageProps {
   onOpenContact: (planId?: string) => void;
 }
 
-interface ConceptualArchetype {
-  id: string;
-  name: string;
-  industry: string;
-  focus: string;
-  blueprintFeatures: string[];
-  targetSpeed: string;
-  status: string;
-  gradient: string;
-}
+const LAUNCH_PILLARS = [
+  {
+    icon: Layers,
+    title: 'Pre-Engineered Conversion Architectures',
+    description: 'Purpose-built layouts tailored for modern business models: SaaS, DTC, Executive Advisory, Creative Studios, and Personal Brands. Every section is engineered around buyer psychology and conversion hierarchy.',
+  },
+  {
+    icon: Cpu,
+    title: 'Hand-Coded React & Tailwind Core',
+    description: 'Zero bloated visual builders, zero sluggish third-party plugins, and zero unnecessary script injection. Hand-authored modern code delivering sub-second mobile hydration and 99+ Lighthouse scores.',
+  },
+  {
+    icon: Clock,
+    title: 'White-Glove 48-Hour Deployment',
+    description: 'Not a blank downloadable zip file where you are stranded. You provide your brand assets and copy; our engineers personally customize your design tokens, test responsiveness, configure DNS & SSL, and launch.',
+  },
+];
 
-const CONCEPTUAL_ARCHETYPES: ConceptualArchetype[] = [
+const CORE_BENEFITS = [
   {
-    id: 'apex-saas',
-    name: 'Apex SaaS',
-    industry: 'SaaS, DevTools & Software',
-    focus: 'Product-led conversion with live terminal demos, interactive bento features, and tier comparisons.',
-    blueprintFeatures: ['Interactive Feature Bento', 'Tiered Pricing Matrix', 'Product Telemetry Mockup', 'Sub-Second Hydration'],
-    targetSpeed: '0.34s LCP',
-    status: 'In Design Lab',
-    gradient: 'from-blue-600/20 via-cyan-500/10 to-transparent',
+    title: 'Go Live in 48 Hours, Not 8 Weeks',
+    description: 'Skip the agonizing 2-month agency turnaround. Get your product, service, or personal brand in front of customers over a single weekend.',
+    metric: '48h',
+    metricLabel: 'Turnaround Target',
   },
   {
-    id: 'monolith-studio',
-    name: 'Monolith Studio',
-    industry: 'Creative Agencies & Design Studios',
-    focus: 'Swiss editorial minimalism with oversized typography, full-bleed case study reels, and kinetic hover motion.',
-    blueprintFeatures: ['Kinetic Work Reel', 'Editorial Dual-Tone Type', 'Architecture Inspector', 'Client Proof Metrics'],
-    targetSpeed: '0.28s LCP',
-    status: 'In Design Lab',
-    gradient: 'from-[#ff5500]/20 via-amber-500/10 to-transparent',
+    title: 'Instant Category Authority',
+    description: 'Look like an established, well-funded industry leader from day one. Premium Swiss typography, dark glass physics, and editorial polish that commands trust.',
+    metric: '100%',
+    metricLabel: 'Agency-Grade Polish',
   },
   {
-    id: 'aura-dtc',
-    name: 'Aura DTC',
-    industry: 'Luxury E-Commerce & DTC Brands',
-    focus: 'High-end editorial storefront aesthetic crafted for premium perception and rapid checkout funnels.',
-    blueprintFeatures: ['High-Velocity Product Grid', 'Editorial Brand Story', 'Instant Mobile Checkout', 'Zero-Shift Layouts'],
-    targetSpeed: '0.38s LCP',
-    status: 'In Design Lab',
-    gradient: 'from-purple-600/20 via-pink-500/10 to-transparent',
+    title: 'Sub-Second Mobile Hydration',
+    description: 'Typical marketplace templates take 3.8s+ to load. Our framework runs on edge infrastructure with sub-0.5s paints so you never bleed paid ad traffic.',
+    metric: '<0.5s',
+    metricLabel: 'Mobile Paint (LCP)',
   },
   {
-    id: 'advisory-pro',
-    name: 'Advisory Pro',
-    industry: 'High-Ticket Consultants & Legal',
-    focus: 'Executive authority architecture engineered for immediate trust, fee defense, and friction-free booking.',
-    blueprintFeatures: ['Executive Outcome Proof', 'Direct Calendar Integration', 'Validated Social Trust', 'Clean Single-Page Flow'],
-    targetSpeed: '0.29s LCP',
-    status: 'In Design Lab',
-    gradient: 'from-emerald-600/20 via-teal-500/10 to-transparent',
+    title: 'AI Answer Engine (AEO & GEO) Ready',
+    description: 'Built with structured Schema.org JSON-LD and semantic hierarchy out of the box so Perplexity, ChatGPT Search, Claude, and Google cite your platform.',
+    metric: '2026',
+    metricLabel: 'Search Architecture',
   },
   {
-    id: 'signature-persona',
-    name: 'Signature Persona',
-    industry: 'Founders, Authors & Keynote Speakers',
-    focus: 'Personal authority platform with newsletter lead magnets, media press kits, and thought leadership archives.',
-    blueprintFeatures: ['High-Converting Lead Funnel', 'Press & Media Reel', 'Thought Leadership Archive', 'Speaker One-Sheet'],
-    targetSpeed: '0.31s LCP',
-    status: 'In Design Lab',
-    gradient: 'from-amber-600/20 via-yellow-500/10 to-transparent',
+    title: 'Zero Platform Lock-In or Monthly Tax',
+    description: 'You own 100% of your production code. No recurring $30-$80/month website builder subscription holding your digital storefront hostage.',
+    metric: '0',
+    metricLabel: 'Monthly Builder Fees',
   },
   {
-    id: 'vanguard-ai',
-    name: 'Vanguard AI',
-    industry: 'AI Agents & DeepTech Startups',
-    focus: 'Futuristic technical interface with real-time prompt playground previews and developer documentation tabs.',
-    blueprintFeatures: ['Prompt Playground Mockup', 'Interactive API Spec', 'Entity Schema Injection', 'Dark Glass Physics'],
-    targetSpeed: '0.35s LCP',
-    status: 'In Design Lab',
-    gradient: 'from-violet-600/20 via-indigo-500/10 to-transparent',
+    title: 'Founder-Level Staging & Polish',
+    description: 'Our engineering team personally verifies your responsiveness across iOS, Android, macOS, and Windows before pushing to production.',
+    metric: '1-on-1',
+    metricLabel: 'Deployment Handoff',
   },
 ];
 
 export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
   const { formatPrice } = useCurrency();
-  const [selectedConcept, setSelectedConcept] = useState<ConceptualArchetype | null>(null);
 
   return (
     <div className="pt-24 bg-black text-white selection:bg-[#ff5500] selection:text-white">
@@ -106,7 +88,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
             </h1>
 
             <p className="text-white/80 text-base sm:text-xl font-normal max-w-2xl leading-relaxed">
-              We don't believe in generic marketplace themes that load 50 bloated plugins and look identical to everyone else. We are currently engineering a suite of 6 high-performance website frameworks — hand-coded in modern React/Vite, optimized for sub-second Core Web Vitals, and designed to launch in just 48 hours.
+              We don't believe in generic marketplace themes that load 50 bloated plugins and look identical to everyone else. We are engineering the KritSite 48-Hour Website Framework — a suite of hand-coded, high-performance website foundations designed to launch your business with agency-grade authority in just 48 hours.
             </p>
 
             {/* Value Highlights Pill Bar */}
@@ -148,20 +130,126 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
         </div>
       </section>
 
-      {/* ── 02. HOW THE 48-HOUR MODEL WILL WORK ── */}
-      <section className="py-20 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#07070a] border-b border-white/10 relative overflow-hidden">
+      {/* ── 02. WHAT WE ARE PLANNING TO LAUNCH ── */}
+      <section className="py-20 sm:py-32 px-6 sm:px-10 lg:px-16 bg-[#07070a] border-b border-white/10 relative overflow-hidden">
+        <AtmosphericMeshBackground variant="problem" />
+
+        <div className="relative z-10 max-w-7xl mx-auto space-y-12">
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-4 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+              <Rocket className="w-3.5 h-3.5" />
+              <span>02 // What We Are Planning To Launch</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+              A Radical Alternative To Sluggish Themes <span className="text-white/30 block">& 8-Week Agency Backlogs.</span>
+            </h2>
+            <p className="text-white/75 text-base sm:text-lg font-normal leading-relaxed">
+              Founders usually face a painful dilemma: either waste 8–12 weeks and thousands of dollars waiting in traditional agency backlogs, or settle for fragile drag-and-drop website builders that look generic, load at turtle speed, and hold your site hostage with recurring monthly subscriptions.
+            </p>
+            <p className="text-white/75 text-base sm:text-lg font-normal leading-relaxed">
+              We are launching the middle path: a curated suite of pre-engineered, clean-code digital foundations paired with white-glove founder staging that gets your business live on a custom domain in just 48 hours.
+            </p>
+          </div>
+
+          {/* 3 Architectural Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {LAUNCH_PILLARS.map((pillar, idx) => {
+              const Icon = pillar.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-8 sm:p-10 rounded-3xl spotlight-card glass-apple space-y-5 border border-white/10 hover:border-[#ff5500]/40 transition-all group"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#ff5500]/10 border border-[#ff5500]/20 flex items-center justify-center text-[#ff5500] group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <div className="space-y-2">
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-[#ff5500] font-bold block">
+                      Core Pillar 0{idx + 1}
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                      {pillar.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-white/70 leading-relaxed font-normal">
+                    {pillar.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 03. HOW IT WILL BENEFIT YOU ── */}
+      <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 relative overflow-hidden">
+        <AtmosphericMeshBackground variant="signature" />
+
+        <div className="relative z-10 max-w-7xl mx-auto space-y-16">
+          <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-4 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>03 // Tangible Commercial Benefits</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+              The Speed Of A Template. <span className="text-white/30 block">The Authority Of A Bespoke Studio.</span>
+            </h2>
+            <p className="text-white/75 text-base sm:text-lg font-normal leading-relaxed">
+              Every detail is engineered from first principles to eliminate the conversion leaks, sluggish load times, and technical headaches that hold modern founders back.
+            </p>
+          </div>
+
+          {/* 6 High-Impact Benefit Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {CORE_BENEFITS.map((benefit, idx) => (
+              <div
+                key={idx}
+                className="p-8 rounded-3xl spotlight-card glass-apple space-y-6 border border-white/10 hover:border-white/20 transition-all flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl sm:text-3xl font-black tracking-tight text-[#ff5500] font-mono">
+                      {benefit.metric}
+                    </span>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-white/50 bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
+                      {benefit.metricLabel}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-white tracking-tight">
+                    {benefit.title}
+                  </h3>
+
+                  <p className="text-sm text-white/70 leading-relaxed font-normal">
+                    {benefit.description}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-white/10 flex items-center gap-2 text-xs font-mono text-white/60">
+                  <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>Verified Standard</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 04. HOW THE 48-HOUR MODEL WORKS ── */}
+      <section className="py-20 sm:py-32 px-6 sm:px-10 lg:px-16 bg-[#07070a] border-b border-white/10 relative overflow-hidden">
         <AtmosphericMeshBackground variant="problem" />
 
         <div className="relative z-10 max-w-7xl mx-auto space-y-12">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
-              <span>02 // The 48-Hour Model</span>
+              <Clock className="w-3.5 h-3.5" />
+              <span>04 // The 48-Hour Model</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
               Agency Quality. <span className="text-white/30 block">Without The Agency Wait.</span>
             </h2>
             <p className="text-white/70 text-sm sm:text-base font-normal leading-relaxed">
-              When our framework catalog launches, getting a world-class website will take three simple steps:
+              When our framework catalog goes live, getting your platform launched will take three frictionless steps:
             </p>
           </div>
 
@@ -172,10 +260,10 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                 01
               </div>
               <h3 className="text-xl font-bold text-white tracking-tight">
-                Select Your Archetype
+                Select Your Framework Direction
               </h3>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
-                Choose the framework tailored to your business model (SaaS, Studio, DTC, Advisory, Personal Brand, or AI). Every archetype is pre-engineered for your specific conversion goals.
+                Choose the foundation calibrated for your specific commercial model (SaaS, Studio, DTC, Advisory, or Personal Brand). Every layout is pre-engineered for conversion.
               </p>
             </div>
 
@@ -187,7 +275,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                 Drop In Brand Assets & Copy
               </h3>
               <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-normal">
-                Send your logo, color preferences, and copy through our 10-minute founder intake. We inject your unique design tokens so the site feels 100% custom to your brand.
+                Provide your logo, brand colors, and copy through our 10-minute founder intake. We inject your unique design tokens so the site feels 100% custom to your brand.
               </p>
             </div>
 
@@ -206,125 +294,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
         </div>
       </section>
 
-      {/* ── 03. CONCEPTUAL ARCHETYPES (IN DESIGN LAB) ── */}
-      <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 relative overflow-hidden">
-        <AtmosphericMeshBackground variant="signature" />
-
-        <div className="relative z-10 max-w-7xl mx-auto space-y-12">
-          {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-white/10 pb-8">
-            <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
-                <Flame className="w-3.5 h-3.5" />
-                <span>03 // Conceptual Blueprint Teasers</span>
-              </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-                6 Archetypes in Incubation. <span className="text-white/30 block">Engineered From Scratch.</span>
-              </h2>
-              <p className="text-white/70 text-sm sm:text-base font-normal leading-relaxed">
-                Here is a preview of the blueprints currently inside our design lab. Pre-register for any archetype below to lock in early-bird launch pricing.
-              </p>
-            </div>
-
-            <div className="shrink-0">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-white/70">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                <span>Catalog Status: Active Prototyping</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Archetypes Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {CONCEPTUAL_ARCHETYPES.map((arch) => (
-              <div
-                key={arch.id}
-                className="rounded-3xl spotlight-card glass-apple flex flex-col justify-between overflow-hidden group transition-all duration-300 border border-white/10 hover:border-white/25 relative"
-              >
-                {/* Visual Blueprint Wireframe Header */}
-                <div className={`relative h-48 bg-gradient-to-br ${arch.gradient} p-6 flex flex-col justify-between border-b border-white/10 overflow-hidden`}>
-                  {/* Wireframe background grid */}
-                  <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:16px_16px]" />
-                  
-                  {/* Blueprint Tag */}
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[10px] font-mono text-amber-400 font-bold flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                      <span>{arch.status}</span>
-                    </span>
-                    <span className="text-[10px] font-mono text-white/60 bg-black/40 px-2 py-0.5 rounded">
-                      Target: {arch.targetSpeed}
-                    </span>
-                  </div>
-
-                  {/* Wireframe Mockup UI Skeleton */}
-                  <div className="relative z-10 space-y-2 opacity-60 group-hover:opacity-100 transition-opacity">
-                    <div className="h-3 w-28 bg-white/40 rounded-full" />
-                    <div className="h-2 w-44 bg-white/20 rounded-full" />
-                    <div className="h-2 w-32 bg-white/15 rounded-full" />
-                  </div>
-                </div>
-
-                {/* Card Content Area */}
-                <div className="p-6 sm:p-8 space-y-6 flex flex-col flex-1 justify-between">
-                  <div className="space-y-3">
-                    <div className="space-y-1">
-                      <span className="text-[11px] font-mono uppercase tracking-widest text-[#ff5500] font-bold">
-                        {arch.industry}
-                      </span>
-                      <h3 className="text-2xl font-black tracking-tight text-white group-hover:text-white transition-colors">
-                        {arch.name}
-                      </h3>
-                    </div>
-
-                    <p className="text-xs sm:text-sm text-white/70 font-normal leading-relaxed">
-                      {arch.focus}
-                    </p>
-
-                    {/* Features Badges */}
-                    <div className="space-y-1.5 pt-2">
-                      <span className="text-[10px] font-mono text-white/40 uppercase tracking-wider block">
-                        Included Blueprint Systems:
-                      </span>
-                      <div className="flex flex-wrap gap-1.5">
-                        {arch.blueprintFeatures.map((f, i) => (
-                          <span
-                            key={i}
-                            className="text-[11px] font-mono text-white/80 bg-white/[0.04] border border-white/10 px-2.5 py-1 rounded-full"
-                          >
-                            ✓ {f}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Pricing & CTA */}
-                  <div className="space-y-4 pt-4 border-t border-white/10">
-                    <div className="flex items-center justify-between text-xs font-mono">
-                      <span className="text-white/50">Early-Bird Waitlist Fee:</span>
-                      <span className="text-white font-bold text-sm sm:text-base">
-                        {formatPrice('₹14,999', '$179')}
-                      </span>
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={() => onOpenContact(`template-waitlist-${arch.id}`)}
-                      className="w-full py-3.5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs sm:text-sm tracking-wider rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md hover:scale-[1.02]"
-                    >
-                      <span>Pre-Register For {arch.name}</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 04. PRIORITY WAITLIST CALLOUT ── */}
+      {/* ── 05. PRIORITY WAITLIST CALLOUT ── */}
       <section className="py-20 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#08090d] border-b border-white/10 relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#ff5500]/10 border border-[#ff5500]/30 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
@@ -337,7 +307,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
           </h2>
 
           <p className="text-white/80 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-normal">
-            Pre-registering reserves your spot in our initial 48-hour deployment queue when the frameworks go live. You lock in our special founding price of <strong className="text-white">{formatPrice('₹14,999', '$179')}</strong> before public catalog pricing goes up.
+            Pre-registering reserves your priority spot in our initial 48-hour deployment queue when the frameworks go live. You lock in our special founding price of <strong className="text-white">{formatPrice('₹14,999', '$179')}</strong> before standard catalog pricing applies.
           </p>
 
           <div className="pt-2 flex justify-center">
@@ -353,7 +323,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
         </div>
       </section>
 
-      {/* ── 05. CUSTOM BESPOKE BRIDGE BANNER ── */}
+      {/* ── 06. CUSTOM BESPOKE BRIDGE BANNER ── */}
       <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-b border-white/10 relative overflow-hidden">
         <AtmosphericMeshBackground variant="cta" />
 
@@ -363,13 +333,13 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
               <div className="lg:col-span-8 space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
-                  <span>04 // Need a Website Right Now?</span>
+                  <span>06 // Need a Website Right Now?</span>
                 </div>
                 <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-white">
                   Don't Wait for the Catalog. <span className="text-white/30 block">Commission a Custom Platform Today.</span>
                 </h2>
                 <p className="text-white/80 text-base sm:text-lg font-normal max-w-xl leading-relaxed">
-                  If your launch timeline is immediate or your product requires custom interactive architecture, we design and build 100% bespoke platforms from scratch in 2–3 weeks.
+                  If your launch timeline is immediate or your product requires bespoke interactive architecture, we design and build 100% custom platforms from scratch in 2–3 weeks.
                 </p>
               </div>
 
@@ -394,7 +364,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
         </div>
       </section>
 
-      {/* ── 06. FREQUENTLY ASKED QUESTIONS ── */}
+      {/* ── 07. FREQUENTLY ASKED QUESTIONS ── */}
       <section className="py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black relative overflow-hidden">
         <AtmosphericMeshBackground variant="proof" />
 
@@ -402,7 +372,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
-              <span>05 // Framework FAQs</span>
+              <span>07 // Framework FAQs</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
               Everything You Need to Know.
@@ -413,7 +383,7 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
             {[
               {
                 q: 'When will the 48-hour framework catalog launch?',
-                a: 'We are currently hand-coding and testing all 6 archetypes to guarantee 99+ Core Web Vitals and zero visual defects. Priority waitlist members will get early access notification as soon as the first wave is ready.',
+                a: 'We are currently hand-coding and testing each framework foundation to guarantee 99+ Core Web Vitals and zero visual defects. Priority waitlist members will receive early access notification as soon as the first release is ready.',
               },
               {
                 q: 'How does pre-registration work? Do I pay now?',
@@ -421,7 +391,11 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
               },
               {
                 q: 'How are these frameworks different from WordPress or Webflow templates?',
-                a: 'Marketplace templates rely on generic third-party plugins, visual builders that bloat your DOM tree with thousands of useless lines, and slow monthly hosting. KritSite frameworks are clean, hand-coded modern web applications running on ultra-fast edge infrastructure with 0.3s hydration.',
+                a: 'Marketplace templates rely on generic third-party plugins, visual builders that bloat your DOM tree with thousands of useless lines, and slow monthly hosting. KritSite frameworks are clean, hand-coded modern web applications running on ultra-fast edge infrastructure with 0.3s hydration and zero recurring builder fees.',
+              },
+              {
+                q: 'What do I need to prepare before my 48-hour build begins?',
+                a: 'All you need is your logo or brand name, color preferences, and the copy/messaging you want on your pages. Our team handles the code tailoring, asset integration, responsiveness, and domain configuration.',
               },
               {
                 q: 'Can I request a custom bespoke build right now?',
