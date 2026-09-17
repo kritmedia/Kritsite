@@ -16,6 +16,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
       id="services"
       className="scroll-mt-24 py-24 sm:py-36 px-6 sm:px-10 lg:px-16 bg-black border-t border-white/10 relative overflow-hidden select-none"
     >
+      <div id="pricing" className="absolute -top-24" />
       {/* ── Atmospheric Smoky Mesh Background in KritSite Brand Colors ── */}
       <AtmosphericMeshBackground variant="services" />
 
@@ -70,12 +71,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
           <div className="group rounded-[32px] sm:rounded-[40px] glass-apple glass-apple-hover p-8 sm:p-12 flex flex-col justify-between space-y-10 relative overflow-hidden transition-all duration-500 border border-white/10 hover:border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
             {/* Top Eyebrow Badges */}
             <div className="flex items-center justify-between gap-4">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-[#ff5500] font-semibold">
-                <Clock className="w-3.5 h-3.5" />
-                <span>48-Hour Turnaround</span>
+              <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#ff5500]/10 border border-[#ff5500]/30 rounded-full text-xs font-mono text-[#ff5500] font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500] animate-pulse" />
+                <span>Coming Soon · Priority Early Access</span>
               </span>
               <span className="text-xs font-mono text-white/40 tracking-wider">
-                01 // Express Architecture
+                01 // Signature Catalog
               </span>
             </div>
 
@@ -88,7 +89,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
                 Launch fast. Look world-class.
               </p>
               <p className="text-sm sm:text-base text-white/75 font-normal leading-relaxed pt-1">
-                A curated architectural framework customized to your brand palette, type scale, and copy — live and indexing in 48 hours.
+                Need to launch immediately without spending weeks in custom design cycles? We are crafting 6 architectural frameworks across high-growth niches. You get agency-grade aesthetics, brand token insertion, and production code live in 48 hours.
               </p>
             </div>
 
@@ -103,38 +104,41 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-white/80 bg-black/70 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/10">
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span>Production-Ready Framework</span>
+                  <span className="w-2 h-2 rounded-full bg-[#ff5500] animate-pulse" />
+                  <span>In Incubation · 6 Niches</span>
                 </span>
-                <span className="text-[#ff5500] font-bold">1–2 Days</span>
+                <span className="text-[#ff5500] font-bold">48h Release</span>
               </div>
             </div>
 
             {/* Apple Pricing & CTA */}
             <div className="space-y-6 pt-2">
               <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-black font-mono tracking-tight text-white">
-                  {formatPrice('₹14,999', '$179')}
+                <div className="flex items-baseline gap-2">
+                  <span className="text-xs font-mono text-white/50 uppercase tracking-wider">Starting at</span>
+                  <div className="text-3xl sm:text-4xl font-black font-mono tracking-tight text-white">
+                    {formatPrice('₹14,999', '$179')}
+                  </div>
                 </div>
                 <p className="text-xs font-mono text-white/50 tracking-wider">
-                  One-time setup fee. Zero recurring platform lock-in.
+                  Estimated launch price. Zero recurring platform lock-in.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
                 <button
                   type="button"
-                  onClick={() => onOpenContact('template-launch')}
+                  onClick={() => onOpenContact('template-waitlist')}
                   className="px-8 py-4 bg-white hover:bg-neutral-200 text-black font-bold text-xs sm:text-sm tracking-wider rounded-full transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.02]"
                 >
-                  <span>Launch in 48h</span>
+                  <span>Join Early Access Waitlist</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <Link
                   to="/templates"
                   className="px-6 py-4 glass-apple glass-apple-hover text-white font-bold text-xs sm:text-sm tracking-wider rounded-full transition-all text-center flex items-center justify-center gap-1.5"
                 >
-                  <span>Browse 6 Catalog Niches</span>
+                  <span>Explore Catalog Previews</span>
                   <ChevronRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -221,11 +225,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
             {/* Apple Pricing & CTA */}
             <div className="space-y-6 pt-2">
               <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-black font-mono tracking-tight text-white">
-                  {formatPrice('₹49,999', '$599')}
+                <div className="flex items-baseline gap-2">
+                  <span className="text-xs font-mono text-[#ff5500]/80 uppercase tracking-wider">Starting at</span>
+                  <div className="text-3xl sm:text-4xl font-black font-mono tracking-tight text-white">
+                    {formatPrice('₹44,999', '$549')}
+                  </div>
                 </div>
                 <p className="text-xs font-mono text-[#ff5500]/80 tracking-wider">
-                  Full custom commission. Strategy, copy, design & production code.
+                  Baseline bespoke scope. Strategy, copy, design & production code.
                 </p>
               </div>
 

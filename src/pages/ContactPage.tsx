@@ -13,7 +13,7 @@ const CONTACT_FAQS = [
   },
   { 
     q: 'Can the studio work with international clients outside India?', 
-    a: 'Yes. Over 45% of our client base spans the United States, UK, UAE, and Europe. Invoices and payments are fully supported in USD and INR.' 
+    a: 'Yes, seamlessly. We engineer platforms for international brands (including clients like Big Bear Vans in California, USA). Contracts, communications, and payments are fully supported in USD and INR with asynchronous sprint updates.' 
   },
   { 
     q: 'What is required from our side to begin the engagement?', 
@@ -62,7 +62,7 @@ export function ContactPage() {
               Commission Your <span className="block text-white/30">Next-Gen Platform.</span>
             </h1>
             <p className="text-white/80 text-base sm:text-xl font-normal max-w-2xl leading-relaxed">
-              Whether you need a signature template deployed in 48 hours or an end-to-end bespoke platform, share your requirements below for a rapid feasibility assessment.
+              Whether you want priority access to our upcoming signature templates or an end-to-end bespoke platform, share your requirements below for a rapid feasibility assessment.
             </p>
           </div>
         </div>
@@ -197,9 +197,9 @@ export function ContactPage() {
                           onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                           className="w-full px-4 py-3.5 input-apple rounded-xl text-white focus:outline-none transition-colors text-sm"
                         >
-                          <option value="template-launch">Signature Template Launch (1–2 Days, {formatPrice('₹14,999', '$179')})</option>
-                          <option value="custom-build">Full Custom Build (2–3 Weeks, {formatPrice('₹49,999', '$599')})</option>
-                          <option value="enterprise">Enterprise Platform (4–8 Weeks, {formatPrice('₹1,49,999+', '$1,799+')})</option>
+                          <option value="template-waitlist">Signature Template (Coming Soon · Early Access, {formatPrice('₹14,999', '$179')})</option>
+                          <option value="custom-build">Full Custom Bespoke Build (Starting at {formatPrice('₹44,999', '$549')})</option>
+                          <option value="enterprise">Enterprise Platform (Starting at {formatPrice('₹1,19,999+', '$1,499+')})</option>
                           <option value="consultation">Strategic Advisory / Undecided</option>
                         </select>
                       </div>
@@ -215,17 +215,17 @@ export function ContactPage() {
                         >
                           {currency === 'INR' ? (
                             <>
-                              <option value="₹14,999">₹14,999 (Template Launch)</option>
-                              <option value="₹49,999">₹49,999 (Custom Build)</option>
-                              <option value="₹1,00,000–₹2,00,000">₹1,00,000–₹2,00,000</option>
-                              <option value="₹2,00,000+">₹2,00,000+ (Enterprise)</option>
+                              <option value="₹14,999">₹14,999 (Signature Template Waitlist)</option>
+                              <option value="₹44,999–₹75,000">₹44,999–₹75,000 (Custom Build)</option>
+                              <option value="₹75,000–₹1,20,000">₹75,000–₹1,20,000 (Advanced Bespoke)</option>
+                              <option value="₹1,20,000+">₹1,20,000+ (Enterprise Platform)</option>
                             </>
                           ) : (
                             <>
-                              <option value="$179">$179 (Template Launch)</option>
-                              <option value="$599">$599 (Custom Build)</option>
-                              <option value="$1,200–$2,400">$1,200–$2,400</option>
-                              <option value="$2,500+">$2,500+ (Enterprise)</option>
+                              <option value="$179">$179 (Signature Template Waitlist)</option>
+                              <option value="$549–$950">$549–$950 (Custom Build)</option>
+                              <option value="$950–$1,500">$950–$1,500 (Advanced Bespoke)</option>
+                              <option value="$1,500+">$1,500+ (Enterprise Platform)</option>
                             </>
                           )}
                         </select>

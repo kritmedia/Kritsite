@@ -93,9 +93,9 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, sel
                   <label className="text-xs sm:text-sm font-bold text-white/85 tracking-wide block">Project Type</label>
                   <select value={formData.projectType} onChange={e => setFormData({ ...formData, projectType: e.target.value })}
                     className="w-full px-4 py-3 input-apple rounded-xl text-white focus:outline-none transition-colors text-sm" >
-                    <option value="template-launch">Template Launch (1–2 Days, {formatPrice('₹14,999', '$179')})</option>
-                    <option value="custom-build">Custom Build (2–3 Weeks, {formatPrice('₹49,999', '$599')})</option>
-                    <option value="enterprise">Enterprise Custom ({formatPrice('₹1,49,999+', '$1,799+')})</option>
+                    <option value="template-waitlist">Signature Template (Coming Soon · Early Access, {formatPrice('₹14,999', '$179')})</option>
+                    <option value="custom-build">Custom Bespoke Build (Starting at {formatPrice('₹44,999', '$549')})</option>
+                    <option value="enterprise">Enterprise Custom (Starting at {formatPrice('₹1,19,999+', '$1,499+')})</option>
                     <option value="not-sure">Not Sure Yet</option>
                   </select>
                 </div>

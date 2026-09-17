@@ -57,7 +57,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                 to="/templates"
                 className="px-8 py-4 glass-apple glass-apple-hover text-white font-bold text-xs sm:text-sm tracking-wider rounded-full hover:border-white transition-all flex items-center gap-2"
               >
-                Browse 48h Templates
+                Browse Signature Templates
               </Link>
             </div>
           </div>
@@ -192,10 +192,10 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                           <Zap className="w-3.5 h-3.5 text-[#ff5500]" />
                           48h Rapid Ingest Pipeline
                         </span>
-                        <span className="text-white font-bold">Guaranteed</span>
+                        <span className="text-[#ff5500] font-bold">Coming Soon</span>
                       </div>
                       <p className="text-xs text-white/70 leading-relaxed font-normal">
-                        Select template → Provide brand hex & copy → We customize and deploy on your domain within 2 business days.
+                        Select a signature framework → Provide brand assets & copy → We calibrate and deploy on your custom domain within 48 hours once catalog launches.
                       </p>
                     </div>
                   )}
@@ -417,6 +417,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {PRICING_PLANS.map((plan) => {
               const isPopular = plan.badge === 'Most Popular' || plan.badge === 'MOST POPULAR';
+              const isWaitlist = plan.id === 'template-launch';
               return (
                 <div
                   key={plan.id}
@@ -426,8 +427,12 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                       : 'glass-apple glass-apple-hover'
                   }`}
                 >
-                  {isPopular && (
-                    <div className="absolute -top-3.5 left-8 px-4 py-1 bg-[#ff5500] text-white text-xs font-black tracking-wider font-mono rounded-full shadow-lg">
+                  {plan.badge && (
+                    <div className={`absolute -top-3.5 left-8 px-4 py-1 text-xs font-black tracking-wider font-mono rounded-full shadow-lg ${
+                      isPopular 
+                        ? 'bg-[#ff5500] text-white' 
+                        : 'bg-white/10 text-[#ff5500] border border-[#ff5500]/30 backdrop-blur-md'
+                    }`}>
                       {plan.badge}
                     </div>
                   )}
@@ -464,14 +469,16 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
 
                   <button
                     type="button"
-                    onClick={() => onOpenContact(plan.id)}
+                    onClick={() => onOpenContact(isWaitlist ? 'template-waitlist' : plan.id)}
                     className={`w-full py-4 font-bold text-xs sm:text-sm tracking-wider rounded-full transition-all flex items-center justify-center gap-3 cursor-pointer shadow-lg hover:scale-[1.02] ${
                       isPopular 
                         ? 'bg-[#ff5500] text-white hover:bg-[#e64d00]' 
+                        : isWaitlist
+                        ? 'border border-[#ff5500]/50 text-[#ff5500] hover:bg-[#ff5500] hover:text-white glass-apple'
                         : 'bg-white text-black hover:bg-neutral-200'
                     }`}
                   >
-                    <span>Commission {plan.name}</span>
+                    <span>{isWaitlist ? 'Join Early Access Waitlist' : `Commission ${plan.name}`}</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>

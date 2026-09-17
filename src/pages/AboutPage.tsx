@@ -10,10 +10,10 @@ interface AboutPageProps {
 
 export function AboutPage({ onOpenContact }: AboutPageProps) {
   const stats = [
-    { label: 'Websites Launched', value: '40+', detail: 'Global & domestic clients' },
-    { label: 'Industries Served', value: '12+', detail: 'Tech, SaaS, Luxury, Creators' },
-    { label: 'Avg. Lighthouse Score', value: '99', detail: 'Zero bloat architecture' },
-    { label: 'Fastest Delivery', value: '24h', detail: 'Signature template launch' },
+    { label: 'Custom Craftsmanship', value: '100%', detail: 'Zero bloated themes or plugins' },
+    { label: 'Lighthouse Velocity', value: '99+', detail: 'Sub-second mobile speed' },
+    { label: 'First Contentful Paint', value: '<0.5s', detail: 'Optimized asset pipelines' },
+    { label: 'Lead Architect Direct', value: '1-on-1', detail: 'Founder-level execution' },
   ];
 
   return (
@@ -188,7 +188,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
                 </div>
               </div>
               <p className="text-sm sm:text-base text-white/80 font-normal leading-relaxed">
-                Design-first web development. 48h signature template launches and bespoke multi-page commissions with native AEO/GEO indexing.
+                Design-first web development. Signature template frameworks (coming soon) and bespoke multi-page commissions with native AEO/GEO indexing.
               </p>
               <div className="pt-2 text-xs font-mono text-[#ff5500] tracking-wider font-bold">
                 Web Architecture & Design

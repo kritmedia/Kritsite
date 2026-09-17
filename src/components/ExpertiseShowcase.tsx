@@ -21,6 +21,7 @@ export interface ExpertiseItem {
   score: string;
   image: string;
   domain: string;
+  liveUrl?: string;
   techStack: string[];
   specs: {
     framework: string;
@@ -32,6 +33,31 @@ export interface ExpertiseItem {
 }
 
 export const SHOWCASE_BUILDS: ExpertiseItem[] = [
+  {
+    id: 'big-bear-vans',
+    title: 'Big Bear Vans',
+    tagline: 'Custom Mercedes Sprinter & Ford Transit Camper Vans in California',
+    category: 'Automotive & Custom Manufacturing',
+    badge: 'CALIFORNIA, USA · 100% BESPOKE',
+    desc: 'Engineered a bespoke digital platform for California’s premier custom camper van builder. Features high-resolution interactive consultation booking, van layout showcase, floor plans, and off-grid adventure branding.',
+    metric: '<0.5s LCP',
+    score: '100/100',
+    image: '/images/showcase/bigbearvans.png',
+    domain: 'www.bigbearvans.com',
+    liveUrl: 'https://www.bigbearvans.com/',
+    techStack: ['Next.js App Router', 'React 19', 'Tailwind CSS', 'Interactive Booking Flow', 'AEO Local Schema'],
+    specs: {
+      framework: 'Next.js 15 App Router + React Server Components',
+      motion: 'Hardware-accelerated fluid scroll with zero layout shifts',
+      speed: 'Sub-second mobile LCP · 100/100 Core Web Vitals',
+      search: 'Local Business, Automotive & Service Schema.org graph',
+    },
+    highlights: [
+      'Interactive multi-step consultation booking flow with calendar sync',
+      'Architectural van layout & custom build floor plan viewer',
+      'High-converting California local SEO & luxury adventure brand identity',
+    ],
+  },
   {
     id: 'isni-plus',
     title: 'ISNI+',
@@ -443,9 +469,21 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
                     <span className="w-2.5 h-2.5 rounded-full bg-white/30" />
                     <span className="w-2.5 h-2.5 rounded-full bg-white/30" />
                   </div>
-                  <span className="text-[10px] font-mono text-white/60 tracking-wider">
-                    https://{inspectingItem.domain}
-                  </span>
+                  {inspectingItem.liveUrl ? (
+                    <a
+                      href={inspectingItem.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-mono text-[#ff5500] hover:underline flex items-center gap-1 tracking-wider"
+                    >
+                      <span>https://{inspectingItem.domain}</span>
+                      <ArrowUpRight className="w-2.5 h-2.5" />
+                    </a>
+                  ) : (
+                    <span className="text-[10px] font-mono text-white/60 tracking-wider">
+                      https://{inspectingItem.domain}
+                    </span>
+                  )}
                   <span className="text-[9px] font-mono text-white/40 tracking-wider">
                     Live Build
                   </span>
@@ -522,7 +560,18 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
                 Want a custom digital platform engineered to this exact standard?
               </div>
 
-              <div className="flex items-center gap-3 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                {inspectingItem.liveUrl && (
+                  <a
+                    href={inspectingItem.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto px-5 py-3 rounded-full glass-apple glass-apple-hover text-white font-mono text-xs font-semibold tracking-wide flex items-center justify-center gap-2 border border-white/15 transition-all"
+                  >
+                    <span>Visit Live Website</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-[#ff5500]" />
+                  </a>
+                )}
                 <button
                   onClick={() => {
                     const id = inspectingItem.id;

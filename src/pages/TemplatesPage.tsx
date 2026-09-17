@@ -94,24 +94,24 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
 
         <div className="relative z-10 max-w-7xl mx-auto space-y-6">
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#ff5500]/10 border border-[#ff5500]/30 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>01 // 48-Hour Signature Catalog</span>
+              <span>01 // In Incubation · Signature Catalog Coming Soon</span>
             </div>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[0.92] text-white">
-              Signature Designs. <span className="block text-white/30">Live in 1–2 Days.</span>
+              Signature Designs. <span className="block text-white/30">Live in 48 Hours.</span>
             </h1>
             <p className="text-white/80 text-base sm:text-xl font-normal max-w-2xl leading-relaxed">
-              We engineered a catalog of 6 architectural web templates across high-growth industries. We customize your brand colors, typography, and copy — and deploy to production within 48 hours.
+              We are hand-crafting a curated catalog of 6 architectural web frameworks across high-growth industries. Designed for founders who need to launch fast with zero design lag — we customize your typography, color tokens, and copy, then deploy within 48 hours.
             </p>
-            <div className="flex flex-wrap items-center gap-6 pt-2 text-xs sm:text-sm font-mono text-white/80">
+            <div className="flex flex-wrap items-center gap-4 pt-2 text-xs sm:text-sm font-mono text-white/80">
               <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                <span className="w-2 h-2 rounded-full bg-[#ff5500]" />
-                <span>Transparent {formatPrice('₹14,999', '$179')} Pricing</span>
+                <span className="w-2 h-2 rounded-full bg-[#ff5500] animate-pulse" />
+                <span>Priority Launch Price: {formatPrice('₹14,999', '$179')}</span>
               </div>
               <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span>On-Page SEO & Mobile Polish Included</span>
+                <span>Zero Bloat & Mobile Polish Guaranteed</span>
               </div>
             </div>
           </div>
@@ -127,13 +127,13 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
           <div className="border-l-2 border-[#ff5500] pl-6 sm:pl-8 py-2 space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono tracking-wider text-[#ff5500]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ff5500]" />
-              <span>02 // Curated Template Architecture</span>
+              <span>02 // Curated Framework Architecture</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-              Engineered Templates. Built For Conversion.
+              Preview The Frameworks. Lock In Priority Access.
             </h2>
             <p className="text-white/70 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
-              Select a framework below. Every build includes custom brand integration, responsive optimization, and production deployment in 48 hours.
+              Explore the 6 upcoming designs below. Pre-register your brand to reserve priority turnaround and early-bird launch pricing upon release.
             </p>
           </div>
 
@@ -207,10 +207,10 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                     <div className="flex items-center gap-2.5">
                       <button
                         type="button"
-                        onClick={() => onOpenContact('template-launch')}
+                        onClick={() => onOpenContact('template-waitlist')}
                         className="flex-1 py-3.5 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs sm:text-sm tracking-wider rounded-full transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md hover:scale-[1.02]"
                       >
-                        <span>Launch in 48h</span>
+                        <span>Reserve Early Access</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
 
@@ -375,11 +375,11 @@ export function TemplatesPage({ onOpenContact }: TemplatesPageProps) {
                 type="button"
                 onClick={() => {
                   setPreviewTemplate(null);
-                  onOpenContact('template-launch');
+                  onOpenContact('template-waitlist');
                 }}
                 className="flex-1 py-4 bg-[#ff5500] hover:bg-[#e64d00] text-white font-bold text-xs sm:text-sm tracking-wider rounded-full transition-all cursor-pointer shadow-[0_0_25px_rgba(255,85,0,0.3)] hover:scale-[1.02] text-center"
               >
-                Proceed With {previewTemplate.name} ({formatPrice('₹14,999', '$179')})
+                Pre-Register for {previewTemplate.name} ({formatPrice('₹14,999', '$179')})
               </button>
               <button
                 type="button"
