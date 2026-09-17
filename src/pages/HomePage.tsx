@@ -5,6 +5,7 @@ import { HeroScrollSection } from '../components/HeroScrollSection';
 import { AtmosphericMeshBackground } from '../components/AtmosphericMeshBackground';
 import { WebsiteAutopsy } from '../components/WebsiteAutopsy';
 import { PricingSection } from '../components/PricingSection';
+import { SignatureBentoGrid } from '../components/SignatureBentoGrid';
 
 interface HomePageProps {
   onOpenContact: (planId?: string) => void;
@@ -108,82 +109,8 @@ export function HomePage({ onOpenContact }: HomePageProps) {
             </div>
           </div>
 
-          {/* 3 Signature Pillars with Apple Glassmorphism */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Pillar 1: Look */}
-            <div className="p-8 sm:p-10 rounded-3xl glass-apple glass-apple-hover space-y-6">
-              <div className="w-12 h-12 rounded-2xl bg-[#ff5500]/10 border border-[#ff5500]/20 flex items-center justify-center text-[#ff5500]">
-                <Eye className="w-6 h-6" />
-              </div>
-              <div className="space-y-3">
-                <span className="text-xs font-mono font-bold tracking-wider text-[#ff5500]">
-                  01 // Look
-                </span>
-                <h3 className="text-2xl font-bold tracking-tight text-white">
-                  Clear Layouts. Strong Type. Thoughtful Motion.
-                </h3>
-              </div>
-              <p className="text-sm sm:text-base text-white/75 leading-relaxed font-normal">
-                Your website should feel like your brand, not like a theme with your logo pasted on it.
-              </p>
-            </div>
-
-            {/* Pillar 2: Move */}
-            <div className="p-8 sm:p-10 rounded-3xl glass-apple glass-apple-hover space-y-6">
-              <div className="w-12 h-12 rounded-2xl bg-[#ff5500]/10 border border-[#ff5500]/20 flex items-center justify-center text-[#ff5500]">
-                <Zap className="w-6 h-6" />
-              </div>
-              <div className="space-y-3">
-                <span className="text-xs font-mono font-bold tracking-wider text-[#ff5500]">
-                  02 // Move
-                </span>
-                <h3 className="text-2xl font-bold tracking-tight text-white">
-                  Fast Pages. Light Code. Smooth Interactions.
-                </h3>
-              </div>
-              <p className="text-sm sm:text-base text-white/75 leading-relaxed font-normal">
-                Because nobody enjoys staring at a loading spinner. Especially your customers.
-              </p>
-            </div>
-
-            {/* Pillar 3: Get Found */}
-            <div className="p-8 sm:p-10 rounded-3xl glass-apple glass-apple-hover space-y-6">
-              <div className="w-12 h-12 rounded-2xl bg-[#ff5500]/10 border border-[#ff5500]/20 flex items-center justify-center text-[#ff5500]">
-                <Search className="w-6 h-6" />
-              </div>
-              <div className="space-y-3">
-                <span className="text-xs font-mono font-bold tracking-wider text-[#ff5500]">
-                  03 // Get Found
-                </span>
-                <h3 className="text-2xl font-bold tracking-tight text-white">
-                  SEO, AEO and GEO Built Into The Site From The Start.
-                </h3>
-              </div>
-              <p className="text-sm sm:text-base text-white/75 leading-relaxed font-normal">
-                So Google can understand you. And AI search tools can understand you too.
-              </p>
-            </div>
-          </div>
-
-          {/* Signature Summary Banner with Apple Glassmorphism & Breathing Border */}
-          <div className="p-8 sm:p-10 rounded-3xl glass-apple flex flex-col sm:flex-row items-center justify-between gap-6 animate-border-breathe">
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm sm:text-base font-mono tracking-wider text-white">
-              <span className="font-bold">Design.</span>
-              <span className="text-[#ff5500]">✦</span>
-              <span className="font-bold">Performance.</span>
-              <span className="text-[#ff5500]">✦</span>
-              <span className="font-bold">Discovery.</span>
-              <span className="text-white/60 block sm:inline">All working together.</span>
-            </div>
-
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono tracking-wider text-white/85 hover:text-white transition-colors shrink-0"
-            >
-              <span>Explore Our Approach</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#ff5500]" />
-            </Link>
-          </div>
+          {/* 2026 Interactive Bento Grid */}
+          <SignatureBentoGrid />
         </div>
       </section>
 
@@ -209,17 +136,17 @@ export function HomePage({ onOpenContact }: HomePageProps) {
             </div>
           </div>
 
-          {/* 4 Minimalist Stat Cards with Apple Glassmorphism */}
+          {/* 4 Minimalist Stat Cards with Spotlight and Glassmorphism */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { stat: '48h', label: 'Launch Websites', desc: 'From signup to live domain' },
-              { stat: '2–3 Weeks', label: 'Custom Builds', desc: 'Zero templates, pure bespoke' },
-              { stat: '<0.8s', label: 'Target Load Time', desc: 'Sub-second mobile LCP' },
-              { stat: '100/100', label: 'Lighthouse Target', desc: 'Core Web Vitals green' },
+              { stat: '48h', label: 'Signature Framework', desc: 'In incubation · Coming soon' },
+              { stat: '2–3 Weeks', label: 'Custom Platforms', desc: 'Zero templates, pure bespoke' },
+              { stat: '<0.5s', label: 'Mobile Paint', desc: 'Sub-second edge LCP' },
+              { stat: '99+', label: 'Lighthouse Target', desc: 'Core Web Vitals green' },
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl glass-apple glass-apple-hover space-y-3"
+                className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl spotlight-card glass-apple glass-apple-hover space-y-3 border border-white/10 hover:border-white/20 transition-all"
               >
                 <div className="text-3xl sm:text-5xl font-black font-mono text-white tracking-tight">
                   {item.stat}

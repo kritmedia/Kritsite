@@ -23,6 +23,56 @@ const CONTACT_FAQS = [
 
 export function ContactPage() {
   const { currency, formatPrice } = useCurrency();
+
+  const ESTIMATOR_DATA = {
+    'template-waitlist': {
+      tierName: 'Signature Framework',
+      turnaround: '48 Hours Guaranteed',
+      budgetLabel: formatPrice('₹14,999', '$179'),
+      inclusions: [
+        'Up to 5 Pages (Home, About, Services, Work, Contact)',
+        'Custom Brand Token Calibration (Colors & Type)',
+        'Sub-Second Mobile Paint (<0.5s LCP)',
+        'Core Web Vitals 99+ Green Standard',
+        'On-Page SEO Meta & OpenGraph Integration',
+      ],
+    },
+    'custom-build': {
+      tierName: 'Custom Bespoke Platform',
+      turnaround: '2–3 Weeks Dedicated',
+      budgetLabel: `Starting at ${formatPrice('₹44,999', '$549')}`,
+      inclusions: [
+        '100% Bespoke Figma Design System',
+        'Copywriting & Conversion Storytelling From Scratch',
+        'Interactive Bento Modules & Micro-Interactions',
+        'AEO & GEO Knowledge Graph (JSON-LD)',
+        '30 Days Dedicated Lead Architect Warranty',
+      ],
+    },
+    'enterprise': {
+      tierName: 'Enterprise Flagship',
+      turnaround: '4–6 Weeks Comprehensive',
+      budgetLabel: `Starting at ${formatPrice('₹1,19,999+', '$1,499+')}`,
+      inclusions: [
+        'Multi-Brand / Multi-Market Architecture',
+        'Headless CMS & Dynamic Ingestion Pipelines',
+        'Custom Canvas & Glass Micro-Physics',
+        'Full Multi-Engine AEO/GEO Indexing Stack',
+        '60 Days Priority Engineering SLA',
+      ],
+    },
+    'consultation': {
+      tierName: 'Strategic Teardown & Advisory',
+      turnaround: '24–48 Hours Feasibility Brief',
+      budgetLabel: 'Complimentary Initial Audit',
+      inclusions: [
+        'Diagnostic Teardown of Current Site Defects',
+        'Core Web Vitals & Hydration Profiling',
+        'AEO/GEO Indexing Readiness Assessment',
+        'Custom Strategic Scope Roadmap',
+      ],
+    },
+  };
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -293,8 +343,63 @@ export function ContactPage() {
               )}
             </div>
 
-            {/* Studio Desk Column */}
+            {/* Studio Desk Column with Dynamic Estimator */}
             <div className="lg:col-span-5 space-y-6">
+              {/* Dynamic Scope & Horizon Estimator */}
+              {(() => {
+                const currentType = (formData.projectType as keyof typeof ESTIMATOR_DATA) in ESTIMATOR_DATA 
+                  ? (formData.projectType as keyof typeof ESTIMATOR_DATA)
+                  : 'custom-build';
+                const est = ESTIMATOR_DATA[currentType];
+                return (
+                  <div className="rounded-3xl spotlight-card glass-apple-amber p-8 space-y-5 border border-[#ff5500]/40 shadow-[0_0_40px_rgba(255,85,0,0.15)] animate-fadeIn">
+                    <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#ff5500] animate-pulse" />
+                        <span className="text-xs font-mono uppercase tracking-wider text-[#ff5500] font-bold">
+                          Scope & Timeline Estimator
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-mono text-white/50 bg-white/5 px-2.5 py-1 rounded-full">
+                        Live Calibration
+                      </span>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="text-xs font-mono text-white/50">Selected Architecture</div>
+                      <h4 className="text-2xl font-black text-white tracking-tight">
+                        {est.tierName}
+                      </h4>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3 font-mono text-xs pt-1">
+                      <div className="p-3 rounded-2xl bg-black/60 border border-white/10 space-y-1">
+                        <div className="text-white/40 text-[11px]">Turnaround Horizon</div>
+                        <div className="text-white font-bold text-sm">{est.turnaround}</div>
+                      </div>
+                      <div className="p-3 rounded-2xl bg-black/60 border border-white/10 space-y-1">
+                        <div className="text-white/40 text-[11px]">Expected Fee</div>
+                        <div className="text-[#ff5500] font-bold text-sm">{est.budgetLabel}</div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2 pt-2 border-t border-white/10">
+                      <div className="text-[11px] font-mono text-white/50 uppercase tracking-wider">
+                        Included In This Milestone:
+                      </div>
+                      <div className="space-y-2">
+                        {est.inclusions.map((inc, i) => (
+                          <div key={i} className="flex items-start gap-2 text-xs font-mono text-white/80">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" />
+                            <span>{inc}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
+
               <div className="glass-apple rounded-3xl p-8 space-y-4 border border-white/10">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-dot" />

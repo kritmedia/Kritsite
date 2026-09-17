@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
               </span>
             </div>
             <p className="text-sm text-white/60 max-w-xs font-light leading-relaxed">
-              Design-first websites that convert. SEO, AEO & GEO optimized. Templates live in 1–2 days, or fully custom. A KritMedia studio.
+              Design-first websites that convert. SEO, AEO & GEO optimized. Signature frameworks in incubation · Custom bespoke platforms. A KritMedia studio.
             </p>
             <div className="flex items-center gap-3">
               <a href="#" className="w-9 h-9 rounded-full border border-white/15 bg-white/[0.03] flex items-center justify-center text-white/40 hover:text-white hover:border-white/40 hover:bg-white/[0.08] transition-all">
@@ -45,33 +45,33 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
             <div className="space-y-4">
               <span className="text-xs font-mono tracking-wider text-white/60 block font-bold">Services</span>
               <div className="space-y-3">
-                <Link to="/services" className="block text-white/60 hover:text-white transition-colors">Template Launch</Link>
-                <Link to="/services" className="block text-white/60 hover:text-white transition-colors">Custom Build</Link>
-                <Link to="/services" className="block text-white/60 hover:text-white transition-colors">Enterprise</Link>
-                <Link to="/services" className="block text-white/60 hover:text-white transition-colors">SEO + AEO + GEO</Link>
+                <Link to="/services" className="block text-white/60 hover:text-white transition-colors">Custom Bespoke</Link>
+                <Link to="/services" className="block text-white/60 hover:text-white transition-colors">Enterprise Platform</Link>
+                <Link to="/services" className="block text-white/60 hover:text-white transition-colors">AEO / GEO Indexing</Link>
+                <Link to="/services" className="block text-white/60 hover:text-white transition-colors">Performance Audit</Link>
               </div>
             </div>
             <div className="space-y-4">
               <span className="text-xs font-mono tracking-wider text-white/60 block font-bold">Templates</span>
               <div className="space-y-3">
-                <Link to="/templates" className="block text-white/60 hover:text-white transition-colors">Obsidian (SaaS)</Link>
-                <Link to="/templates" className="block text-white/60 hover:text-white transition-colors">Studio (Agency)</Link>
-                <Link to="/templates" className="block text-white/60 hover:text-white transition-colors">Luxe (E-Commerce)</Link>
-                <Link to="/templates" className="block text-white/60 hover:text-white transition-colors">Persona (Brand)</Link>
+                <Link to="/templates" className="block text-white/60 hover:text-white transition-colors">Framework Teaser</Link>
+                <Link to="/templates" className="block text-white/60 hover:text-white transition-colors">SaaS & DevTools (Soon)</Link>
+                <Link to="/templates" className="block text-white/60 hover:text-white transition-colors">Creative Studio (Soon)</Link>
+                <Link to="/templates" className="block text-white/60 hover:text-white transition-colors">Join Early Waitlist</Link>
               </div>
             </div>
             <div className="space-y-4">
               <span className="text-xs font-mono tracking-wider text-white/60 block font-bold">Company</span>
               <div className="space-y-3">
-                <Link to="/about" className="block text-white/60 hover:text-white transition-colors">About</Link>
-                <Link to="/contact" className="block text-white/60 hover:text-white transition-colors">Contact</Link>
+                <Link to="/about" className="block text-white/60 hover:text-white transition-colors">About Studio</Link>
+                <Link to="/contact" className="block text-white/60 hover:text-white transition-colors">Direct Desk</Link>
                 <a href="https://kritvideo.com" target="_blank" rel="noreferrer" className="flex items-center gap-1 text-white/60 hover:text-white transition-colors">
                   KritVideo <ArrowUpRight className="w-3 h-3" />
                 </a>
               </div>
             </div>
             <div className="space-y-4">
-              <span className="text-xs font-mono tracking-wider text-white/60 block font-bold">Start</span>
+              <span className="text-xs font-mono tracking-wider text-white/60 block font-bold">Initiate</span>
               <button
                 onClick={onOpenContact}
                 className="block w-full sm:w-auto px-6 py-3 bg-[#ff5500] hover:bg-[#ff6a1a] text-white font-bold text-xs tracking-wider rounded-full shadow-[0_0_20px_rgba(255,85,0,0.35)] transition-all cursor-pointer text-center"
@@ -84,7 +84,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-white/10 text-xs sm:text-sm text-white/40 font-mono">
-          <div>© {new Date().getFullYear()} KritSite. A KritMedia Studio. All rights reserved.</div>
+          <div className="flex items-center gap-3">
+            <span>© {new Date().getFullYear()} KritSite. A KritMedia Studio.</span>
+            <span className="hidden sm:inline text-white/20">|</span>
+            <span className="hidden sm:inline text-white/50">Global Boutique Engineering</span>
+          </div>
           
           <div className="flex items-center gap-6 tracking-wider">
             <span className="hover:text-white/60 transition-colors cursor-pointer">Privacy Policy</span>

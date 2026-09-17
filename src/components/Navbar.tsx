@@ -46,7 +46,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
     {
       label: 'Templates',
       href: '/templates',
-      desc: 'Curated modern website showcase',
+      desc: 'Curated 48h website frameworks (coming soon)',
+      badge: 'Soon',
     },
   ];
 
@@ -68,9 +69,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
   return (
     <header className="fixed top-4 sm:top-6 inset-x-0 z-50 flex justify-center pointer-events-none px-3 sm:px-4 select-none">
-      <div className="relative pointer-events-auto w-[96%] sm:w-[90%] md:w-[84%] lg:w-[72%] max-w-5xl">
+      <div className="relative pointer-events-auto w-[96%] sm:w-[90%] md:w-[86%] lg:w-[78%] max-w-5xl">
         {/* Main Floating Capsule */}
-        <div className="flex items-center justify-between gap-3 sm:gap-6 bg-neutral-950/70 backdrop-blur-2xl border border-white/15 hover:border-white/25 rounded-full px-4 sm:px-7 py-2 sm:py-2.5 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_20px_50px_rgba(0,0,0,0.85)] transition-all duration-300">
+        <div className="flex items-center justify-between gap-3 sm:gap-6 bg-neutral-950/75 backdrop-blur-2xl border border-white/15 hover:border-white/25 rounded-full px-4 sm:px-7 py-2 sm:py-2.5 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.2),0_20px_50px_rgba(0,0,0,0.85)] transition-all duration-300">
           
           {/* Brand Logo & Title */}
           <Link
@@ -98,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
           </Link>
 
           {/* Center Nav Links Pill (Matches KritVideo) */}
-          <div className="hidden md:flex bg-black/50 backdrop-blur-xl border border-white/10 rounded-full px-6 lg:px-9 py-2 sm:py-2.5 items-center gap-7 lg:gap-11 shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]">
+          <div className="hidden md:flex bg-black/50 backdrop-blur-xl border border-white/10 rounded-full px-6 lg:px-9 py-2 sm:py-2.5 items-center gap-6 lg:gap-9 shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href === '/#expertise' && pathname === '/' && hash === '#expertise');
               return (
@@ -106,11 +107,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                   key={link.label}
                   to={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className={`text-[11px] sm:text-xs font-mono tracking-wider transition-all duration-150 cursor-pointer relative py-1 px-1.5 ${
+                  className={`text-[11px] sm:text-xs font-mono tracking-wider transition-all duration-150 cursor-pointer relative py-1 px-1.5 flex items-center gap-1.5 ${
                     isActive ? 'text-white font-bold' : 'text-neutral-300 hover:text-white'
                   }`}
                 >
                   <span>{link.label}</span>
+                  {link.badge && (
+                    <span className="text-[9px] font-mono font-bold px-1.5 py-0.2 bg-[#ff5500]/20 text-[#ff5500] rounded-full border border-[#ff5500]/30 leading-tight">
+                      {link.badge}
+                    </span>
+                  )}
                   {isActive && (
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-[2px] bg-[#ff5500] rounded-full" />
                   )}
@@ -119,8 +125,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             })}
           </div>
 
-          {/* Right Action Buttons */}
-          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          {/* Right Action Buttons with Studio Live Status */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Live studio indicator on large screens */}
+            <div className="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[10px] font-mono text-white/70">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Q2 Booking Open</span>
+            </div>
             {/* White Pill Button with Glowing Shadow */}
             <button
               onClick={onOpenContact}
@@ -161,9 +172,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               className="flex items-center justify-between px-4 py-3 rounded-2xl transition-colors text-left group hover:bg-white/10"
             >
               <div className="flex flex-col">
-                <span className="text-xs sm:text-sm font-mono tracking-wider font-bold text-white group-hover:text-[#ff5500] transition-colors">
-                  {link.label}
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs sm:text-sm font-mono tracking-wider font-bold text-white group-hover:text-[#ff5500] transition-colors">
+                    {link.label}
+                  </span>
+                  {link.badge && (
+                    <span className="text-[9px] font-mono font-bold px-1.5 py-0.2 bg-[#ff5500]/20 text-[#ff5500] rounded-full border border-[#ff5500]/30 leading-tight">
+                      {link.badge}
+                    </span>
+                  )}
+                </div>
                 <span className="text-[10px] sm:text-[11px] text-neutral-400">
                   {link.desc}
                 </span>

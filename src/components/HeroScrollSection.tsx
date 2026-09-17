@@ -222,18 +222,18 @@ export const HeroScrollSection: React.FC<HeroScrollSectionProps> = ({ onOpenCont
             <div className="relative w-full lg:max-w-[500px] xl:max-w-[560px] flex flex-col justify-center">
               <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black tracking-tight text-white leading-[0.95] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
                 Websites That Make Your Business
-                <span className="block">Look The Part.</span>
+                <span className="block text-white/40">Look The Part.</span>
               </h1>
 
               {/* Sub-Keywords with Star Bullets */}
               <div className="mt-4 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3.5 text-xs sm:text-sm font-semibold tracking-wider text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                <span>48h Launches</span>
+                <span>Signature Frameworks (Soon)</span>
                 <span className="text-[#ff5500]">✦</span>
-                <span>Custom Builds</span>
+                <span>Bespoke Platforms</span>
                 <span className="text-[#ff5500]">✦</span>
-                <span>Built for Search</span>
+                <span>AEO & GEO Search</span>
                 <span className="text-[#ff5500]">✦</span>
-                <span>Built to Perform</span>
+                <span>Sub-Second Velocity</span>
               </div>
             </div>
 
@@ -243,11 +243,11 @@ export const HeroScrollSection: React.FC<HeroScrollSectionProps> = ({ onOpenCont
             <div className="relative w-full lg:max-w-[400px] xl:max-w-[440px] flex items-center lg:justify-end">
               <div className="space-y-4 sm:space-y-5">
                 <p className="text-sm sm:text-base font-normal text-white/90 leading-relaxed max-w-sm drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-                  We design and build fast, high-converting websites for businesses that have outgrown the boring stuff.
+                  We engineer design-first, high-converting digital platforms for founders who have outgrown generic themes.
                 </p>
 
                 <p className="text-xs sm:text-sm text-white/75 leading-relaxed max-w-sm drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
-                  No bloated themes. No endless meetings. No website that looks like it was made during a lunch break.
+                  Zero bloated themes. Zero endless meeting loops. Authentic craftsmanship calibrated for modern AI search engines and human buyers.
                 </p>
 
                 <div className="flex items-center gap-3 sm:gap-4 pt-1 pointer-events-auto">
@@ -277,13 +277,13 @@ export const HeroScrollSection: React.FC<HeroScrollSectionProps> = ({ onOpenCont
           <div className="w-full bg-black/75 backdrop-blur-md border-t border-white/10 py-3 sm:py-4 px-4 sm:px-10 lg:px-14 xl:px-18 pointer-events-auto">
             <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4">
               <div className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm font-mono tracking-wider text-white/80 overflow-x-auto no-scrollbar whitespace-nowrap py-1">
-                <span className="text-white font-medium">48h Launches</span>
+                <span className="text-white font-medium">Signature Frameworks (Incubation)</span>
                 <span className="text-[#ff5500]">·</span>
-                <span className="text-white font-medium">Custom Builds</span>
+                <span className="text-white font-medium">Custom Bespoke Platforms</span>
                 <span className="text-[#ff5500]">·</span>
                 <span className="text-white font-medium">Built for Search</span>
                 <span className="text-[#ff5500]">·</span>
-                <span className="text-white font-medium">Built to Perform</span>
+                <span className="text-white font-medium">Sub-Second Velocity</span>
               </div>
 
               <a href="#expertise" className="hidden lg:flex items-center gap-2 text-xs font-mono tracking-wider text-white/60 hover:text-white transition-colors shrink-0">

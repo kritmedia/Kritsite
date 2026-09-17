@@ -21,6 +21,7 @@ const TAB_ICONS: Record<string, React.FC<{ className?: string }>> = {
 
 export function ServicesPage({ onOpenContact }: ServicesPageProps) {
   const [activeTab, setActiveTab] = useState('design');
+  const [activeMilestone, setActiveMilestone] = useState<number>(0);
   const { currency, setCurrency } = useCurrency();
 
   const activeCard = SERVICE_PILLARS.find((p) => p.id === activeTab) || SERVICE_PILLARS[0];
@@ -160,7 +161,7 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                   )}
 
                   {activeTab === 'seo' && (
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       <div className="flex items-center justify-between text-xs text-white/70">
                         <span className="flex items-center gap-2">
                           <Cpu className="w-3.5 h-3.5 text-[#ff5500]" />
@@ -181,6 +182,23 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
                           <span>Generative Search (GEO):</span>
                           <span className="text-cyan-400 font-bold">Structured Citation Anchors</span>
                         </div>
+                      </div>
+
+                      {/* Live JSON-LD Schema Snippet Box */}
+                      <div className="p-3.5 rounded-xl bg-black/90 border border-white/10 space-y-1.5 font-mono text-[11px]">
+                        <div className="flex items-center justify-between text-white/40 pb-1 border-b border-white/5">
+                          <span className="text-cyan-400 font-bold">✦ SCHEMA.ORG JSON-LD GRAPH</span>
+                          <span className="text-[10px] text-emerald-400">Validated 2026</span>
+                        </div>
+                        <pre className="text-white/70 overflow-x-auto text-[10px] leading-relaxed">
+{`{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "KritSite",
+  "serviceType": "Bespoke Web Development",
+  "knowsAbout": ["Sub-Second Hydration", "AEO/GEO Indexing", "Swiss Design"]
+}`}
+                        </pre>
                       </div>
                     </div>
                   )}
@@ -287,43 +305,104 @@ export function ServicesPage({ onOpenContact }: ServicesPageProps) {
             </button>
           </div>
 
+          {/* 4 Interactive Milestone Cards with Spotlight */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {WORKFLOW_STEPS.map((step) => (
-              <div
-                key={step.step}
-                className="rounded-3xl glass-apple glass-apple-hover p-6 sm:p-8 flex flex-col justify-between space-y-6 group transition-all duration-300"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-3xl font-black font-mono text-white/25 group-hover:text-[#ff5500] transition-colors">
-                      {step.step}
-                    </span>
-                    <span className="text-xs font-mono text-white/80 border border-white/15 px-3 py-1 rounded-full tracking-wider bg-white/5">
-                      {step.duration}
-                    </span>
+            {WORKFLOW_STEPS.map((step, idx) => {
+              const isCurrent = activeMilestone === idx;
+              return (
+                <div
+                  key={step.step}
+                  onClick={() => setActiveMilestone(idx)}
+                  className={`rounded-3xl spotlight-card glass-apple p-6 sm:p-8 flex flex-col justify-between space-y-6 group transition-all duration-300 cursor-pointer border ${
+                    isCurrent
+                      ? 'border-[#ff5500]/60 ring-2 ring-[#ff5500]/30 shadow-[0_0_35px_rgba(255,85,0,0.2)] bg-black/80 scale-[1.02]'
+                      : 'border-white/10 hover:border-white/20'
+                  }`}
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className={`text-3xl font-black font-mono transition-colors ${
+                        isCurrent ? 'text-[#ff5500]' : 'text-white/25 group-hover:text-[#ff5500]'
+                      }`}>
+                        {step.step}
+                      </span>
+                      <span className="text-xs font-mono text-white/80 border border-white/15 px-3 py-1 rounded-full tracking-wider bg-white/5">
+                        {step.duration}
+                      </span>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-bold tracking-tight text-white group-hover:text-white/90">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-white/70 leading-relaxed font-normal">{step.description}</p>
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold tracking-tight text-white group-hover:text-white/90">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-white/70 leading-relaxed font-normal">{step.description}</p>
+                  <div className="pt-4 border-t border-white/10 space-y-2">
+                    <div className="flex items-center justify-between text-xs font-mono">
+                      <span className="text-white/50">Verified Deliverables:</span>
+                      <span className="text-[#ff5500] font-bold">{isCurrent ? 'Active Inspect ✦' : 'Click to View'}</span>
+                    </div>
+                    {step.deliverables.slice(0, 2).map((d, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs text-white/80 font-mono">
+                        <Check className="w-3 h-3 text-[#ff5500] shrink-0" />
+                        <span className="truncate">{d}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
+              );
+            })}
+          </div>
 
-                <div className="pt-4 border-t border-white/10 space-y-2">
-                  <span className="text-xs font-mono tracking-wider text-white/50 block">
-                    Verified Deliverables:
-                  </span>
-                  {step.deliverables.map((d, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-white/80 font-mono">
-                      <Check className="w-3 h-3 text-[#ff5500] shrink-0" />
+          {/* Active Milestone Deep Inspector Drawer */}
+          <div className="p-8 sm:p-10 rounded-3xl glass-apple-amber border border-[#ff5500]/30 shadow-[0_20px_60px_rgba(255,85,0,0.12)] space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl font-black font-mono text-[#ff5500]">
+                  {WORKFLOW_STEPS[activeMilestone].step}
+                </span>
+                <div>
+                  <h4 className="text-xl font-bold text-white tracking-tight">
+                    {WORKFLOW_STEPS[activeMilestone].title} Phase Deep Dive
+                  </h4>
+                  <p className="text-xs font-mono text-white/60">
+                    Production Horizon: {WORKFLOW_STEPS[activeMilestone].duration} · Milestone Checkpoint
+                  </p>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Client Review & Sign-Off Gate</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <span className="text-xs font-mono text-white/50 uppercase tracking-wider block">
+                  Phase Objectives
+                </span>
+                <p className="text-sm text-white/80 font-normal leading-relaxed">
+                  {WORKFLOW_STEPS[activeMilestone].description}
+                </p>
+              </div>
+
+              <div className="space-y-2 md:col-span-2">
+                <span className="text-xs font-mono text-white/50 uppercase tracking-wider block">
+                  All Phase Deliverables & Quality Gates:
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {WORKFLOW_STEPS[activeMilestone].deliverables.map((d, i) => (
+                    <div key={i} className="p-3 rounded-xl bg-black/60 border border-white/10 flex items-center gap-2.5 text-xs sm:text-sm font-mono text-white/90">
+                      <CheckCircle2 className="w-4 h-4 text-[#ff5500] shrink-0" />
                       <span>{d}</span>
                     </div>
                   ))}
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

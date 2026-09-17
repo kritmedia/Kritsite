@@ -74,7 +74,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
             <div className="lg:col-span-5 space-y-6">
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="rounded-3xl glass-apple glass-apple-hover p-6 space-y-2">
+                  <div key={stat.label} className="rounded-3xl spotlight-card glass-apple glass-apple-hover p-6 space-y-2 border border-white/10 hover:border-white/20 transition-all">
                     <div className="text-3xl sm:text-4xl font-black font-mono text-white">{stat.value}</div>
                     <div className="text-xs font-mono tracking-wider text-[#ff5500] font-bold">
                       {stat.label}
@@ -122,7 +122,7 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
             {DESIGN_PRINCIPLES.map((principle) => (
               <div
                 key={principle.number}
-                className="rounded-3xl glass-apple glass-apple-hover p-8 sm:p-10 space-y-5 transition-all duration-300 group"
+                className="rounded-3xl spotlight-card glass-apple glass-apple-hover p-8 sm:p-10 space-y-5 transition-all duration-300 group border border-white/10 hover:border-white/20"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-4xl font-black font-mono text-white/15 group-hover:text-[#ff5500] transition-colors">

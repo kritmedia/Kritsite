@@ -189,24 +189,52 @@ const ROW_ORDER = [
   SHOWCASE_BUILDS[4], // Quso.ai
 ];
 
+const SHOWCASE_CATEGORIES = [
+  { id: 'all', label: 'All Flagships' },
+  { id: 'automotive', label: 'Automotive & Bespoke' },
+  { id: 'healthcare', label: 'Healthcare & Union' },
+  { id: 'ai', label: 'AI & YC Agents' },
+  { id: 'productivity', label: 'Productivity & Apps' },
+];
+
 interface ExpertiseShowcaseProps {
   onOpenContact: (planId?: string) => void;
 }
 
 export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenContact }) => {
   const [inspectingItem, setInspectingItem] = useState<ExpertiseItem | null>(null);
+  const [modalTab, setModalTab] = useState<'architecture' | 'telemetry'>('architecture');
+  const [activeFilter, setActiveFilter] = useState<string>('all');
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const rowRef = useRef<HTMLDivElement | null>(null);
 
+  // Filter items or show all
+  const filteredBuilds = activeFilter === 'all' 
+    ? ROW_ORDER 
+    : ROW_ORDER.filter(item => {
+        if (activeFilter === 'automotive') return item.id === 'big-bear-vans';
+        if (activeFilter === 'healthcare') return item.id === 'isni-plus';
+        if (activeFilter === 'ai') return item.id === 'almanac';
+        if (activeFilter === 'productivity') return item.id === 'mates' || item.id === 'increto';
+        return true;
+      });
+
   // 4 sets for seamless infinite horizontal loop
-  const displayRow = [...ROW_ORDER, ...ROW_ORDER, ...ROW_ORDER, ...ROW_ORDER];
+  const displayRow = [...filteredBuilds, ...filteredBuilds, ...filteredBuilds, ...filteredBuilds];
 
   // Manual scroll shift via chevrons < > (matching Morphic controls)
   const handleScroll = (direction: 'left' | 'right') => {
     const amount = direction === 'left' ? -420 : 420;
     if (rowRef.current) {
       rowRef.current.scrollBy({ left: amount, behavior: 'smooth' });
+    }
+  };
+
+  const handleFilterClick = (filterId: string) => {
+    setActiveFilter(filterId);
+    if (rowRef.current) {
+      rowRef.current.scrollTo({ left: 0, behavior: 'smooth' });
     }
   };
 
@@ -305,35 +333,48 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
           </div>
         </div>
 
-        {/* ── 2. SUB-BAR: "Made with KritSite" + Sleek < > Arrows (Exact Morphic Layout) ── */}
-        <div className="flex items-center justify-between pt-8 sm:pt-10">
+        {/* ── 2. SUB-BAR: "Made with KritSite" + Category Filter Pills + < > Arrows ── */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8 sm:pt-10">
           {/* Left: Brand / Section Indicator */}
           <div className="flex items-center gap-3">
             <span className="text-xs sm:text-sm font-semibold text-white tracking-wide flex items-center gap-2">
               <span className="text-[#ff5500] font-black text-sm">✦</span>
               <span>Made with KritSite</span>
             </span>
-            <a 
-              href="#expertise" 
-              onClick={(e) => { e.preventDefault(); handleScroll('right'); }}
-              className="text-xs text-white/40 hover:text-white transition-colors cursor-pointer"
-            >
-              See more
-            </a>
+            <span className="text-xs text-white/30 hidden sm:inline">|</span>
+            <span className="text-xs font-mono text-white/50 hidden sm:inline">Production Flagships</span>
+          </div>
+
+          {/* Center: Category Filter Pills */}
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 w-full md:w-auto">
+            {SHOWCASE_CATEGORIES.map((cat) => (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => handleFilterClick(cat.id)}
+                className={`px-3.5 py-1.5 rounded-full text-[11px] font-mono tracking-wider transition-all cursor-pointer whitespace-nowrap ${
+                  activeFilter === cat.id
+                    ? 'bg-white text-black font-bold shadow-md scale-[1.02]'
+                    : 'bg-white/5 hover:bg-white/10 text-white/60 hover:text-white border border-white/10'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
           </div>
 
           {/* Right: Sleek < > Chevron Buttons */}
-          <div className="flex items-center gap-3 text-white/50">
+          <div className="flex items-center gap-3 text-white/50 self-end md:self-auto">
             <button
               onClick={() => handleScroll('left')}
-              className="p-1 hover:text-white transition-colors cursor-pointer"
+              className="p-1.5 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
               aria-label="Previous builds"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => handleScroll('right')}
-              className="p-1 hover:text-white transition-colors cursor-pointer"
+              className="p-1.5 hover:text-white transition-colors cursor-pointer rounded-full hover:bg-white/10"
               aria-label="Next builds"
             >
               <ChevronRight className="w-4 h-4" />
@@ -500,57 +541,126 @@ export const ExpertiseShowcase: React.FC<ExpertiseShowcaseProps> = ({ onOpenCont
 
               {/* Right Column: Telemetry & Architecture Specs */}
               <div className="lg:col-span-6 space-y-4">
-                {/* Technical Specs Card */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 space-y-3">
-                  <div className="flex items-center gap-2 text-[11px] font-mono font-semibold tracking-wider text-[#ff5500]">
-                    <Cpu className="w-4 h-4" />
-                    <span>Technical Architecture</span>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                    <div>
-                      <span className="text-white/40 font-mono block text-[9px] tracking-wider">Framework & Runtime</span>
-                      <span className="text-white font-medium text-[11px] leading-snug block">{inspectingItem.specs.framework}</span>
-                    </div>
-                    <div>
-                      <span className="text-white/40 font-mono block text-[9px] tracking-wider">Motion & Physics</span>
-                      <span className="text-white font-medium text-[11px] leading-snug block">{inspectingItem.specs.motion}</span>
-                    </div>
-                    <div>
-                      <span className="text-white/40 font-mono block text-[9px] tracking-wider">Performance Metrics</span>
-                      <span className="text-[#ff5500] font-mono font-bold text-[11px] leading-snug block">{inspectingItem.specs.speed}</span>
-                    </div>
-                    <div>
-                      <span className="text-white/40 font-mono block text-[9px] tracking-wider">Search & AI Discovery</span>
-                      <span className="text-white font-medium text-[11px] leading-snug block">{inspectingItem.specs.search}</span>
-                    </div>
-                  </div>
+                {/* Modal Tab Switcher */}
+                <div className="flex items-center gap-1.5 p-1 rounded-full bg-white/5 border border-white/10 w-fit">
+                  <button
+                    type="button"
+                    onClick={() => setModalTab('architecture')}
+                    className={`px-3.5 py-1 rounded-full text-[10px] font-mono tracking-wider transition-all cursor-pointer ${
+                      modalTab === 'architecture'
+                        ? 'bg-white text-black font-bold shadow-sm'
+                        : 'text-white/60 hover:text-white'
+                    }`}
+                  >
+                    Architecture & Stack
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setModalTab('telemetry')}
+                    className={`px-3.5 py-1 rounded-full text-[10px] font-mono tracking-wider transition-all cursor-pointer ${
+                      modalTab === 'telemetry'
+                        ? 'bg-white text-black font-bold shadow-sm'
+                        : 'text-white/60 hover:text-white'
+                    }`}
+                  >
+                    Telemetry & Search
+                  </button>
                 </div>
 
-                {/* Engineering Highlights Card */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 space-y-3">
-                  <div className="flex items-center gap-2 text-[11px] font-mono font-semibold tracking-wider text-[#ff5500]">
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>Engineering Highlights</span>
-                  </div>
+                {modalTab === 'architecture' ? (
+                  <>
+                    {/* Technical Specs Card */}
+                    <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 space-y-3">
+                      <div className="flex items-center gap-2 text-[11px] font-mono font-semibold tracking-wider text-[#ff5500]">
+                        <Cpu className="w-4 h-4" />
+                        <span>Technical Architecture</span>
+                      </div>
 
-                  <ul className="space-y-2 text-xs text-white/80">
-                    {inspectingItem.highlights.map((highlight, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="w-3.5 h-3.5 text-[#ff5500] shrink-0 mt-0.5" />
-                        <span className="text-[11px] leading-snug">{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                        <div>
+                          <span className="text-white/40 font-mono block text-[9px] tracking-wider">Framework & Runtime</span>
+                          <span className="text-white font-medium text-[11px] leading-snug block">{inspectingItem.specs.framework}</span>
+                        </div>
+                        <div>
+                          <span className="text-white/40 font-mono block text-[9px] tracking-wider">Motion & Physics</span>
+                          <span className="text-white font-medium text-[11px] leading-snug block">{inspectingItem.specs.motion}</span>
+                        </div>
+                        <div>
+                          <span className="text-white/40 font-mono block text-[9px] tracking-wider">Performance Metrics</span>
+                          <span className="text-[#ff5500] font-mono font-bold text-[11px] leading-snug block">{inspectingItem.specs.speed}</span>
+                        </div>
+                        <div>
+                          <span className="text-white/40 font-mono block text-[9px] tracking-wider">Search & AI Discovery</span>
+                          <span className="text-white font-medium text-[11px] leading-snug block">{inspectingItem.specs.search}</span>
+                        </div>
+                      </div>
+                    </div>
 
-                  <div className="pt-1 flex items-center gap-1.5 flex-wrap">
-                    {inspectingItem.techStack.map((tech, idx) => (
-                      <span key={idx} className="px-2 py-0.5 rounded bg-white/10 text-[9px] font-mono text-white/80 border border-white/10">
-                        {tech}
+                    {/* Engineering Highlights Card */}
+                    <div className="p-4 sm:p-5 rounded-2xl bg-black/60 border border-white/10 space-y-3">
+                      <div className="flex items-center gap-2 text-[11px] font-mono font-semibold tracking-wider text-[#ff5500]">
+                        <ShieldCheck className="w-4 h-4" />
+                        <span>Engineering Highlights</span>
+                      </div>
+
+                      <ul className="space-y-2 text-xs text-white/80">
+                        {inspectingItem.highlights.map((highlight, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <Check className="w-3.5 h-3.5 text-[#ff5500] shrink-0 mt-0.5" />
+                            <span className="text-[11px] leading-snug">{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="pt-1 flex items-center gap-1.5 flex-wrap">
+                        {inspectingItem.techStack.map((tech, idx) => (
+                          <span key={idx} className="px-2 py-0.5 rounded bg-white/10 text-[9px] font-mono text-white/80 border border-white/10">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  /* Telemetry View */
+                  <div className="p-5 rounded-2xl bg-black/60 border border-white/10 space-y-4 font-mono text-xs">
+                    <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                      <div className="flex items-center gap-2 text-[#ff5500] text-[11px] font-bold">
+                        <Sparkles className="w-4 h-4" />
+                        <span>Core Web Vitals Audit</span>
+                      </div>
+                      <span className="px-2.5 py-0.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-bold">
+                        Score: 100/100
                       </span>
-                    ))}
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10 space-y-1">
+                        <span className="text-white/40 text-[9px] block">First Contentful Paint</span>
+                        <span className="text-emerald-400 font-bold text-sm">&lt; 0.48s</span>
+                      </div>
+                      <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10 space-y-1">
+                        <span className="text-white/40 text-[9px] block">Largest Contentful Paint</span>
+                        <span className="text-emerald-400 font-bold text-sm">&lt; 0.65s</span>
+                      </div>
+                      <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10 space-y-1">
+                        <span className="text-white/40 text-[9px] block">Cumulative Layout Shift</span>
+                        <span className="text-emerald-400 font-bold text-sm">0.00 (Zero Shift)</span>
+                      </div>
+                      <div className="p-3 rounded-xl bg-white/[0.03] border border-white/10 space-y-1">
+                        <span className="text-white/40 text-[9px] block">Interaction to Next Paint</span>
+                        <span className="text-emerald-400 font-bold text-sm">&lt; 32ms</span>
+                      </div>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-[#ff5500]/10 border border-[#ff5500]/30 text-white/90 space-y-1">
+                      <span className="text-[#ff5500] font-bold text-[10px] block">AI & Semantic Search Health</span>
+                      <p className="text-[10px] text-white/70 leading-relaxed">
+                        JSON-LD Schema Graph fully linked with Organization, WebSite & Service entity graph. 100% crawlable by ChatGPT Search, Perplexity, and Google AI Overviews.
+                      </p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
 

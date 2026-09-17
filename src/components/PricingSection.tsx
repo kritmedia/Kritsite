@@ -68,7 +68,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
         {/* ── Apple Dual Flagship Product Comparison Grid ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           {/* ── CARD 01: TEMPLATE LAUNCH (Speed & Precision) ── */}
-          <div className="group rounded-[32px] sm:rounded-[40px] glass-apple glass-apple-hover p-8 sm:p-12 flex flex-col justify-between space-y-10 relative overflow-hidden transition-all duration-500 border border-white/10 hover:border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+          <div className="group rounded-[32px] sm:rounded-[40px] spotlight-card glass-apple glass-apple-hover p-8 sm:p-12 flex flex-col justify-between space-y-10 relative overflow-hidden transition-all duration-500 border border-white/10 hover:border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
             {/* Top Eyebrow Badges */}
             <div className="flex items-center justify-between gap-4">
               <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#ff5500]/10 border border-[#ff5500]/30 rounded-full text-xs font-mono text-[#ff5500] font-bold">
@@ -179,7 +179,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
           </div>
 
           {/* ── CARD 02: CUSTOM PLATFORM (Flagship Pro Tier) ── */}
-          <div className="group rounded-[32px] sm:rounded-[40px] glass-apple-amber p-8 sm:p-12 flex flex-col justify-between space-y-10 relative overflow-hidden transition-all duration-500 border border-[#ff5500]/30 hover:border-[#ff5500]/50 shadow-[0_0_60px_rgba(255,85,0,0.18)] animate-border-breathe">
+          <div className="group rounded-[32px] sm:rounded-[40px] spotlight-card glass-apple-amber p-8 sm:p-12 flex flex-col justify-between space-y-10 relative overflow-hidden transition-all duration-500 border border-[#ff5500]/30 hover:border-[#ff5500]/50 shadow-[0_0_60px_rgba(255,85,0,0.18)] animate-border-breathe">
             {/* Top Eyebrow Badges */}
             <div className="flex items-center justify-between gap-4">
               <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#ff5500]/10 border border-[#ff5500]/30 rounded-full text-xs font-mono text-[#ff5500] font-bold">
