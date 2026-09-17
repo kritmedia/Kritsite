@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Globe, Film, Sparkles, Shield, Cpu, Compass } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Sparkles, Shield, Cpu, Compass } from 'lucide-react';
 import { DESIGN_PRINCIPLES } from '../data/content';
 import { AtmosphericMeshBackground } from '../components/AtmosphericMeshBackground';
 
@@ -204,9 +204,11 @@ export function AboutPage({ onOpenContact }: AboutPageProps) {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl border border-white/20 flex items-center justify-center group-hover:border-white transition-colors bg-white/5">
-                    <Film className="w-5 h-5 text-white/70" />
-                  </div>
+                  <img
+                    src="/images/kritvideo-logo.png"
+                    alt="KritVideo Logo"
+                    className="w-10 h-10 rounded-xl object-contain shadow-[0_0_20px_rgba(255,85,0,0.25)] group-hover:scale-105 transition-transform duration-300"
+                  />
                   <div>
                     <span className="text-xs font-mono text-white/50 tracking-wider block">
                       Sister Studio
